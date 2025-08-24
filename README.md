@@ -10,7 +10,7 @@
 [![Release](https://img.shields.io/github/v/release/matspike/ufsa-2?display_name=tag&sort=semver)](https://github.com/matspike/ufsa-2/releases)
 [![Latest release](https://img.shields.io/github/release/matspike/ufsa-2.svg?label=latest)](https://github.com/matspike/ufsa-2/releases/latest)
 
-Docs site: <https://matspike.github.io/ufsa-2/>
+Docs site: <https://matspike.github.io/ufsa2/>
 
 ---
 
