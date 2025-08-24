@@ -1,0 +1,6 @@
+Name,Template,Reference
+JavaScript Object Notation,application/json,RFC 8259
+ZIP Archive,application/zip,RFC 6713
+PDF Document,application/pdf,ISO 32000-2
+GZIP,application/gzip,RFC 6713
+LD+JSON,application/ld+json,W3C REC

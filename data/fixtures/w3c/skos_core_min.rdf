@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <skos:Concept rdf:about="http://example.org/concept/label">
+    <skos:prefLabel>Label</skos:prefLabel>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="http://example.org/concept/concept">
+    <skos:prefLabel>Concept</skos:prefLabel>
+  </skos:Concept>
+
+</rdf:RDF>

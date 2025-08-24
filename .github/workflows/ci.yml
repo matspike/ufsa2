@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        run: |
+          pipx install uv
+          uv --version
+
+      - name: Sync dependencies (all groups)
+        run: |
+          uv sync --all-groups
+
+      - name: Lint
+        run: |
+          uv run -q ruff check
+
+      - name: Type check
+        run: |
+          uv run -q ty check
+
+      - name: Run tests with coverage
+        run: |
+          uv run -q pytest --cov=ufsa_v2 --cov-report=xml -q
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+          fail_ci_if_error: false
+
+      - name: Build pipeline artifacts
+        run: |
+          uv run -q ufsa-v2 run --registry ufsa_v2/registry/pointer_registry.yaml --out build --tracker tracker.json
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ufsa-build
+          path: |
+            build/**
+            tracker.json

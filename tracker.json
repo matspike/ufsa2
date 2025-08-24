@@ -1,0 +1,874 @@
+{
+  "meta": {
+    "generatedAt": "2025-08-24T22:00:15.535125+00:00",
+    "python": "3.13.2",
+    "schemes": {
+      "fhir_r4_patient": {
+        "label": "HL7 FHIR R4 Patient Resource (Fixture)",
+        "conceptCount": 10
+      },
+      "iso_3166_1_a2": {
+        "label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+        "conceptCount": 7
+      },
+      "w3c_skos_core": {
+        "label": "W3C SKOS Core Vocabulary (Fixture-Min)",
+        "conceptCount": 2
+      },
+      "fhir_r4_observation": {
+        "label": "HL7 FHIR R4 Observation Resource (Fixture)",
+        "conceptCount": 13
+      },
+      "iana_mime_application": {
+        "label": "IANA MIME Types (Application) (Fixture)",
+        "conceptCount": 5
+      },
+      "shopify_admin_product": {
+        "label": "Shopify Admin GraphQL API Product Object (Fixture)",
+        "conceptCount": 5
+      },
+      "openfigi_v3": {
+        "label": "OpenFIGI API v3 Mapping Response (Fixture)",
+        "conceptCount": 8
+      },
+      "shopify_admin_order": {
+        "label": "Shopify Admin GraphQL API Order Object (Fixture)",
+        "conceptCount": 6
+      },
+      "fhir_r4_encounter": {
+        "label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+        "conceptCount": 8
+      },
+      "fhir_r4_condition": {
+        "label": "HL7 FHIR R4 Condition Resource (Fixture)",
+        "conceptCount": 8
+      },
+      "fhir_r4_medication": {
+        "label": "HL7 FHIR R4 Medication Resource (Fixture)",
+        "conceptCount": 5
+      },
+      "fhir_r4_procedure": {
+        "label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+        "conceptCount": 7
+      },
+      "iana_mime_text": {
+        "label": "IANA MIME Types (Text) (Fixture)",
+        "conceptCount": 3
+      },
+      "iana_mime_image": {
+        "label": "IANA MIME Types (Image) (Fixture)",
+        "conceptCount": 3
+      },
+      "iana_mime_audio": {
+        "label": "IANA MIME Types (Audio) (Fixture)",
+        "conceptCount": 3
+      },
+      "iana_mime_video": {
+        "label": "IANA MIME Types (Video) (Fixture)",
+        "conceptCount": 3
+      },
+      "iso_3166_2": {
+        "label": "ISO 3166-2 Subdivision Codes (Fixture)",
+        "conceptCount": 4
+      },
+      "iso_4217": {
+        "label": "ISO 4217 Currency Codes (Fixture)",
+        "conceptCount": 4
+      },
+      "shopify_customer": {
+        "label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+        "conceptCount": 5
+      },
+      "shopify_inventory_item": {
+        "label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+        "conceptCount": 4
+      },
+      "shopify_fulfillment": {
+        "label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+        "conceptCount": 4
+      },
+      "iso_6166_isin": {
+        "label": "ISO 6166 ISIN Codes (Fixture)",
+        "conceptCount": 2
+      },
+      "cusip": {
+        "label": "CUSIP (Fixture)",
+        "conceptCount": 2
+      },
+      "cyclonedx_example": {
+        "label": "Example CycloneDX SBOM",
+        "conceptCount": 2
+      },
+      "internal_dw_schema": {
+        "label": "Internal Data Warehouse Schema",
+        "conceptCount": 7
+      }
+    },
+    "git": {
+      "commit": "410f30cc0271ad510e1361c687c2d8a310641a01",
+      "branch": "main"
+    },
+    "mappingCandidates": 76,
+    "plan": {
+      "tasks": [
+        {
+          "title": "Integrate fhir_r4_patient \u2014 HL7 FHIR R4 Patient Resource (Fixture)",
+          "domain": "healthcare",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 1
+        },
+        {
+          "title": "Integrate iso_3166_1_a2 \u2014 ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+          "domain": "foundational",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 2
+        },
+        {
+          "title": "Integrate w3c_skos_core \u2014 W3C SKOS Core Vocabulary (Fixture-Min)",
+          "domain": "foundational",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 3
+        },
+        {
+          "title": "Integrate fhir_r4_observation \u2014 HL7 FHIR R4 Observation Resource (Fixture)",
+          "domain": "healthcare",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 4
+        },
+        {
+          "title": "Integrate iana_mime_application \u2014 IANA MIME Types (Application) (Fixture)",
+          "domain": "foundational",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 5
+        },
+        {
+          "title": "Integrate shopify_admin_product \u2014 Shopify Admin GraphQL API Product Object (Fixture)",
+          "domain": "ecommerce",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 6
+        },
+        {
+          "title": "Integrate openfigi_v3 \u2014 OpenFIGI API v3 Mapping Response (Fixture)",
+          "domain": "finance",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 7
+        },
+        {
+          "title": "Integrate shopify_admin_order \u2014 Shopify Admin GraphQL API Order Object (Fixture)",
+          "domain": "ecommerce",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Integrated via fixtures and parsers",
+          "doc_ref": "Docs 1 & 2",
+          "id": 8
+        },
+        {
+          "title": "Emit global tables",
+          "domain": "infrastructure",
+          "category": "emitter",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Global CSV tables are present in build/",
+          "doc_ref": "Doc 2, outputs",
+          "id": 9
+        },
+        {
+          "title": "Emit consolidated indexes",
+          "domain": "infrastructure",
+          "category": "emitter",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Index and aggregates present in build/",
+          "doc_ref": "Doc 2, outputs",
+          "id": 10
+        },
+        {
+          "title": "Generate mapping candidates",
+          "domain": "infrastructure",
+          "category": "mapping",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Naive label-equality candidates generated",
+          "doc_ref": "Doc 2, mapping",
+          "id": 11
+        },
+        {
+          "title": "Makefile targets and uv scripts",
+          "domain": "infrastructure",
+          "category": "ops",
+          "priority": "low",
+          "status": "done",
+          "rationale": "Makefile present; uv scripts configured in pyproject",
+          "doc_ref": "Ops",
+          "id": 12
+        },
+        {
+          "title": "Tighten SKOS mapping predicates and relations in model and outputs",
+          "domain": "infrastructure",
+          "category": "model",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Doc 2 emphasizes SKOS as the core; ensure predicates (exact/close/broad/narrow) supported in emitters",
+          "doc_ref": "Doc 2, Section II",
+          "id": 13
+        },
+        {
+          "title": "FHIR: Add Encounter, Condition, Medication, Procedure (JSON Schema fixtures)",
+          "domain": "healthcare",
+          "category": "coverage",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Doc 1 Section 3.1 calls out breadth across resources",
+          "doc_ref": "Doc 1, 3.1",
+          "id": 14
+        },
+        {
+          "title": "FHIR: Deepen Observation semantics (ValueSet hooks for Observation.code)",
+          "domain": "healthcare",
+          "category": "depth",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Doc 1 mentions coded value sets; prepare hooks for future LOINC integration",
+          "doc_ref": "Doc 1, 3.1",
+          "id": 15
+        },
+        {
+          "title": "Shopify: Add Customer, InventoryItem, Fulfillment objects (fixtures)",
+          "domain": "ecommerce",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Extend beyond Product/Order for realistic domain coverage",
+          "doc_ref": "Doc 1, 3.2",
+          "id": 16
+        },
+        {
+          "title": "Shopify: Implement basic HTML/GraphQL scraping fetcher with cache",
+          "domain": "ecommerce",
+          "category": "depth",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Doc 1 requires scraping for real sources; add fetcher layer with caching",
+          "doc_ref": "Doc 1, 3.2",
+          "id": 17
+        },
+        {
+          "title": "OpenFIGI: Model compositeFIGI/shareClassFIGI hierarchy and relations",
+          "domain": "finance",
+          "category": "depth",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Capture intended hierarchy and relations per Doc 1",
+          "doc_ref": "Doc 1, 3.3",
+          "id": 18
+        },
+        {
+          "title": "Finance: Add ISIN and CUSIP fixtures and establish relatedMatch links to FIGI",
+          "domain": "finance",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Demonstrate cross-standard identifier mapping",
+          "doc_ref": "Doc 1, 3.3",
+          "id": 19
+        },
+        {
+          "title": "ISO: Add ISO 4217 currency and ISO 3166-2 subdivisions (fixtures)",
+          "domain": "foundational",
+          "category": "coverage",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Broaden foundational standards for mappings",
+          "doc_ref": "Doc 1, 3.4",
+          "id": 20
+        },
+        {
+          "title": "IANA: Cover text/*, image/*, audio/*, video/* in addition to application/*",
+          "domain": "foundational",
+          "category": "coverage",
+          "priority": "low",
+          "status": "done",
+          "rationale": "Extend MIME type space for better mappings",
+          "doc_ref": "Doc 1, 3.4",
+          "id": 21
+        },
+        {
+          "title": "SKOS: Full vocabulary ingestion instead of minimal subset",
+          "domain": "foundational",
+          "category": "depth",
+          "priority": "low",
+          "status": "done",
+          "rationale": "Ensure complete vocabulary for richer relations",
+          "doc_ref": "Doc 1, 3.4",
+          "id": 22
+        },
+        {
+          "title": "Fetcher: Add network fetchers with caching and hash pinning (offline by default)",
+          "domain": "infrastructure",
+          "category": "platform",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Enable real spec ingestion while preserving determinism",
+          "doc_ref": "Doc 1, Section I/III",
+          "id": 23
+        },
+        {
+          "title": "Profiles: Support contextual overlays and mapping semantics in config",
+          "domain": "infrastructure",
+          "category": "platform",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Prepare for domain-specific overlays and mapping preferences",
+          "doc_ref": "Doc 1, Section I",
+          "id": 24
+        },
+        {
+          "title": "CI: Add CI to run check + pipeline; publish artifacts",
+          "domain": "infrastructure",
+          "category": "ops",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Automate quality gates and artifact publication",
+          "doc_ref": "Doc 1, Section IV/V",
+          "id": 25
+        },
+        {
+          "title": "Profiles: minimal on-disk schema + validator",
+          "domain": "architecture",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Implement minimal YAML schema and validator to enable contextual overlays",
+          "doc_ref": "docs/2_Profiles and Overlays.md",
+          "id": 26
+        },
+        {
+          "title": "Profiles: CLI apply/check overlays",
+          "domain": "tooling",
+          "category": "feature",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "CLI to apply/check overlays on emitted tables",
+          "doc_ref": "docs/2_Profiles and Overlays.md",
+          "id": 27
+        },
+        {
+          "title": "Identifier systems: minimal YAML schema",
+          "domain": "architecture",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Define IdentifierSystem schema (governance, concept, syntax, scope)",
+          "doc_ref": "docs/3_Identifier and Mapping Registries.md",
+          "id": 28
+        },
+        {
+          "title": "Mapping object: minimal YAML schema",
+          "domain": "architecture",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Define Mapping object linking identifier systems incl. contextualPreference rules",
+          "doc_ref": "docs/3_Identifier and Mapping Registries.md",
+          "id": 29
+        },
+        {
+          "title": "Identifier/Mapping: CLI + validation",
+          "domain": "tooling",
+          "category": "feature",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "CLI commands to create/validate identifier systems and mappings",
+          "doc_ref": "docs/3_Identifier and Mapping Registries.md",
+          "id": 30
+        },
+        {
+          "title": "Emit: identifier_systems.csv & mappings.csv",
+          "domain": "infrastructure",
+          "category": "emitter",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Add dedicated global tables for identifier systems and mappings, wire into pipeline",
+          "doc_ref": "docs/3_Identifier and Mapping Registries.md",
+          "id": 31
+        },
+        {
+          "title": "OpenFIGI: implement HTML fetcher with cache",
+          "domain": "finance",
+          "category": "depth",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Real spec ingestion; mirror Shopify approach; add caching/pinning",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 32
+        },
+        {
+          "title": "Integrate SEAL license script into project and Makefile",
+          "domain": "infrastructure",
+          "category": "automation",
+          "priority": "low",
+          "status": "done",
+          "rationale": "Scoped SEAL_LICENSE.py to ufsa_v2/tests + self; added Makefile targets seal/seal-clean; gitignored outputs; updated README",
+          "doc_ref": "README.md; Makefile; SEAL_LICENSE.py",
+          "id": 33
+        },
+        {
+          "title": "Phase 1: Create parser stubs (CycloneDX + SQL DDL)",
+          "domain": "infrastructure",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Added parser_cyclonedx.py and parser_ast_sql.py with minimal fixture parsing",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 34
+        },
+        {
+          "title": "Phase 1: Pointer registry entries and fixtures (SBOM/AST)",
+          "domain": "infrastructure",
+          "category": "config",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Appended cyclonedx_example and internal_dw_schema to pointer registry; added fixtures",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 35
+        },
+        {
+          "title": "Phase 2: Implement CycloneDX SBOM parser",
+          "domain": "infrastructure",
+          "category": "feature",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Minimal transform from components/dependencies into SKOS; iterate if needed",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 36
+        },
+        {
+          "title": "Phase 2: Implement SQL DDL AST parser",
+          "domain": "infrastructure",
+          "category": "feature",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Naive DDL parsing for tables/columns; future: sqlglot for robustness",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 37
+        },
+        {
+          "title": "Phase 3: Specialized emitters (software_components.csv, database_schemas.csv)",
+          "domain": "infrastructure",
+          "category": "emitter",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Emit specialized tables and exclude from generic concepts.csv",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 38
+        },
+        {
+          "title": "Phase 4: Tracker integration (track specialized outputs)",
+          "domain": "infrastructure",
+          "category": "ops",
+          "priority": "low",
+          "status": "done",
+          "rationale": "Outputs are automatically tracked via engine emit step",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 39
+        },
+        {
+          "title": "Phase 4: Sealing & packaging include new parser modules",
+          "domain": "infrastructure",
+          "category": "automation",
+          "priority": "low",
+          "status": "done",
+          "rationale": "SEAL scans ufsa_v2/; whitelist already captures sealed outputs",
+          "doc_ref": "docs/4_UFSA2.1_SBOM_AST.md",
+          "id": 40
+        },
+        {
+          "title": "Docs: design Pydantic v2 model layer (scope, naming, locations)",
+          "domain": "documentation",
+          "category": "design",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Audit codebase and define core BaseModel classes to represent concepts, schemes, relations, identifiers, mappings, SBOM and AST entities",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 41
+        },
+        {
+          "title": "Add pydantic-core models for core entities (Concept, ConceptScheme, Relation, Mapping, IdentifierSystem, SoftwareComponent, DatabaseTable/Column, ForeignKey)",
+          "domain": "documentation",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Implement Pydantic v2 models with field validation and type hints; keep isolated in ufsa_v2/models/ to avoid refactoring parsers initially",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 42
+        },
+        {
+          "title": "Wire mkdocs-material + mkdocstrings (Python) config",
+          "domain": "documentation",
+          "category": "tooling",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Add mkdocs.yml with material theme, mkdocstrings-python handler, and navigation; pin dependencies in pyproject",
+          "doc_ref": "docs/0_Federated Schema Architecture_ Falsification & Implementation.md",
+          "id": 43
+        },
+        {
+          "title": "Auto-docs: generate API pages from Pydantic models (mkdocstrings)",
+          "domain": "documentation",
+          "category": "feature",
+          "priority": "high",
+          "status": "done",
+          "rationale": "Create docs/ reference pages that import ufsa_v2.models.* and ufsa_v2.* modules, enabling mkdocstrings to render models and docstrings",
+          "doc_ref": "docs/2_Profiles and Overlays.md",
+          "id": 44
+        },
+        {
+          "title": "CI: build docs on push (mkdocs build) and publish to GitHub Pages",
+          "domain": "documentation",
+          "category": "ci",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Add workflow to install deps, build mkdocs, and deploy gh-pages; ensure docs link to sealed packaging notes",
+          "doc_ref": "docs/3_Identifier and Mapping Registries.md",
+          "id": 45
+        },
+        {
+          "title": "Docstrings: add module/class/function docs across ufsa_v2 for mkdocstrings",
+          "domain": "documentation",
+          "category": "quality",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Ensure public modules/classes/functions have clear docstrings and __all__ exports; adopt Google-style or NumPy-style for consistency",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 46
+        },
+        {
+          "title": "Makefile: add docs build/serve targets and README snippets",
+          "domain": "documentation",
+          "category": "tooling",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Create make docs (mkdocs build) and make docs-serve (mkdocs serve) targets; document in README",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 47
+        },
+        {
+          "title": "Docs: scaffold docs site (docs/index.md, docs/reference/ with mkdocstrings hooks)",
+          "domain": "documentation",
+          "category": "scaffolding",
+          "priority": "medium",
+          "status": "done",
+          "rationale": "Create landing page and reference stubs that call mkdocstrings for ufsa_v2.models and core modules; set up navigation",
+          "doc_ref": "docs/1_UFSA v2.0 Registry and Emitter Design.md",
+          "id": 48
+        }
+      ],
+      "createdAt": "2025-08-24T15:01:48.609023+00:00",
+      "updatedAt": "2025-08-24T19:53:18.913225+00:00"
+    }
+  },
+  "files": {
+    "ufsa_v2/registry/pointer_registry.yaml": {
+      "sha256": "6c89137b863e81cc3910dee75f8048cdcc4bbf59923aa891f82a763a55fea277"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/patient.schema.json": {
+      "sha256": "59ac1a7d7547b0e820200a85787978818e6ab3eda9ba620c03d7c79b46c4601a"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iso/iso_3166_1_a2.csv": {
+      "sha256": "ed1a01bbca117f39378e081cc1328f6280d67259d62030314d46c847e59c9c51"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/w3c/skos_core_min.rdf": {
+      "sha256": "0e2e710f1bf1649c54a13822d0eddfcb2dfc867d4534a0b1ae52fc6af28ec437"
+    },
+    "build/fhir_r4_patient.concepts.json": {
+      "sha256": "2bf6974e0ebb563180de83db0debe86ebe3788c9b3f5befb5bd7d5cd5d488141"
+    },
+    "build/fhir_r4_patient.concepts.csv": {
+      "sha256": "b0ad723791cf7eec1589a7a7ba00cf5d5b0a063a0b42c75b757b224fd8535f4a"
+    },
+    "build/iso_3166_1_a2.concepts.json": {
+      "sha256": "b8240caebfdd76830253d8f12e6d120d31df4d2ae4aba339fd31006916946798"
+    },
+    "build/iso_3166_1_a2.concepts.csv": {
+      "sha256": "3338344d78dcbd82a01d6e0d0d85c23d7fa100b8ff9437aa8511d8193c7936f8"
+    },
+    "build/w3c_skos_core.concepts.json": {
+      "sha256": "c4c8fe3b59526ee1ef191fef1f66b5839332a833e1e0dd1c2467179bbfdecf44"
+    },
+    "build/w3c_skos_core.concepts.csv": {
+      "sha256": "80456e4a1759635b90bf2b611d514d99b2e21e2fc6af5e46092746c1b37a8316"
+    },
+    "build/concept_schemes.index.json": {
+      "sha256": "dcc5b0b9c9870931b0acbb95ee1472ddc5c761d94f1dbdb583b0272a71048263"
+    },
+    "pyproject.toml": {
+      "sha256": "9ca24d8a78d2dbcd5122cf23057600e4fd515decce3c41b85c5a6d917cf48530"
+    },
+    "uv.lock": {
+      "sha256": "09bc1815a4d74f0403ef778020d45e8e8815a32306abe067133ef430b5ee4b3b"
+    },
+    "README.md": {
+      "sha256": "8777ff4b53bacd93cd0535a5b6b9b4628c1bcfdd43d0254a8f2b47cc42bbc144"
+    },
+    "build/concepts.all.json": {
+      "sha256": "3b27ab721eea611155170cd896005584397a4a91de9d7ec533b9494e848f08c2"
+    },
+    "build/concepts.all.csv": {
+      "sha256": "0abb6ec0f1b6b02c7e8cf628ddbd2530ad464d6687034b4f3d214db2d5bcdc09"
+    },
+    "build/mappings.candidates.json": {
+      "sha256": "dda1313de3dd15dd4d3a5377d883dd8333537ec0b34f3b08d06b98a4cf5338a4"
+    },
+    "build/mappings.candidates.csv": {
+      "sha256": "8c70cc094854496145855e322dac8c2a3215f3ddb13c1b799070220134b929bc"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/observation.schema.json": {
+      "sha256": "0bd8e760ceda14b0c70a4f27d7b39baab8ca38d286973c1952e180832630275b"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iana/application.csv": {
+      "sha256": "78323d18d3df0fba5be60322c8dc8671625fbd3b15703422b19256c8c9cc227b"
+    },
+    "build/fhir_r4_observation.concepts.json": {
+      "sha256": "f4e183acf637b42fe64dc861785aface667aff21cfe56ca9dec9a6bae79d39f5"
+    },
+    "build/fhir_r4_observation.concepts.csv": {
+      "sha256": "d8c6bfbff529f040ae33764d58ec878971d489553c70e9d91e8fe5c5e42c6c0d"
+    },
+    "build/iana_mime_application.concepts.json": {
+      "sha256": "b8709ccb08a006bf5de0a33f9d8bb038a0e1169fd918b7f912d553bf2623c49d"
+    },
+    "build/iana_mime_application.concepts.csv": {
+      "sha256": "72fd5ff0397d012ae229ecc836a271fbd936b5a6ec17c1ef8dc811506f4f2086"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/shopify/product_fields.csv": {
+      "sha256": "2823d83f7533373783c8708c017a50ba2793ea4d68e737259a6b8a647452cd15"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/openfigi/mapping_fields.csv": {
+      "sha256": "ed32c681e891e6ed80a8edca4ae79ca381f4a88176eb4f19aee13cd37defc269"
+    },
+    "build/shopify_admin_product.concepts.json": {
+      "sha256": "a3ce722b8ce039e3374ccb485e91e4aac1d743b30697fb015613c4bd6304ca33"
+    },
+    "build/shopify_admin_product.concepts.csv": {
+      "sha256": "5ccc87a368e6d34377147d6e82e41a1c5e6c96cbac0075e08089abf3ac6d985a"
+    },
+    "build/openfigi_v3.concepts.json": {
+      "sha256": "792ad1f91282da0fe29e06b7933e9c3b679c1f568053ec481ce71441dae4aaf6"
+    },
+    "build/openfigi_v3.concepts.csv": {
+      "sha256": "1eea11e84c21ed423e7b85fb77def1e6a03dbd8357f38ca02878bcac95b19203"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/shopify/order_fields.csv": {
+      "sha256": "4fe1bee842b55016d3b89225d603eb34735e456a2ed909261d112dbd75c23d63"
+    },
+    "build/shopify_admin_order.concepts.json": {
+      "sha256": "a3bec8ee9d2f6bdb60af4cb4fb923a51320ae4cc0993c37fcf0f8dcaea623f90"
+    },
+    "build/shopify_admin_order.concepts.csv": {
+      "sha256": "ceb97610bad673b0435654b99ed17273178ca9e7fc5e3fcffc3c3d1be3717416"
+    },
+    "build/concept_schemes.csv": {
+      "sha256": "fc38e12208dcdc78b6c4bed385eb60465a55dd2768067e991e9a201f9eee8216"
+    },
+    "build/concepts.csv": {
+      "sha256": "84a0402bbcdbdf8ce7aa82c1759ee4e792aeeff12625413b5f3d6b495034e26b"
+    },
+    "build/semantic_relations.csv": {
+      "sha256": "90af6364baf3ccc6aec0d8e6a92a9e9ad9511e02710fc42de2638ef87ae41faf"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/encounter.schema.json": {
+      "sha256": "0081217722e61f8976196c7cb1a077776be6759fcdade9f5f7f6d0dcf0bb9bd3"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/condition.schema.json": {
+      "sha256": "160bfae81b8c619e48f87c3b416f34c2c011a5135141ac86263db58dab257eec"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/medication.schema.json": {
+      "sha256": "6c84cce57cd528109f4bf580eff4c70e14ced00cf22763d923164ea7240f574d"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/fhir/procedure.schema.json": {
+      "sha256": "d73e02b0efec65482fb9cff55ff387c3607052b29634caed727ff73487ac69f9"
+    },
+    "build/fhir_r4_encounter.concepts.json": {
+      "sha256": "61991e888eb085cf89d25d20618f3820a10c7792a2f6561e1b0bf861baf7b67d"
+    },
+    "build/fhir_r4_encounter.concepts.csv": {
+      "sha256": "446f0017d5d7d438a73f798854d9f24fec5da9787d492ccd1351b47e8d788283"
+    },
+    "build/fhir_r4_condition.concepts.json": {
+      "sha256": "540e44063a13b2d4ac41b42774dc2515c0e9a41020e564e35fdde5179550b103"
+    },
+    "build/fhir_r4_condition.concepts.csv": {
+      "sha256": "cae1d6a00a22cb670e6ee5370748089e907c39e6d1b22badc04fb73c7e3ceaf1"
+    },
+    "build/fhir_r4_medication.concepts.json": {
+      "sha256": "366db90e9b4c32733680a95b78a433caa8bfefbdd0c8d42407161ee871e2c006"
+    },
+    "build/fhir_r4_medication.concepts.csv": {
+      "sha256": "104e077dff8b6eeb526a9051a1af8478c990ff9bad0e972040b493bf658af71c"
+    },
+    "build/fhir_r4_procedure.concepts.json": {
+      "sha256": "454ea92d3820b215ec8d856682cb4e4baa0c16dfb4a830f434d80615aae18791"
+    },
+    "build/fhir_r4_procedure.concepts.csv": {
+      "sha256": "cc28199812fcdf5c801cf97a80545ca40e020864e5dfb15d65fdf10a651fbe08"
+    },
+    "build/identifier_systems.csv": {
+      "sha256": "dbcd1d8f5c78168bbe4e59a8bfefb49cb6b41314ea7c778d68c19dfec616218e"
+    },
+    "build/mappings.csv": {
+      "sha256": "2ce2e7cc5f6a0f2baa6098db31445373939e74b405dea8504b71605858895f5b"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iana/text.csv": {
+      "sha256": "61dae10c2b8da5998860623b4c2d2de79b0c4939243a8bf0b18eb011dcfc3209"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iana/image.csv": {
+      "sha256": "a4c7fd533a4564d647f1af2177aefa897dcaaf5e6034fc2cd00c4ee974e64785"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iana/audio.csv": {
+      "sha256": "e47c4ccbf7b970d3692636abdf81956d5143597dffb8f4089230fff28bef6b6d"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iana/video.csv": {
+      "sha256": "467357d01ff66ec078e68938f1a1444b01226f1923e2e0a5506418deb7b24bd6"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iso/iso_3166_2.csv": {
+      "sha256": "cee1820475a8cadef750b09c470152e9d7f5742a7a2fcb39cbb67feb4e6bc2af"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iso/iso_4217.csv": {
+      "sha256": "f6178c0347d3187f7d94645752c9c8582a419b51531a36b79b7e74afcb2b581d"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/shopify/customer_fields.csv": {
+      "sha256": "9427b71c89cfe81302a43c6a5208382a7ae9f6d96a5d48364e3be0c83678404c"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/shopify/inventoryitem_fields.csv": {
+      "sha256": "82636278ddb331adf9a764de37b0dabca2b240e5e8e4b60935ffdaf4b5d960b0"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/shopify/fulfillment_fields.csv": {
+      "sha256": "6999cb4c67d64468e433e260e1f1c28703a7051af1689909ac8f88c8d2f12e33"
+    },
+    "build/iana_mime_text.concepts.json": {
+      "sha256": "bad9da0a349f810f768a83e2b824cf1c66fc4c2396b1f954baccdb1f4beb88ea"
+    },
+    "build/iana_mime_text.concepts.csv": {
+      "sha256": "7608eda85e39b7b3e7b105df461c46ab7dc51ead87d1a4b186adb0715f67de2e"
+    },
+    "build/iana_mime_image.concepts.json": {
+      "sha256": "7575f54390329f60cfb634d0ff735ee87ebef47e86c32ac0756d90039ce85f3d"
+    },
+    "build/iana_mime_image.concepts.csv": {
+      "sha256": "75cc1eddc355d0d8b35677cd21f3d0f68bf6d169b9f1c91278c2e145b50c23e5"
+    },
+    "build/iana_mime_audio.concepts.json": {
+      "sha256": "ad7dfd83b5dd8bac7174ee71c17b292b075ed4799433286971ae473f185690df"
+    },
+    "build/iana_mime_audio.concepts.csv": {
+      "sha256": "671898e7c00f1838361c6515c818b868539aa09b8244a7d5297c8e3483cb5db0"
+    },
+    "build/iana_mime_video.concepts.json": {
+      "sha256": "dd60bc9e3ceddac4f0465fc246374a6de74792c583484221118fcd42278d5ce0"
+    },
+    "build/iana_mime_video.concepts.csv": {
+      "sha256": "c09c33fc0f6e302f06dac0bfa81c1ef22042a4fa64842de41f128db8e8c9fb6b"
+    },
+    "build/iso_3166_2.concepts.json": {
+      "sha256": "ac90ab74d97718b67aabb7453449dbd46458c2a90db79ddcf8d412a0a32b0a51"
+    },
+    "build/iso_3166_2.concepts.csv": {
+      "sha256": "e42e7b56459a57ea63ba03358e44c54fc70ab12d5af1d5b34910161ba4a2b39e"
+    },
+    "build/iso_4217.concepts.json": {
+      "sha256": "6a0a9034e7e869af24f409603b019145333368837165f8602a83f904411a829d"
+    },
+    "build/iso_4217.concepts.csv": {
+      "sha256": "8a7c7a71d267c94322e2df6173e703c0c44bc59e36f7b7593997455ea06dc244"
+    },
+    "build/shopify_customer.concepts.json": {
+      "sha256": "dd9ca8e4a3c976ea97a94c709f0fff8fe1c81e1d4e0761b7987fc202c51f87b9"
+    },
+    "build/shopify_customer.concepts.csv": {
+      "sha256": "b9def55bd8cb3e234cef58404eaf928de736288136ec6df9e0551842cc1df59e"
+    },
+    "build/shopify_inventory_item.concepts.json": {
+      "sha256": "82dd22de389a244d839898e640fe41fc76c5dcb16e9eb0e2f2825dcd1fcab566"
+    },
+    "build/shopify_inventory_item.concepts.csv": {
+      "sha256": "1f386fd39997c95f151db2272b4de344ac197db499426a07808fe2ba61166df1"
+    },
+    "build/shopify_fulfillment.concepts.json": {
+      "sha256": "c1563e05cd46c5b75359371b5699d357bab0bdcff978ba746e52640504fec62e"
+    },
+    "build/shopify_fulfillment.concepts.csv": {
+      "sha256": "79af233fcfaeedb0182ab0b81ecf72c7f21dd470dbbd2ca431f8eeba012ccf19"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/iso/isin.csv": {
+      "sha256": "879c3bb7b0fa60dd36807edbfa4e62c758fd5f6b2ea32749bcf36ea7960a1d4f"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/finance/cusip.csv": {
+      "sha256": "419b07715e8834a3fed0603efa57022d3e7ee210cf00b015d4885e778bf2cd80"
+    },
+    "build/iso_6166_isin.concepts.json": {
+      "sha256": "b6a118675983737078cbb85899058bb94e57c2a2023f5cbf3915c0bc11d766f0"
+    },
+    "build/iso_6166_isin.concepts.csv": {
+      "sha256": "9f17d52d48810f643be0772238c618d0d70b0390e5408cdc4e76388865bc92ea"
+    },
+    "build/cusip.concepts.json": {
+      "sha256": "c293564dce758ed91e16459c6c04402b23f730b6c93ed9e56269a0780cb3a92b"
+    },
+    "build/cusip.concepts.csv": {
+      "sha256": "aeff902637f3f1f30883d30b745170cac3e9cb303fc83c0c0d101a3661031069"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/sbom_example.json": {
+      "sha256": "93936c3b19bbae19fa49a0cff19b0b2e92805b1cbc9440080fe0a7f0f039f441"
+    },
+    "/home/matsp/projects/chimera/ufsa/ufsa-2/data/fixtures/dw_schema.sql": {
+      "sha256": "a33f054401b0fd618bb0f98114b20f8b67363114d8f9aa9c0692e57377e2ef22"
+    },
+    "build/cyclonedx_example.concepts.json": {
+      "sha256": "fbc528da5dc8f76181cd16e254082395cd03a14f79e212c68473a8c6b20de949"
+    },
+    "build/cyclonedx_example.concepts.csv": {
+      "sha256": "f29c556fdaea185e65f2c2f918663c11b123a51699f81ad4a0bcaf20a81b6e44"
+    },
+    "build/internal_dw_schema.concepts.json": {
+      "sha256": "89a85927ba2c66039b88780bf08a81976d0fd6c3f878196dc952cdf340b6d3f5"
+    },
+    "build/internal_dw_schema.concepts.csv": {
+      "sha256": "339ad3ddae810f7e06ca38b80aacd23d90049a9fe1490b3786a8ddffe7c568d9"
+    },
+    "build/software_components.csv": {
+      "sha256": "005f877d42ccff75e13ea2464d0f40839f6525b66fe4cdb50749ce19709e2e76"
+    },
+    "build/database_schemas.csv": {
+      "sha256": "f90da512450495aa1bfd56f184982586242fcb7779e43cb95d8d48ecab6abb09"
+    }
+  }
+}

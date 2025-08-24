@@ -1,0 +1,6 @@
+Name,Description
+title,The title of the product.
+createdAt,The date and time when the product was created.
+handle,A unique human-friendly string for the product.
+vendor,The name of the vendor of the product.
+status,The status of the product.

@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UFSA v2 Pointer Registry",
+  "type": "object",
+  "properties": {
+    "standards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "standard_id",
+          "name",
+          "governing_body",
+          "specification_url",
+          "data_format",
+          "parser_module",
+          "concept_scheme_uri"
+        ],
+        "properties": {
+          "standard_id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "governing_body": { "type": "string", "minLength": 1 },
+          "specification_url": { "type": "string", "minLength": 1 },
+          "data_format": { "type": "string", "minLength": 1 },
+          "parser_module": { "type": "string", "minLength": 1 },
+          "concept_scheme_uri": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": ["standards"],
+  "additionalProperties": true
+}

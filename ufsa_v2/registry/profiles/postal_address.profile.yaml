@@ -1,0 +1,13 @@
+kind: Profile
+apiVersion: ufsa.org/v2.0
+metadata:
+  name: PostalAddressProfile
+  domain: core
+  target: core:Address
+spec:
+  constraints:
+    - path: postalCode
+      cardinality: required
+      validation:
+        - type: regex
+          pattern: "^[0-9A-Za-z -]{3,12}$"

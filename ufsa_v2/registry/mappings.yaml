@@ -1,0 +1,21 @@
+mappings:
+  - subject: urn:ufsa:id:openfigi
+    predicate: skos:relatedMatch
+    object: urn:ufsa:id:isin
+    confidence: 0.6
+    provenance: Doc 3 example
+  - subject: urn:ufsa:concept:openfigi_v3:compositeFIGI
+    predicate: skos:broadMatch
+    object: urn:ufsa:concept:openfigi_v3:shareClassFIGI
+    confidence: 0.8
+    provenance: OpenFIGI composite vs share class hierarchy
+  - subject: urn:ufsa:id:cusip
+    predicate: skos:relatedMatch
+    object: urn:ufsa:id:openfigi
+    confidence: 0.5
+    provenance: FIGI maps from identifiers including CUSIP
+  - subject: urn:ufsa:scheme:iana_mime_application
+    predicate: skos:relatedMatch
+    object: urn:ufsa:scheme:w3c_skos_core
+    confidence: 0.2
+    provenance: MIME types described in human-readable SKOS docs

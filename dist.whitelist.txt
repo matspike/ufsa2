@@ -1,0 +1,11 @@
+# Files and folders to include in the sealed release artifact
+# Lines starting with # are comments. Globs are supported (bash-style).
+
+# Final sealed sources and hash report
+licensed_src_meta_sealed/**
+LICENSE_HASHES.md
+
+# Core legal and docs
+LICENSE
+NOTICE
+README.md

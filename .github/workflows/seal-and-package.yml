@@ -1,0 +1,140 @@
+name: Seal and package artifacts
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      publish_release:
+        description: 'Publish a GitHub Release with sealed artifacts (manual only)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+      release_tag:
+        description: 'Release tag (e.g., v1.0.0). Required when publish_release=true.'
+        required: false
+      release_name:
+        description: 'Release name (optional)'
+        required: false
+      release_notes:
+        description: 'Release notes (optional)'
+        required: false
+      draft:
+        description: 'Create as draft (recommended)'
+        required: false
+        default: 'true'
+        type: choice
+        options: ['true', 'false']
+      prerelease:
+        description: 'Mark as prerelease'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+jobs:
+  seal:
+    name: Seal source and build artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: |
+          pipx install uv
+          uv --version
+
+      - name: Sync dependencies
+        run: uv sync --all-groups
+
+      - name: Run seal
+        run: make seal
+
+      - name: Build pipeline artifacts (SBOM/AST)
+        run: |
+          uv run -q ufsa-v2 run --registry ufsa_v2/registry/pointer_registry.yaml --out build --tracker tracker.json
+
+      - name: Verify version vs tag (if tag push)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          VERSION=$(grep -E '^version\s*=\s*"' pyproject.toml | sed -E 's/.*"([^"]+)".*/\1/')
+          TAG="${GITHUB_REF#refs/tags/}"
+          if [ "$TAG" != "v$VERSION" ]; then
+            echo "Tag $TAG does not match project version v$VERSION" >&2
+            exit 1
+          fi
+
+      - name: Pack sealed artifacts (whitelist)
+        run: |
+          mkdir -p dist
+          # Create a temp staging dir and copy only whitelisted entries
+          STAGE=$(mktemp -d)
+          while IFS= read -r line; do
+            case "$line" in
+              ''|'#'*) continue;;
+              *)
+                echo "Including: $line";
+                mkdir -p "$STAGE";
+                shopt -s globstar nullglob dotglob || true
+                for f in $line; do
+                  if [ -e "$f" ]; then
+                    if [ -d "$f" ]; then
+                      mkdir -p "$STAGE/$f"
+                      rsync -a --exclude='.git' "$f/" "$STAGE/$f/"
+                    else
+                      mkdir -p "$STAGE/$(dirname "$f")"
+                      cp -a "$f" "$STAGE/$f"
+                    fi
+                  fi
+                done
+                ;;
+            esac
+          done < dist.whitelist.txt
+          tar -C "$STAGE" -czf dist/sealed-meta.tgz .
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sealed-artifacts
+          path: |
+            dist/sealed-meta.tgz
+            LICENSE_HASHES.md
+            build/**
+            tracker.json
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    needs: seal
+    if: startsWith(github.ref, 'refs/tags/') || (github.event_name == 'workflow_dispatch' && inputs.publish_release == 'true')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sealed-artifacts
+          path: dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || inputs.release_tag }}
+          name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || (inputs.release_name && inputs.release_name || inputs.release_tag) }}
+          body: ${{ github.event_name == 'workflow_dispatch' && inputs.release_notes || '' }}
+          draft: ${{ github.event_name == 'workflow_dispatch' && (inputs.draft == 'true') || false }}
+          prerelease: ${{ github.event_name == 'workflow_dispatch' && (inputs.prerelease == 'true') || false }}
+          files: |
+            dist/sealed-meta.tgz
+            dist/LICENSE_HASHES.md
+            build/**
+            tracker.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

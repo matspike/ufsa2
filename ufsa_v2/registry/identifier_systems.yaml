@@ -1,0 +1,21 @@
+systems:
+  - id: iso-3166-1-a2
+    name: ISO 3166-1 Alpha-2 Country Codes
+    authority: ISO
+    uri: https://www.iso.org/iso-3166-country-codes.html
+    description: Two-letter country code set
+  - id: openfigi
+    name: OpenFIGI Identifier
+    authority: OMG / Bloomberg L.P.
+    uri: https://www.openfigi.com/about/identifiers
+    description: Financial Instrument Global Identifier
+  - id: isin
+    name: ISIN
+    authority: ISO
+    uri: https://www.iso.org/standard/74842.html
+    description: International Securities Identification Number
+  - id: cusip
+    name: CUSIP
+    authority: ANSI / CUSIP Global Services
+    uri: https://www.cusip.com/
+    description: Committee on Uniform Securities Identification Procedures

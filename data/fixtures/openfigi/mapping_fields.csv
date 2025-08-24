@@ -1,0 +1,9 @@
+Name,Description
+figi,The unique identifier assigned to the instrument.
+name,The instrument name.
+ticker,The instrument ticker symbol.
+exchCode,The exchange code where the instrument is traded.
+marketSector,The market sector classification.
+securityType,The instrument's security type.
+compositeFIGI,The composite FIGI for the instrument across exchanges.
+shareClassFIGI,The FIGI for the specific share class of the instrument.

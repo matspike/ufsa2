@@ -1,0 +1,40 @@
+site_name: UFSA v2
+site_url: https://matspike.github.io/ufsa-2/
+repo_url: https://github.com/matspike/ufsa-2
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.tracking
+    - content.code.copy
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_signature: true
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
+  - js/mermaid-init.js
+nav:
+  - Overview: index.md
+  - Architecture:
+    - Target: ref/0_Federated Schema Architecture_ Falsification & Implementation.md
+    - Registry & Emitters: ref/1_UFSA v2.0 Registry and Emitter Design.md
+    - Profiles & Overlays: ref/2_Profiles and Overlays.md
+    - Identifier & Mappings: ref/3_Identifier and Mapping Registries.md
+    - SBOM & AST: ref/4_UFSA2.1_SBOM_AST.md
+  - Reference:
+    - Models: research/models.md
+    - Core Modules: research/core.md

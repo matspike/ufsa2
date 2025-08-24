@@ -1,0 +1,5 @@
+Name,Description
+id,The unique ID of the fulfillment.
+status,The status of the fulfillment.
+trackingInfo,Tracking information.
+lineItems,The fulfilled line items.

@@ -1,0 +1,202 @@
+standards:
+  - standard_id: fhir_r4_patient
+    name: HL7 FHIR R4 Patient Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/patient.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_patient
+
+  - standard_id: fhir_r4_observation
+    name: HL7 FHIR R4 Observation Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/observation.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_observation
+
+  - standard_id: fhir_r4_encounter
+    name: HL7 FHIR R4 Encounter Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/encounter.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_encounter
+
+  - standard_id: fhir_r4_condition
+    name: HL7 FHIR R4 Condition Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/condition.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_condition
+
+  - standard_id: fhir_r4_medication
+    name: HL7 FHIR R4 Medication Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/medication.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_medication
+
+  - standard_id: fhir_r4_procedure
+    name: HL7 FHIR R4 Procedure Resource (Fixture)
+    governing_body: HL7 International
+    specification_url: fixtures://fhir/procedure.schema.json
+    data_format: JSON-Schema
+    parser_module: ufsa_v2.parsers.json_schema_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/fhir_r4_procedure
+
+  - standard_id: iso_3166_1_a2
+    name: ISO 3166-1 Alpha-2 Country Codes (Fixture)
+    governing_body: ISO
+    specification_url: fixtures://iso/iso_3166_1_a2.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iso_3166_1_a2
+
+  - standard_id: w3c_skos_core
+    name: W3C SKOS Core Vocabulary (Fixture-Min)
+    governing_body: W3C
+    specification_url: fixtures://w3c/skos_core_min.rdf
+    data_format: RDF/XML
+    parser_module: ufsa_v2.parsers.rdf_parser
+    concept_scheme_uri: http://www.w3.org/2004/02/skos/core#
+
+  - standard_id: iana_mime_application
+    name: IANA MIME Types (Application) (Fixture)
+    governing_body: IETF / IANA
+    specification_url: fixtures://iana/application.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.iana_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iana_mime_application
+
+  - standard_id: shopify_admin_product
+    name: Shopify Admin GraphQL API Product Object (Fixture)
+    governing_body: Shopify
+    specification_url: fixtures://shopify/product_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/shopify_admin_product
+
+  - standard_id: openfigi_v3
+    name: OpenFIGI API v3 Mapping Response (Fixture)
+    governing_body: OMG / Bloomberg L.P.
+    specification_url: fixtures://openfigi/mapping_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/openfigi_v3
+
+  - standard_id: shopify_admin_order
+    name: Shopify Admin GraphQL API Order Object (Fixture)
+    governing_body: Shopify
+    specification_url: fixtures://shopify/order_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/shopify_admin_order
+
+  - standard_id: iana_mime_text
+    name: IANA MIME Types (Text) (Fixture)
+    governing_body: IETF / IANA
+    specification_url: fixtures://iana/text.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.iana_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iana_mime_text
+
+  - standard_id: iana_mime_image
+    name: IANA MIME Types (Image) (Fixture)
+    governing_body: IETF / IANA
+    specification_url: fixtures://iana/image.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.iana_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iana_mime_image
+
+  - standard_id: iana_mime_audio
+    name: IANA MIME Types (Audio) (Fixture)
+    governing_body: IETF / IANA
+    specification_url: fixtures://iana/audio.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.iana_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iana_mime_audio
+
+  - standard_id: iana_mime_video
+    name: IANA MIME Types (Video) (Fixture)
+    governing_body: IETF / IANA
+    specification_url: fixtures://iana/video.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.iana_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iana_mime_video
+
+  - standard_id: iso_3166_2
+    name: ISO 3166-2 Subdivision Codes (Fixture)
+    governing_body: ISO
+    specification_url: fixtures://iso/iso_3166_2.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iso_3166_2
+
+  - standard_id: iso_4217
+    name: ISO 4217 Currency Codes (Fixture)
+    governing_body: ISO
+    specification_url: fixtures://iso/iso_4217.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iso_4217
+
+  - standard_id: iso_6166_isin
+    name: ISO 6166 ISIN Codes (Fixture)
+    governing_body: ISO
+    specification_url: fixtures://iso/isin.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/iso_6166_isin
+
+  - standard_id: shopify_customer
+    name: Shopify Admin GraphQL API Customer Object (Fixture)
+    governing_body: Shopify
+    specification_url: fixtures://shopify/customer_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/shopify_customer
+
+  - standard_id: shopify_inventory_item
+    name: Shopify Admin GraphQL API InventoryItem Object (Fixture)
+    governing_body: Shopify
+    specification_url: fixtures://shopify/inventoryitem_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/shopify_inventory_item
+
+  - standard_id: shopify_fulfillment
+    name: Shopify Admin GraphQL API Fulfillment Object (Fixture)
+    governing_body: Shopify
+    specification_url: fixtures://shopify/fulfillment_fields.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.fields_csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/shopify_fulfillment
+
+  - standard_id: cusip
+    name: CUSIP (Fixture)
+    governing_body: ANSI / CUSIP Global Services
+    specification_url: fixtures://finance/cusip.csv
+    data_format: CSV
+    parser_module: ufsa_v2.parsers.csv_parser
+    concept_scheme_uri: http://ufsa.org/v2/standards/cusip
+
+  # New: SBOM (CycloneDX)
+  - standard_id: cyclonedx_example
+    name: Example CycloneDX SBOM
+    governing_body: OWASP
+    specification_url: fixtures://sbom_example.json
+    data_format: CycloneDX-JSON
+    parser_module: ufsa_v2.parsers.parser_cyclonedx
+    concept_scheme_uri: http://ufsa.org/v2.1/standards/cyclonedx_example
+
+  # New: AST (SQL DDL)
+  - standard_id: internal_dw_schema
+    name: Internal Data Warehouse Schema
+    governing_body: Internal
+    specification_url: fixtures://dw_schema.sql
+    data_format: SQL-DDL
+    parser_module: ufsa_v2.parsers.parser_ast_sql
+    concept_scheme_uri: http://ufsa.org/v2.1/standards/internal_dw_schema

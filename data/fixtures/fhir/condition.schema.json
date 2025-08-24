@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FHIR Condition",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string"},
+    "clinicalStatus": {"type": "object"},
+    "verificationStatus": {"type": "object"},
+    "category": {"type": "array", "items": {"type": "object"}},
+    "code": {"type": "object"},
+    "subject": {"type": "object"}
+  }
+}

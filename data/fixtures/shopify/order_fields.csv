@@ -1,0 +1,7 @@
+Name,Description
+id,The unique ID of the order.
+createdAt,The date and time when the order was created.
+currencyCode,The three-letter code for the currency used.
+totalPrice,The sum of all line items, taxes, and discounts in the order.
+customer,The customer associated with the order.
+shippingAddress,The shipping address for the order.

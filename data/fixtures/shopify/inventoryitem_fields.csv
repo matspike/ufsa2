@@ -1,0 +1,5 @@
+Name,Description
+id,The unique ID of the inventory item.
+sku,The stock keeping unit.
+tracked,Whether the inventory is tracked.
+countryCodeOfOrigin,The country code of origin.

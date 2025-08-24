@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ufsa.org/v2/schemas/profile.schema.json",
+  "title": "UFSA Profile",
+  "type": "object",
+  "properties": {
+    "kind": {"const": "Profile"},
+    "apiVersion": {"type": "string"},
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "domain": {"type": "string"},
+        "target": {"type": "string"}
+      },
+      "required": ["name", "target"],
+      "additionalProperties": true
+    },
+    "spec": {
+      "type": "object",
+      "properties": {
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {"type": "string"},
+              "cardinality": {"type": "string"},
+              "validation": {"type": "array"}
+            },
+            "required": ["path"],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "required": ["kind", "apiVersion", "metadata", "spec"],
+  "additionalProperties": false
+}

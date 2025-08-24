@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FHIR Encounter",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string", "description": "Logical id of this encounter"},
+    "status": {"type": "string", "description": "planned | in-progress | finished"},
+    "class": {"type": "object", "properties": {"code": {"type": "string"}}},
+    "type": {"type": "array", "items": {"type": "object"}},
+    "subject": {"type": "object"}
+  }
+}

@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run tests with uv",
+			"type": "shell",
+			"command": "uv run -q pytest -q",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$pytest"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Lint docs (optional)",
+			"type": "shell",
+			"command": "uv run -q python - << 'PY'\nprint('Markdown lint placeholder - no strict linter configured here')\nPY",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run tests with uv",
+			"type": "shell",
+			"command": "uv run -q pytest -q",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$pytest"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run tests with uv",
+			"type": "shell",
+			"command": "uv run -q pytest -q",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$pytest"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run tests with uv",
+			"type": "shell",
+			"command": "uv run -q pytest -q",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$pytest"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run tests with uv",
+			"type": "shell",
+			"command": "uv run -q pytest -q",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [
+				"$pytest"
+			],
+			"group": "build"
+		}
+	]
+}

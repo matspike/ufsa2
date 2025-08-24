@@ -1,0 +1,24 @@
+# Sealed release artifact including selected build outputs (SBOM/AST)
+
+# Final sealed sources and hash report
+licensed_src_meta_sealed/**
+LICENSE_HASHES.md
+
+# Core legal and docs
+LICENSE
+NOTICE
+README.md
+
+# Selected build outputs: specialized SBOM/AST and per-scheme samples
+build/software_components.csv
+build/database_schemas.csv
+build/cyclonedx_example.concepts.csv
+build/internal_dw_schema.concepts.csv
+# Include indexes too for convenience
+build/concept_schemes.csv
+build/concepts.csv
+build/semantic_relations.csv
+ 
+# SBOM/AST fixture inputs for provenance
+data/fixtures/sbom_example.json
+data/fixtures/dw_schema.sql

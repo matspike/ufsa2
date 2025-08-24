@@ -1,0 +1,26 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "components": [
+    {
+      "name": "requests",
+      "version": "2.32.3",
+      "purl": "pkg:pypi/requests@2.32.3",
+      "description": "Python HTTP for Humans",
+      "bom-ref": "pkg:pypi/requests@2.32.3"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.2.2",
+      "purl": "pkg:pypi/urllib3@2.2.2",
+      "description": "HTTP client",
+      "bom-ref": "pkg:pypi/urllib3@2.2.2"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:pypi/requests@2.32.3",
+      "dependsOn": ["pkg:pypi/urllib3@2.2.2"]
+    }
+  ]
+}
