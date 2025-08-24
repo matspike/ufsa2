@@ -121,7 +121,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: sealed-artifacts
-          path: dist
+          # Download to repo root so file globs below resolve correctly
+          path: .
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -133,7 +134,7 @@ jobs:
           prerelease: ${{ github.event_name == 'workflow_dispatch' && (inputs.prerelease == 'true') || false }}
           files: |
             dist/sealed-meta.tgz
-            dist/LICENSE_HASHES.md
+            LICENSE_HASHES.md
             build/**
             tracker.json
         env:
