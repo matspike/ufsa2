@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2025-08-24T22:00:15.535125+00:00",
+    "generatedAt": "2025-08-24T22:36:13.601794+00:00",
     "python": "3.13.2",
     "schemes": {
       "fhir_r4_patient": {
@@ -105,7 +105,7 @@
       }
     },
     "git": {
-      "commit": "410f30cc0271ad510e1361c687c2d8a310641a01",
+      "commit": "6eaaeb8ed35bb73e27c6b60bb128e4667742ce5d",
       "branch": "main"
     },
     "mappingCandidates": 76,
@@ -637,7 +637,7 @@
       "sha256": "09bc1815a4d74f0403ef778020d45e8e8815a32306abe067133ef430b5ee4b3b"
     },
     "README.md": {
-      "sha256": "8777ff4b53bacd93cd0535a5b6b9b4628c1bcfdd43d0254a8f2b47cc42bbc144"
+      "sha256": "3771179a001ca5e1ae5d95aa5040ffa28074ffbb069165b256803bdb6bb64472"
     },
     "build/concepts.all.json": {
       "sha256": "3b27ab721eea611155170cd896005584397a4a91de9d7ec533b9494e848f08c2"
@@ -869,6 +869,81 @@
     },
     "build/database_schemas.csv": {
       "sha256": "f90da512450495aa1bfd56f184982586242fcb7779e43cb95d8d48ecab6abb09"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/patient.schema.json": {
+      "sha256": "59ac1a7d7547b0e820200a85787978818e6ab3eda9ba620c03d7c79b46c4601a"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/observation.schema.json": {
+      "sha256": "0bd8e760ceda14b0c70a4f27d7b39baab8ca38d286973c1952e180832630275b"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/encounter.schema.json": {
+      "sha256": "0081217722e61f8976196c7cb1a077776be6759fcdade9f5f7f6d0dcf0bb9bd3"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/condition.schema.json": {
+      "sha256": "160bfae81b8c619e48f87c3b416f34c2c011a5135141ac86263db58dab257eec"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/medication.schema.json": {
+      "sha256": "6c84cce57cd528109f4bf580eff4c70e14ced00cf22763d923164ea7240f574d"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/fhir/procedure.schema.json": {
+      "sha256": "d73e02b0efec65482fb9cff55ff387c3607052b29634caed727ff73487ac69f9"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iso/iso_3166_1_a2.csv": {
+      "sha256": "ed1a01bbca117f39378e081cc1328f6280d67259d62030314d46c847e59c9c51"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/w3c/skos_core_min.rdf": {
+      "sha256": "0e2e710f1bf1649c54a13822d0eddfcb2dfc867d4534a0b1ae52fc6af28ec437"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iana/application.csv": {
+      "sha256": "78323d18d3df0fba5be60322c8dc8671625fbd3b15703422b19256c8c9cc227b"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/shopify/product_fields.csv": {
+      "sha256": "2823d83f7533373783c8708c017a50ba2793ea4d68e737259a6b8a647452cd15"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/openfigi/mapping_fields.csv": {
+      "sha256": "ed32c681e891e6ed80a8edca4ae79ca381f4a88176eb4f19aee13cd37defc269"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/shopify/order_fields.csv": {
+      "sha256": "4fe1bee842b55016d3b89225d603eb34735e456a2ed909261d112dbd75c23d63"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iana/text.csv": {
+      "sha256": "61dae10c2b8da5998860623b4c2d2de79b0c4939243a8bf0b18eb011dcfc3209"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iana/image.csv": {
+      "sha256": "a4c7fd533a4564d647f1af2177aefa897dcaaf5e6034fc2cd00c4ee974e64785"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iana/audio.csv": {
+      "sha256": "e47c4ccbf7b970d3692636abdf81956d5143597dffb8f4089230fff28bef6b6d"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iana/video.csv": {
+      "sha256": "467357d01ff66ec078e68938f1a1444b01226f1923e2e0a5506418deb7b24bd6"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iso/iso_3166_2.csv": {
+      "sha256": "cee1820475a8cadef750b09c470152e9d7f5742a7a2fcb39cbb67feb4e6bc2af"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iso/iso_4217.csv": {
+      "sha256": "f6178c0347d3187f7d94645752c9c8582a419b51531a36b79b7e74afcb2b581d"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/iso/isin.csv": {
+      "sha256": "879c3bb7b0fa60dd36807edbfa4e62c758fd5f6b2ea32749bcf36ea7960a1d4f"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/shopify/customer_fields.csv": {
+      "sha256": "9427b71c89cfe81302a43c6a5208382a7ae9f6d96a5d48364e3be0c83678404c"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/shopify/inventoryitem_fields.csv": {
+      "sha256": "82636278ddb331adf9a764de37b0dabca2b240e5e8e4b60935ffdaf4b5d960b0"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/shopify/fulfillment_fields.csv": {
+      "sha256": "6999cb4c67d64468e433e260e1f1c28703a7051af1689909ac8f88c8d2f12e33"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/finance/cusip.csv": {
+      "sha256": "419b07715e8834a3fed0603efa57022d3e7ee210cf00b015d4885e778bf2cd80"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/sbom_example.json": {
+      "sha256": "93936c3b19bbae19fa49a0cff19b0b2e92805b1cbc9440080fe0a7f0f039f441"
+    },
+    "/home/matsp/projects/chimera/ufsa/public/data/fixtures/dw_schema.sql": {
+      "sha256": "a33f054401b0fd618bb0f98114b20f8b67363114d8f9aa9c0692e57377e2ef22"
     }
   }
 }
