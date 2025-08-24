@@ -1,14 +1,14 @@
 # UFSA v2 — Declarative, federated interoperability engine
 
-[![CI](https://github.com/matspike/ufsa-2/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa-2/actions/workflows/ci.yml)
-[![Docs](https://github.com/matspike/ufsa-2/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa-2/actions/workflows/docs.yml)
+[![CI](https://github.com/matspike/ufsa2/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/ci.yml)
+[![Docs](https://github.com/matspike/ufsa2/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/docs.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-blue?logo=python)](pyproject.toml)
 [![Code style: ruff](https://img.shields.io/badge/style-ruff-000000.svg?logo=ruff&labelColor=gray)](https://docs.astral.sh/ruff/)
-[![Coverage](https://codecov.io/gh/matspike/ufsa-2/branch/main/graph/badge.svg)](https://codecov.io/gh/matspike/ufsa-2)
-[![CodeQL](https://github.com/matspike/ufsa-2/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa-2/actions/workflows/codeql.yml)
-[![Release](https://img.shields.io/github/v/release/matspike/ufsa-2?display_name=tag&sort=semver)](https://github.com/matspike/ufsa-2/releases)
-[![Latest release](https://img.shields.io/github/release/matspike/ufsa-2.svg?label=latest)](https://github.com/matspike/ufsa-2/releases/latest)
+[![Coverage](https://codecov.io/gh/matspike/ufsa2/branch/main/graph/badge.svg)](https://codecov.io/gh/matspike/ufsa2)
+[![CodeQL](https://github.com/matspike/ufsa2/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/codeql.yml)
+[![Release](https://img.shields.io/github/v/release/matspike/ufsa2?display_name=tag&sort=semver)](https://github.com/matspike/ufsa2/releases)
+[![Latest release](https://img.shields.io/github/release/matspike/ufsa2.svg?label=latest)](https://github.com/matspike/ufsa2/releases/latest)
 
 Docs site: <https://matspike.github.io/ufsa2/>
 

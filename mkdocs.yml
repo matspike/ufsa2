@@ -1,6 +1,6 @@
 site_name: UFSA v2
-site_url: https://matspike.github.io/ufsa-2/
-repo_url: https://github.com/matspike/ufsa-2
+site_url: https://matspike.github.io/ufsa2/
+repo_url: https://github.com/matspike/ufsa2
 theme:
   name: material
   features:
