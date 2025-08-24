@@ -111,7 +111,6 @@ This repo ships an offline, deterministic bootstrap (fixture‑backed) that clea
 ## Table of contents
 
 | 1. **[Overview](#overview)** | 1a. *[Architecture diagram](#architecture-diagram)* | 1b. *[Target architecture at a glance](#target-architecture-at-a-glance)* | 1c. *[Project structure](#project-structure)* |
-|---|---|---|---|
 | 2. **[Product & integration](#product-and-integration)** | 2a. *[Data contracts](#data-contracts)* | 2b. *[Integration patterns](#integration-patterns)* | 2c. *[Versioning & reproducibility](#versioning-and-reproducibility)* |
 | 3. **[Outputs](#outputs)** | 3a. *[Standards covered](#standards-covered-via-fixtures)* | 3b. *[Technologies](#technologies)* | 3c. *[Quick start](#quick-start)* |
 | 4. **[Development](#development)** | 4a. *[Makefile targets](#makefile-targets)* | 4b. *[Planning & progress](#planning-and-progress)* | 4c. *[Tracker workflow](#tracker-workflow)* |
