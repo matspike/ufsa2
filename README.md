@@ -1,4 +1,6 @@
-# UFSA v2 — Declarative, federated interoperability engine
+# UFSA v2: Universal Federated Schema Architecture
+
+## Declarative, federated interoperability engine
 
 [![CI](https://github.com/matspike/ufsa2/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/ci.yml)
 [![Docs](https://github.com/matspike/ufsa2/actions/workflows/docs.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/docs.yml)
@@ -14,9 +16,11 @@ Docs site: <https://matspike.github.io/ufsa2/>
 
 ---
 
-## UFSA v2 normalizes diverse public standards
+### UFSA v2 normalizes diverse public standards
 
-e.g. `FHIR`, `ISO`, `IANA`, `SKOS`, `Shopify`, `OpenFIGI`, `SBOMs`, `SQL DDL` into:
+e.g. `FHIR`, `ISO`, `IANA`, `SKOS`, `Shopify`, `OpenFIGI`, `SBOMs`, `SQL DDL` 
+
+into:
 
 - a single semantic layer, and
 - portable tables you can ingest anywhere.
