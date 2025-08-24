@@ -10,7 +10,6 @@
 [![Coverage](https://codecov.io/gh/matspike/ufsa2/branch/main/graph/badge.svg)](https://codecov.io/gh/matspike/ufsa2)
 [![CodeQL](https://github.com/matspike/ufsa2/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/matspike/ufsa2/actions/workflows/codeql.yml)
 [![Release](https://img.shields.io/github/v/release/matspike/ufsa2?display_name=tag&sort=semver)](https://github.com/matspike/ufsa2/releases)
-[![Latest release](https://img.shields.io/github/release/matspike/ufsa2.svg?label=latest)](https://github.com/matspike/ufsa2/releases/latest)
 
 Docs site: <https://matspike.github.io/ufsa2/>
 
