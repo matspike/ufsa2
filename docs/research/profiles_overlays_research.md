@@ -1,7 +1,15 @@
+# Profiles and Overlays — Research Archive
+
+[Research archive of the original content formerly at "ref/2_Profiles and Overlays.md".]
+
+This page preserves the original exploratory notes on contextual Profiles/Overlays that extend a base schema without duplication. It complements the falsification/refinement narrative.
+
+---
+
 # Profiles and Overlays (UFSA v2 – stub)
 
 This short note outlines how Profiles/Overlays will extend the current engine.
-It complements the research doc “Falsification & Implementation” (see Research/0) and aligns with the FHIR profiling pattern.
+It complements `docs/0_...Falsification & Implementation.md` section IV and aligns with the FHIR profiling pattern.
 
 ## Purpose
 

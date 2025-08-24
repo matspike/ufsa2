@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = []
 # ///
-# Copyright 2025 Matthew Spike — Repo: https://github.com/matspike/ufsa-2 — LinkedIn: https://www.linkedin.com/in/matspike
+# Copyright 2025 Matthew Spike — Repo: https://github.com/matspike/ufsa2 — LinkedIn: https://www.linkedin.com/in/matspike
 #
 # This file is part of ufsa2.
 #
@@ -20,7 +20,7 @@
 #
 # --- INTEGRITY SEAL ---
 # Initial Hash (sha256-orig): 207d2cbf2cda770f87b3cecd70a090efc91d104f818db5980c49c23f519cba4d
-# Sealed Hash  (sha256-sealed-v1): f7781932075cbc6a9a3b9a4b8c9c1373cfd909b7534db1fefa77a97cce80f468
+# Sealed Hash  (sha256-sealed-v1): e68071b5f0e65ec9de61dffe70db9b8195daecc566604a83ace9b296224c620f
 #
 """
 License Sealing and Verification Script (Self-Sealing & UV-Aware Version).

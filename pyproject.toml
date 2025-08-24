@@ -1,6 +1,6 @@
 [project]
 name = "ufsa2"
-version = "0.0.2"
+version = "0.2.0"
 description = "Universal Federated Schema Architecture"
 authors = [{ name = "Matthew Spike", email = "matspike@gmail.com" }]
 readme = "README.md"

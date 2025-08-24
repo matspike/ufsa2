@@ -14,15 +14,23 @@ Docs site: <https://matspike.github.io/ufsa2/>
 
 ---
 
+## UFSA v2 normalizes diverse public standards
+
+e.g. `FHIR`, `ISO`, `IANA`, `SKOS`, `Shopify`, `OpenFIGI`, `SBOMs`, `SQL DDL` into:
+
+- a single semantic layer, and
+- portable tables you can ingest anywhere.
+
 ## Overview
 
 `UFSA` — the *Universal Federated Schema Architecture v2* (`ufsa2`) — is a declarative, federated interoperability engine which **normalizes diverse public standards** into:
-- a **unified** `SKOS`‑based model, and 
+
+- a **unified** `SKOS`‑based model, and
 - **portable tables** for integration purposes.
 
 ### Declaration of Declarative Principles
 
-- Standards like `FHIR`, `ISO` specifications, and `OpenFIGI` are structured documents which **fully describe their data models**. 
+- Standards like `FHIR`, `ISO` specifications, and `OpenFIGI` are structured documents which **fully describe their data models**.
 - Rather than manually implementing parsers and mappings for each standard, `UFSA`:
   - provides an **architectural scaffold** which
   - **materializes standards**  into **interoperable artifacts**.
@@ -34,6 +42,16 @@ Docs site: <https://matspike.github.io/ufsa2/>
 3. **Materialization**: The specification becomes its own parser and semantic model
 4. **Normalization**: All standards converge to a unified SKOS-based representation
 5. **Federation**: Cross-domain mappings emerge from the normalized semantic layer
+
+#### Pipeline stages at a glance
+
+| Stage | Purpose | Sources | Key components | Outputs |
+|---|---|---|---|---|
+| Declaration | Declare which specs to ingest | YAML registry | `ufsa_v2/registry/pointer_registry.yaml` | Plan for parsers |
+| Ingestion | Acquire source artifacts | Local fixtures (now); HTTP with cache/pin (later) | Fetcher, scraper | Raw spec files |
+| Parsing/Materialization | Turn spec structure into typed entities | JSON Schema, CSV, RDF, CycloneDX, SQL DDL | Parsers in `ufsa_v2/parsers/` | Concepts, schemes, relations |
+| Normalization | Align to SKOS model | — | Core model in `ufsa_v2/core_models.py` | Unified in‑memory graph |
+| Emission | Persist portable tables | — | Emitters in `ufsa_v2/emitters/` | Per‑scheme CSV/JSON + global tables |
 
 ### Architecture diagram
 
@@ -128,6 +146,18 @@ What you get after a run (default: `build/`)
 | Registries | identifier_systems.csv, mappings.csv |
 | Specialized | software_components.csv (SBOM/CycloneDX), database_schemas.csv (SQL AST) |
 
+### Features and maturity
+
+| Capability | Status | Notes |
+|---|---|---|
+| JSON Schema parser | ✅ Stable | Extracts properties/definitions → SKOS concepts and relations |
+| CSV schema parser | ✅ Stable | Structured field CSVs (FHIR, ISO, IANA, Shopify, OpenFIGI) |
+| RDF/SKOS ingester | ✅ Stable | Loads core SKOS vocabulary for labels/definitions/mappings |
+| CycloneDX SBOM parser | 🟡 Beta | Emits `software_components.csv` with hashes/licenses/refs |
+| SQL DDL → AST parser | 🟡 Beta | Emits `database_schemas.csv`, basic FK detection |
+| Profiles evaluator | 🟡 Experimental | Apply/check constraints against build outputs |
+| Identifier/Mapping registries | 🟡 In progress | Curated links across identifier systems and schemes |
+
 ### Data contracts
 
 Stable columns and semantics you can build against:
@@ -210,6 +240,49 @@ Conventions and guarantees
 | Identifiers | concept_id and scheme_uri stable within a minor line (0.Y.Z → stable across Z) |
 | Predicates | SKOS vocabulary as strings (no CURIE expansion required) |
 | Compatibility | Adding columns allowed; renames/removals announced with a minor bump |
+
+### Data model (ER diagram)
+
+```mermaid
+erDiagram
+  ConceptScheme ||--o{ Concept : contains
+  Concept }o--o{ Concept : "skos:* relation"
+  ConceptScheme {
+    string scheme_id PK
+    string scheme_label
+    string scheme_uri UNIQUE
+    string governing_body
+  }
+  Concept {
+    string concept_id PK
+    string pref_label
+    string definition
+    string notation
+    string scheme_uri FK
+  }
+  SemanticRelation {
+    string subject_id FK
+    string predicate
+    string object_id FK
+  }
+  IdentifierSystem {
+    string id PK
+    string name
+    string authority
+    string uri UNIQUE
+    string description
+  }
+  Mapping {
+    string from_system FK
+    string from_value
+    string to_concept_id FK
+    string relation
+    string note
+  }
+  ConceptScheme ||--o{ IdentifierSystem : catalogs
+  Concept ||--o{ Mapping : targets
+  IdentifierSystem ||--o{ Mapping : provides
+```
 
 ### Integration patterns
 
@@ -307,7 +380,7 @@ UFSA v2 implements a declarative approach to schema federation where public stan
   - Artifact tracker: hashes and meta to detect drift (machine + human handover)
   - Plan subsystem: seed from docs/state, add/mark/list/stats to drive roadmap execution
 
-See the two docs for the full “tri‑level” target (Concept, Schema, Identifier) and contextual Profiles/Overlays. The current code focuses on the Schema‑like ingestion and a SKOS‑centric concept layer with emerging mapping support.
+See the concise reference pages (docs/ref) for the “tri‑level” target and registries; and the full Research docs (docs/research) for the long‑form rationale.
 
 ## Architecture sketch
 
@@ -317,6 +390,28 @@ See the Mermaid diagram in Architecture diagram above for the current, robust vi
 
 - Profiles/Overlays constrain/extend base structures contextually (evaluator + CLI stubs implemented; overlay transforms TBD)
 - Identifier & Mapping registries model competing systems and preferences
+
+### Run flow (sequence)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant User
+  participant CLI
+  participant Engine
+  participant Parsers
+  participant Emitters
+  participant FS as Filesystem
+
+  User->>CLI: uv run ufsa-v2 run --registry ...
+  CLI->>Engine: start()
+  Engine->>FS: read pointer_registry.yaml
+  Engine->>Parsers: parse(JSON, CSV, RDF, SBOM, SQL)
+  Parsers-->>Engine: normalized SKOS entities
+  Engine->>Emitters: write tables
+  Emitters->>FS: CSV/JSON in build/
+  Engine-->>CLI: summary + tracker.json
+```
 
 ## What’s implemented now
 
@@ -370,6 +465,16 @@ Consolidated/global:
 | mappings.candidates.json / .csv | naive cross‑scheme label‑equality candidates |
 
 All outputs are written to `build/` by default and tracked for drift.
+
+### Inputs → Outputs map
+
+| Input type | Example fixture | Parser | Primary outputs |
+|---|---|---|---|
+| JSON Schema | FHIR R4 Patient | `parsers/json_schema.py` | Scheme + concepts + relations |
+| CSV | ISO 4217 currency table | `parsers/csv_schema.py` | Concepts with notations/labels |
+| RDF/SKOS | SKOS Core | `parsers/rdf_skos.py` | Enriched labels/definitions/mappings |
+| CycloneDX SBOM | cyclonedx_example | `parsers/cyclonedx.py` | `software_components.csv` |
+| SQL DDL | internal_dw_schema | `parsers/sql_ast.py` | `database_schemas.csv` |
 
 See `docs/4_UFSA2.1_SBOM_AST.md` for background on the SBOM/AST integration and the specialized table shapes.
 
@@ -755,8 +860,9 @@ Notes:
 
 [↥ back to top](#ufsa-v2--declarative-federated-interoperability-engine)
 
-- Core pattern and implementation notes: `docs/1_UFSA v2.0 Registry and Emitter Design.md`
-- Target architecture, rationale, and falsification → refinement path: `docs/0_Federated Schema Architecture_ Falsification & Implementation.md`
+- Core pattern and implementation notes (concise): `docs/ref/1_UFSA v2.0 Registry and Emitter Design.md`
+- Target architecture overview (concise): `docs/ref/0_Federated Schema Architecture_ Falsification & Implementation.md`
+- Full research docs: `docs/research/0_Federated Schema Architecture_ Falsification & Implementation.md`, `docs/research/1_UFSA v2.0 Registry and Emitter Design.md`
 - Profiles/Overlays (stub): `docs/2_Profiles and Overlays.md`
 - Identifier & Mapping Registries (stub): `docs/3_Identifier and Mapping Registries.md`
 

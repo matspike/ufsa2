@@ -35,6 +35,6 @@ nav:
     - Profiles & Overlays: ref/2_Profiles and Overlays.md
     - Identifier & Mappings: ref/3_Identifier and Mapping Registries.md
     - SBOM & AST: ref/4_UFSA2.1_SBOM_AST.md
-  - Reference:
-    - Models: research/models.md
-    - Core Modules: research/core.md
+  - Research:
+    - Architecture (full): research/0_Federated Schema Architecture_ Falsification & Implementation.md
+    - Registry & Emitters (full): research/1_UFSA v2.0 Registry and Emitter Design.md
