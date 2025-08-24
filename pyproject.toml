@@ -28,10 +28,10 @@ dependencies = [
 ufsa-v2 = "ufsa_v2.cli:main"
 
 [project.urls]
-Homepage = "https://matspike.github.io/ufsa-2/"
-Repository = "https://github.com/matspike/ufsa-2"
-Documentation = "https://matspike.github.io/ufsa-2/"
-LinkedIn = "https://www.linkedin.com/in/matspike" 
+Homepage = "https://matspike.github.io/ufsa2/"
+Repository = "https://github.com/matspike/ufsa2"
+Documentation = "https://matspike.github.io/ufsa2/"
+LinkedIn = "https://www.linkedin.com/in/matspike"
 
 [project.optional-dependencies]
 dev = [
