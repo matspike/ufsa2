@@ -1,0 +1,97 @@
+{
+  "id": "iso_3166_1_a2",
+  "label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+  "concepts": [
+    {
+      "id": "iso_3166_1_a2:US",
+      "label": "United States of America",
+      "notes": {
+        "code": "US"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:GB",
+      "label": "United Kingdom",
+      "notes": {
+        "code": "GB"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:AU",
+      "label": "Australia",
+      "notes": {
+        "code": "AU"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:DE",
+      "label": "Germany",
+      "notes": {
+        "code": "DE"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:BR",
+      "label": "Brazil",
+      "notes": {
+        "code": "BR"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:ZA",
+      "label": "South Africa",
+      "notes": {
+        "code": "ZA"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_3166_1_a2:JP",
+      "label": "Japan",
+      "notes": {
+        "code": "JP"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

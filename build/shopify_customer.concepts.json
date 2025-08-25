@@ -1,0 +1,71 @@
+{
+  "id": "shopify_customer",
+  "label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+  "concepts": [
+    {
+      "id": "shopify_customer:id",
+      "label": "id",
+      "notes": {
+        "description": "The unique ID of the customer."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_customer:email",
+      "label": "email",
+      "notes": {
+        "description": "The customer's email address."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_customer:firstname",
+      "label": "firstName",
+      "notes": {
+        "description": "The customer's first name."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_customer:lastname",
+      "label": "lastName",
+      "notes": {
+        "description": "The customer's last name."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_customer:createdat",
+      "label": "createdAt",
+      "notes": {
+        "description": "When the customer was created."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

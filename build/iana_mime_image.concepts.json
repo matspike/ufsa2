@@ -1,0 +1,45 @@
+{
+  "id": "iana_mime_image",
+  "label": "IANA MIME Types (Image) (Fixture)",
+  "concepts": [
+    {
+      "id": "iana_mime_image:image_jpeg",
+      "label": "JPEG",
+      "notes": {
+        "notation": "image/jpeg"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_image:image_png",
+      "label": "PNG",
+      "notes": {
+        "notation": "image/png"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_image:image_gif",
+      "label": "GIF",
+      "notes": {
+        "notation": "image/gif"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

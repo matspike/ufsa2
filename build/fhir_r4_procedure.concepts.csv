@@ -1,0 +1,8 @@
+id,label,in_scheme,notes_json
+fhir_r4_procedure:,FHIR Procedure,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""object""}"
+fhir_r4_procedure:id,id,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""string""}"
+fhir_r4_procedure:status,status,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""string""}"
+fhir_r4_procedure:code,code,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""object""}"
+fhir_r4_procedure:subject,subject,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""object""}"
+fhir_r4_procedure:performer,performer,http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""array""}"
+fhir_r4_procedure:performer[],performer[],http://ufsa.org/v2/standards/fhir_r4_procedure,"{""type"": ""object""}"

@@ -1,0 +1,44 @@
+{
+  "id": "cyclonedx_example",
+  "label": "Example CycloneDX SBOM",
+  "concepts": [
+    {
+      "id": "cyclonedx_example:pkg:pypi/requests@2.32.3",
+      "label": "requests",
+      "notes": {
+        "notation": "2.32.3",
+        "description": "Python HTTP for Humans",
+        "purl": "pkg:pypi/requests@2.32.3",
+        "kind": "software_component",
+        "licenses": "",
+        "hashes": "",
+        "externalReferences": ""
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/cyclonedx_example",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "cyclonedx_example:pkg:pypi/urllib3@2.2.2",
+      "label": "urllib3",
+      "notes": {
+        "notation": "2.2.2",
+        "description": "HTTP client",
+        "purl": "pkg:pypi/urllib3@2.2.2",
+        "kind": "software_component",
+        "licenses": "",
+        "hashes": "",
+        "externalReferences": ""
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/cyclonedx_example",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

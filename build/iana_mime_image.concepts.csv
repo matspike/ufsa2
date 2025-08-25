@@ -1,0 +1,4 @@
+id,label,in_scheme,notes_json
+iana_mime_image:image_jpeg,JPEG,http://ufsa.org/v2/standards/iana_mime_image,"{""notation"": ""image/jpeg""}"
+iana_mime_image:image_png,PNG,http://ufsa.org/v2/standards/iana_mime_image,"{""notation"": ""image/png""}"
+iana_mime_image:image_gif,GIF,http://ufsa.org/v2/standards/iana_mime_image,"{""notation"": ""image/gif""}"

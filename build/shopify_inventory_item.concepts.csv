@@ -1,0 +1,5 @@
+id,label,in_scheme,notes_json
+shopify_inventory_item:id,id,http://ufsa.org/v2/standards/shopify_inventory_item,"{""description"": ""The unique ID of the inventory item.""}"
+shopify_inventory_item:sku,sku,http://ufsa.org/v2/standards/shopify_inventory_item,"{""description"": ""The stock keeping unit.""}"
+shopify_inventory_item:tracked,tracked,http://ufsa.org/v2/standards/shopify_inventory_item,"{""description"": ""Whether the inventory is tracked.""}"
+shopify_inventory_item:countrycodeoforigin,countryCodeOfOrigin,http://ufsa.org/v2/standards/shopify_inventory_item,"{""description"": ""The country code of origin.""}"

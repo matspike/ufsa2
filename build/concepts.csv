@@ -1,0 +1,122 @@
+concept_id,pref_label,definition,notation,scheme_uri
+fhir_r4_patient:,Patient,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:id,id,Logical id of this artifact,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:active,active,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:gender,gender,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name,name,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name[],name[],,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name[].use,use,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name[].family,family,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name[].given,given,,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_patient:name[].given[],given[],,,http://ufsa.org/v2/standards/fhir_r4_patient
+fhir_r4_observation:,Observation,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:resourceType,resourceType,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:status,status,The status of the result value.,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code,code,Type of observation (code / type),,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code.coding,coding,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code.coding[],coding[],,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code.coding[].system,system,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code.coding[].code,code,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:code.coding[].display,display,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:subject,subject,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:subject.reference,reference,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:effectiveDateTime,effectiveDateTime,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_observation:valueString,valueString,,,http://ufsa.org/v2/standards/fhir_r4_observation
+fhir_r4_encounter:,FHIR Encounter,,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:id,id,Logical id of this encounter,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:status,status,planned | in-progress | finished,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:class,class,,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:class.code,code,,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:type,type,,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:type[],type[],,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_encounter:subject,subject,,,http://ufsa.org/v2/standards/fhir_r4_encounter
+fhir_r4_condition:,FHIR Condition,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:id,id,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:clinicalStatus,clinicalStatus,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:verificationStatus,verificationStatus,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:category,category,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:category[],category[],,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:code,code,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_condition:subject,subject,,,http://ufsa.org/v2/standards/fhir_r4_condition
+fhir_r4_medication:,FHIR Medication,,,http://ufsa.org/v2/standards/fhir_r4_medication
+fhir_r4_medication:id,id,,,http://ufsa.org/v2/standards/fhir_r4_medication
+fhir_r4_medication:code,code,,,http://ufsa.org/v2/standards/fhir_r4_medication
+fhir_r4_medication:status,status,,,http://ufsa.org/v2/standards/fhir_r4_medication
+fhir_r4_medication:manufacturer,manufacturer,,,http://ufsa.org/v2/standards/fhir_r4_medication
+fhir_r4_procedure:,FHIR Procedure,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:id,id,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:status,status,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:code,code,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:subject,subject,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:performer,performer,,,http://ufsa.org/v2/standards/fhir_r4_procedure
+fhir_r4_procedure:performer[],performer[],,,http://ufsa.org/v2/standards/fhir_r4_procedure
+iso_3166_1_a2:US,United States of America,,US,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:GB,United Kingdom,,GB,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:AU,Australia,,AU,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:DE,Germany,,DE,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:BR,Brazil,,BR,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:ZA,South Africa,,ZA,http://ufsa.org/v2/standards/iso_3166_1_a2
+iso_3166_1_a2:JP,Japan,,JP,http://ufsa.org/v2/standards/iso_3166_1_a2
+w3c_skos_core:http://example.org/concept/label,Label,,,http://www.w3.org/2004/02/skos/core#
+w3c_skos_core:http://example.org/concept/concept,Concept,,,http://www.w3.org/2004/02/skos/core#
+iana_mime_application:application_json,JavaScript Object Notation,,application/json,http://ufsa.org/v2/standards/iana_mime_application
+iana_mime_application:application_zip,ZIP Archive,,application/zip,http://ufsa.org/v2/standards/iana_mime_application
+iana_mime_application:application_pdf,PDF Document,,application/pdf,http://ufsa.org/v2/standards/iana_mime_application
+iana_mime_application:application_gzip,GZIP,,application/gzip,http://ufsa.org/v2/standards/iana_mime_application
+iana_mime_application:application_ld_json,LD+JSON,,application/ld+json,http://ufsa.org/v2/standards/iana_mime_application
+shopify_admin_product:title,title,The title of the product.,,http://ufsa.org/v2/standards/shopify_admin_product
+shopify_admin_product:createdat,createdAt,The date and time when the product was created.,,http://ufsa.org/v2/standards/shopify_admin_product
+shopify_admin_product:handle,handle,A unique human-friendly string for the product.,,http://ufsa.org/v2/standards/shopify_admin_product
+shopify_admin_product:vendor,vendor,The name of the vendor of the product.,,http://ufsa.org/v2/standards/shopify_admin_product
+shopify_admin_product:status,status,The status of the product.,,http://ufsa.org/v2/standards/shopify_admin_product
+openfigi_v3:figi,figi,The unique identifier assigned to the instrument.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:name,name,The instrument name.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:ticker,ticker,The instrument ticker symbol.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:exchcode,exchCode,The exchange code where the instrument is traded.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:marketsector,marketSector,The market sector classification.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:securitytype,securityType,The instrument's security type.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:compositefigi,compositeFIGI,The composite FIGI for the instrument across exchanges.,,http://ufsa.org/v2/standards/openfigi_v3
+openfigi_v3:shareclassfigi,shareClassFIGI,The FIGI for the specific share class of the instrument.,,http://ufsa.org/v2/standards/openfigi_v3
+shopify_admin_order:id,id,The unique ID of the order.,,http://ufsa.org/v2/standards/shopify_admin_order
+shopify_admin_order:createdat,createdAt,The date and time when the order was created.,,http://ufsa.org/v2/standards/shopify_admin_order
+shopify_admin_order:currencycode,currencyCode,The three-letter code for the currency used.,,http://ufsa.org/v2/standards/shopify_admin_order
+shopify_admin_order:totalprice,totalPrice,The sum of all line items,,http://ufsa.org/v2/standards/shopify_admin_order
+shopify_admin_order:customer,customer,The customer associated with the order.,,http://ufsa.org/v2/standards/shopify_admin_order
+shopify_admin_order:shippingaddress,shippingAddress,The shipping address for the order.,,http://ufsa.org/v2/standards/shopify_admin_order
+iana_mime_text:text_plain,Plain Text,,text/plain,http://ufsa.org/v2/standards/iana_mime_text
+iana_mime_text:text_csv,CSV,,text/csv,http://ufsa.org/v2/standards/iana_mime_text
+iana_mime_text:text_html,HTML,,text/html,http://ufsa.org/v2/standards/iana_mime_text
+iana_mime_image:image_jpeg,JPEG,,image/jpeg,http://ufsa.org/v2/standards/iana_mime_image
+iana_mime_image:image_png,PNG,,image/png,http://ufsa.org/v2/standards/iana_mime_image
+iana_mime_image:image_gif,GIF,,image/gif,http://ufsa.org/v2/standards/iana_mime_image
+iana_mime_audio:audio_mpeg,MP3,,audio/mpeg,http://ufsa.org/v2/standards/iana_mime_audio
+iana_mime_audio:audio_wav,WAV,,audio/wav,http://ufsa.org/v2/standards/iana_mime_audio
+iana_mime_audio:audio_ogg,OGG,,audio/ogg,http://ufsa.org/v2/standards/iana_mime_audio
+iana_mime_video:video_mp4,MP4,,video/mp4,http://ufsa.org/v2/standards/iana_mime_video
+iana_mime_video:video_webm,WebM,,video/webm,http://ufsa.org/v2/standards/iana_mime_video
+iana_mime_video:video_x-msvideo,AVI,,video/x-msvideo,http://ufsa.org/v2/standards/iana_mime_video
+iso_3166_2:US-CA,California,,US-CA,http://ufsa.org/v2/standards/iso_3166_2
+iso_3166_2:US-NY,New York,,US-NY,http://ufsa.org/v2/standards/iso_3166_2
+iso_3166_2:GB-ENG,England,,GB-ENG,http://ufsa.org/v2/standards/iso_3166_2
+iso_3166_2:JP-13,Tokyo,,JP-13,http://ufsa.org/v2/standards/iso_3166_2
+iso_4217:USD,US Dollar,,USD,http://ufsa.org/v2/standards/iso_4217
+iso_4217:EUR,Euro,,EUR,http://ufsa.org/v2/standards/iso_4217
+iso_4217:JPY,Japanese Yen,,JPY,http://ufsa.org/v2/standards/iso_4217
+iso_4217:GBP,Pound Sterling,,GBP,http://ufsa.org/v2/standards/iso_4217
+iso_6166_isin:US0378331005,Apple Inc. ISIN,,US0378331005,http://ufsa.org/v2/standards/iso_6166_isin
+iso_6166_isin:US5949181045,Microsoft Corp ISIN,,US5949181045,http://ufsa.org/v2/standards/iso_6166_isin
+shopify_customer:id,id,The unique ID of the customer.,,http://ufsa.org/v2/standards/shopify_customer
+shopify_customer:email,email,The customer's email address.,,http://ufsa.org/v2/standards/shopify_customer
+shopify_customer:firstname,firstName,The customer's first name.,,http://ufsa.org/v2/standards/shopify_customer
+shopify_customer:lastname,lastName,The customer's last name.,,http://ufsa.org/v2/standards/shopify_customer
+shopify_customer:createdat,createdAt,When the customer was created.,,http://ufsa.org/v2/standards/shopify_customer
+shopify_inventory_item:id,id,The unique ID of the inventory item.,,http://ufsa.org/v2/standards/shopify_inventory_item
+shopify_inventory_item:sku,sku,The stock keeping unit.,,http://ufsa.org/v2/standards/shopify_inventory_item
+shopify_inventory_item:tracked,tracked,Whether the inventory is tracked.,,http://ufsa.org/v2/standards/shopify_inventory_item
+shopify_inventory_item:countrycodeoforigin,countryCodeOfOrigin,The country code of origin.,,http://ufsa.org/v2/standards/shopify_inventory_item
+shopify_fulfillment:id,id,The unique ID of the fulfillment.,,http://ufsa.org/v2/standards/shopify_fulfillment
+shopify_fulfillment:status,status,The status of the fulfillment.,,http://ufsa.org/v2/standards/shopify_fulfillment
+shopify_fulfillment:trackinginfo,trackingInfo,Tracking information.,,http://ufsa.org/v2/standards/shopify_fulfillment
+shopify_fulfillment:lineitems,lineItems,The fulfilled line items.,,http://ufsa.org/v2/standards/shopify_fulfillment
+cusip:03783310,Apple Inc. CUSIP,,03783310,http://ufsa.org/v2/standards/cusip
+cusip:59491810,Microsoft Corp CUSIP,,59491810,http://ufsa.org/v2/standards/cusip

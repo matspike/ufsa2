@@ -1,0 +1,257 @@
+{
+  "fhir_r4_patient": {
+    "label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_patient:",
+      "fhir_r4_patient:id",
+      "fhir_r4_patient:active",
+      "fhir_r4_patient:gender",
+      "fhir_r4_patient:name",
+      "fhir_r4_patient:name[]",
+      "fhir_r4_patient:name[].use",
+      "fhir_r4_patient:name[].family",
+      "fhir_r4_patient:name[].given",
+      "fhir_r4_patient:name[].given[]"
+    ]
+  },
+  "fhir_r4_observation": {
+    "label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_observation:",
+      "fhir_r4_observation:resourceType",
+      "fhir_r4_observation:status",
+      "fhir_r4_observation:code",
+      "fhir_r4_observation:code.coding",
+      "fhir_r4_observation:code.coding[]",
+      "fhir_r4_observation:code.coding[].system",
+      "fhir_r4_observation:code.coding[].code",
+      "fhir_r4_observation:code.coding[].display",
+      "fhir_r4_observation:subject",
+      "fhir_r4_observation:subject.reference",
+      "fhir_r4_observation:effectiveDateTime",
+      "fhir_r4_observation:valueString"
+    ]
+  },
+  "fhir_r4_encounter": {
+    "label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_encounter:",
+      "fhir_r4_encounter:id",
+      "fhir_r4_encounter:status",
+      "fhir_r4_encounter:class",
+      "fhir_r4_encounter:class.code",
+      "fhir_r4_encounter:type",
+      "fhir_r4_encounter:type[]",
+      "fhir_r4_encounter:subject"
+    ]
+  },
+  "fhir_r4_condition": {
+    "label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_condition:",
+      "fhir_r4_condition:id",
+      "fhir_r4_condition:clinicalStatus",
+      "fhir_r4_condition:verificationStatus",
+      "fhir_r4_condition:category",
+      "fhir_r4_condition:category[]",
+      "fhir_r4_condition:code",
+      "fhir_r4_condition:subject"
+    ]
+  },
+  "fhir_r4_medication": {
+    "label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_medication:",
+      "fhir_r4_medication:id",
+      "fhir_r4_medication:code",
+      "fhir_r4_medication:status",
+      "fhir_r4_medication:manufacturer"
+    ]
+  },
+  "fhir_r4_procedure": {
+    "label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "concepts": [
+      "fhir_r4_procedure:",
+      "fhir_r4_procedure:id",
+      "fhir_r4_procedure:status",
+      "fhir_r4_procedure:code",
+      "fhir_r4_procedure:subject",
+      "fhir_r4_procedure:performer",
+      "fhir_r4_procedure:performer[]"
+    ]
+  },
+  "iso_3166_1_a2": {
+    "label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "concepts": [
+      "iso_3166_1_a2:US",
+      "iso_3166_1_a2:GB",
+      "iso_3166_1_a2:AU",
+      "iso_3166_1_a2:DE",
+      "iso_3166_1_a2:BR",
+      "iso_3166_1_a2:ZA",
+      "iso_3166_1_a2:JP"
+    ]
+  },
+  "w3c_skos_core": {
+    "label": "W3C SKOS Core Vocabulary (Fixture-Min)",
+    "concepts": [
+      "w3c_skos_core:http://example.org/concept/label",
+      "w3c_skos_core:http://example.org/concept/concept"
+    ]
+  },
+  "iana_mime_application": {
+    "label": "IANA MIME Types (Application) (Fixture)",
+    "concepts": [
+      "iana_mime_application:application_json",
+      "iana_mime_application:application_zip",
+      "iana_mime_application:application_pdf",
+      "iana_mime_application:application_gzip",
+      "iana_mime_application:application_ld_json"
+    ]
+  },
+  "shopify_admin_product": {
+    "label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "concepts": [
+      "shopify_admin_product:title",
+      "shopify_admin_product:createdat",
+      "shopify_admin_product:handle",
+      "shopify_admin_product:vendor",
+      "shopify_admin_product:status"
+    ]
+  },
+  "openfigi_v3": {
+    "label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "concepts": [
+      "openfigi_v3:figi",
+      "openfigi_v3:name",
+      "openfigi_v3:ticker",
+      "openfigi_v3:exchcode",
+      "openfigi_v3:marketsector",
+      "openfigi_v3:securitytype",
+      "openfigi_v3:compositefigi",
+      "openfigi_v3:shareclassfigi"
+    ]
+  },
+  "shopify_admin_order": {
+    "label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "concepts": [
+      "shopify_admin_order:id",
+      "shopify_admin_order:createdat",
+      "shopify_admin_order:currencycode",
+      "shopify_admin_order:totalprice",
+      "shopify_admin_order:customer",
+      "shopify_admin_order:shippingaddress"
+    ]
+  },
+  "iana_mime_text": {
+    "label": "IANA MIME Types (Text) (Fixture)",
+    "concepts": [
+      "iana_mime_text:text_plain",
+      "iana_mime_text:text_csv",
+      "iana_mime_text:text_html"
+    ]
+  },
+  "iana_mime_image": {
+    "label": "IANA MIME Types (Image) (Fixture)",
+    "concepts": [
+      "iana_mime_image:image_jpeg",
+      "iana_mime_image:image_png",
+      "iana_mime_image:image_gif"
+    ]
+  },
+  "iana_mime_audio": {
+    "label": "IANA MIME Types (Audio) (Fixture)",
+    "concepts": [
+      "iana_mime_audio:audio_mpeg",
+      "iana_mime_audio:audio_wav",
+      "iana_mime_audio:audio_ogg"
+    ]
+  },
+  "iana_mime_video": {
+    "label": "IANA MIME Types (Video) (Fixture)",
+    "concepts": [
+      "iana_mime_video:video_mp4",
+      "iana_mime_video:video_webm",
+      "iana_mime_video:video_x-msvideo"
+    ]
+  },
+  "iso_3166_2": {
+    "label": "ISO 3166-2 Subdivision Codes (Fixture)",
+    "concepts": [
+      "iso_3166_2:US-CA",
+      "iso_3166_2:US-NY",
+      "iso_3166_2:GB-ENG",
+      "iso_3166_2:JP-13"
+    ]
+  },
+  "iso_4217": {
+    "label": "ISO 4217 Currency Codes (Fixture)",
+    "concepts": [
+      "iso_4217:USD",
+      "iso_4217:EUR",
+      "iso_4217:JPY",
+      "iso_4217:GBP"
+    ]
+  },
+  "iso_6166_isin": {
+    "label": "ISO 6166 ISIN Codes (Fixture)",
+    "concepts": [
+      "iso_6166_isin:US0378331005",
+      "iso_6166_isin:US5949181045"
+    ]
+  },
+  "shopify_customer": {
+    "label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "concepts": [
+      "shopify_customer:id",
+      "shopify_customer:email",
+      "shopify_customer:firstname",
+      "shopify_customer:lastname",
+      "shopify_customer:createdat"
+    ]
+  },
+  "shopify_inventory_item": {
+    "label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+    "concepts": [
+      "shopify_inventory_item:id",
+      "shopify_inventory_item:sku",
+      "shopify_inventory_item:tracked",
+      "shopify_inventory_item:countrycodeoforigin"
+    ]
+  },
+  "shopify_fulfillment": {
+    "label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+    "concepts": [
+      "shopify_fulfillment:id",
+      "shopify_fulfillment:status",
+      "shopify_fulfillment:trackinginfo",
+      "shopify_fulfillment:lineitems"
+    ]
+  },
+  "cusip": {
+    "label": "CUSIP (Fixture)",
+    "concepts": [
+      "cusip:03783310",
+      "cusip:59491810"
+    ]
+  },
+  "cyclonedx_example": {
+    "label": "Example CycloneDX SBOM",
+    "concepts": [
+      "cyclonedx_example:pkg:pypi/requests@2.32.3",
+      "cyclonedx_example:pkg:pypi/urllib3@2.2.2"
+    ]
+  },
+  "internal_dw_schema": {
+    "label": "Internal Data Warehouse Schema",
+    "concepts": [
+      "internal_dw_schema:users",
+      "internal_dw_schema:users.user_id",
+      "internal_dw_schema:users.email",
+      "internal_dw_schema:orders",
+      "internal_dw_schema:orders.order_id",
+      "internal_dw_schema:orders.user_id",
+      "internal_dw_schema:orders.amount"
+    ]
+  }
+}

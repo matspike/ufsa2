@@ -1,0 +1,28 @@
+{
+  "id": "w3c_skos_core",
+  "label": "W3C SKOS Core Vocabulary (Fixture-Min)",
+  "concepts": [
+    {
+      "id": "w3c_skos_core:http://example.org/concept/label",
+      "label": "Label",
+      "notes": {},
+      "in_scheme": "http://www.w3.org/2004/02/skos/core#",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "w3c_skos_core:http://example.org/concept/concept",
+      "label": "Concept",
+      "notes": {},
+      "in_scheme": "http://www.w3.org/2004/02/skos/core#",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

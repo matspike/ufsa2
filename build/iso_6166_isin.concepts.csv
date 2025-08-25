@@ -1,0 +1,3 @@
+id,label,in_scheme,notes_json
+iso_6166_isin:US0378331005,Apple Inc. ISIN,http://ufsa.org/v2/standards/iso_6166_isin,"{""code"": ""US0378331005""}"
+iso_6166_isin:US5949181045,Microsoft Corp ISIN,http://ufsa.org/v2/standards/iso_6166_isin,"{""code"": ""US5949181045""}"

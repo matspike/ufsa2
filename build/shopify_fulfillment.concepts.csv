@@ -1,0 +1,5 @@
+id,label,in_scheme,notes_json
+shopify_fulfillment:id,id,http://ufsa.org/v2/standards/shopify_fulfillment,"{""description"": ""The unique ID of the fulfillment.""}"
+shopify_fulfillment:status,status,http://ufsa.org/v2/standards/shopify_fulfillment,"{""description"": ""The status of the fulfillment.""}"
+shopify_fulfillment:trackinginfo,trackingInfo,http://ufsa.org/v2/standards/shopify_fulfillment,"{""description"": ""Tracking information.""}"
+shopify_fulfillment:lineitems,lineItems,http://ufsa.org/v2/standards/shopify_fulfillment,"{""description"": ""The fulfilled line items.""}"

@@ -1,0 +1,6 @@
+id,label,in_scheme,notes_json
+fhir_r4_medication:,FHIR Medication,http://ufsa.org/v2/standards/fhir_r4_medication,"{""type"": ""object""}"
+fhir_r4_medication:id,id,http://ufsa.org/v2/standards/fhir_r4_medication,"{""type"": ""string""}"
+fhir_r4_medication:code,code,http://ufsa.org/v2/standards/fhir_r4_medication,"{""type"": ""object""}"
+fhir_r4_medication:status,status,http://ufsa.org/v2/standards/fhir_r4_medication,"{""type"": ""string""}"
+fhir_r4_medication:manufacturer,manufacturer,http://ufsa.org/v2/standards/fhir_r4_medication,"{""type"": ""object""}"

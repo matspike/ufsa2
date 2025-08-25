@@ -1,0 +1,6 @@
+id,label,in_scheme,notes_json
+shopify_admin_product:title,title,http://ufsa.org/v2/standards/shopify_admin_product,"{""description"": ""The title of the product.""}"
+shopify_admin_product:createdat,createdAt,http://ufsa.org/v2/standards/shopify_admin_product,"{""description"": ""The date and time when the product was created.""}"
+shopify_admin_product:handle,handle,http://ufsa.org/v2/standards/shopify_admin_product,"{""description"": ""A unique human-friendly string for the product.""}"
+shopify_admin_product:vendor,vendor,http://ufsa.org/v2/standards/shopify_admin_product,"{""description"": ""The name of the vendor of the product.""}"
+shopify_admin_product:status,status,http://ufsa.org/v2/standards/shopify_admin_product,"{""description"": ""The status of the product.""}"

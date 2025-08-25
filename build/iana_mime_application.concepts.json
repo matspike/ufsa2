@@ -1,0 +1,71 @@
+{
+  "id": "iana_mime_application",
+  "label": "IANA MIME Types (Application) (Fixture)",
+  "concepts": [
+    {
+      "id": "iana_mime_application:application_json",
+      "label": "JavaScript Object Notation",
+      "notes": {
+        "notation": "application/json"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_application:application_zip",
+      "label": "ZIP Archive",
+      "notes": {
+        "notation": "application/zip"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_application:application_pdf",
+      "label": "PDF Document",
+      "notes": {
+        "notation": "application/pdf"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_application:application_gzip",
+      "label": "GZIP",
+      "notes": {
+        "notation": "application/gzip"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_application:application_ld_json",
+      "label": "LD+JSON",
+      "notes": {
+        "notation": "application/ld+json"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

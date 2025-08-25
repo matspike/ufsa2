@@ -1,0 +1,6 @@
+id,label,in_scheme,notes_json
+iana_mime_application:application_json,JavaScript Object Notation,http://ufsa.org/v2/standards/iana_mime_application,"{""notation"": ""application/json""}"
+iana_mime_application:application_zip,ZIP Archive,http://ufsa.org/v2/standards/iana_mime_application,"{""notation"": ""application/zip""}"
+iana_mime_application:application_pdf,PDF Document,http://ufsa.org/v2/standards/iana_mime_application,"{""notation"": ""application/pdf""}"
+iana_mime_application:application_gzip,GZIP,http://ufsa.org/v2/standards/iana_mime_application,"{""notation"": ""application/gzip""}"
+iana_mime_application:application_ld_json,LD+JSON,http://ufsa.org/v2/standards/iana_mime_application,"{""notation"": ""application/ld+json""}"

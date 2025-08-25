@@ -1,0 +1,45 @@
+{
+  "id": "iana_mime_text",
+  "label": "IANA MIME Types (Text) (Fixture)",
+  "concepts": [
+    {
+      "id": "iana_mime_text:text_plain",
+      "label": "Plain Text",
+      "notes": {
+        "notation": "text/plain"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_text:text_csv",
+      "label": "CSV",
+      "notes": {
+        "notation": "text/csv"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_text:text_html",
+      "label": "HTML",
+      "notes": {
+        "notation": "text/html"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

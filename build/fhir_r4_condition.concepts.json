@@ -1,0 +1,110 @@
+{
+  "id": "fhir_r4_condition",
+  "label": "HL7 FHIR R4 Condition Resource (Fixture)",
+  "concepts": [
+    {
+      "id": "fhir_r4_condition:",
+      "label": "FHIR Condition",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:id",
+      "label": "id",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:clinicalStatus",
+      "label": "clinicalStatus",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:verificationStatus",
+      "label": "verificationStatus",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:category",
+      "label": "category",
+      "notes": {
+        "type": "array"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:category[]",
+      "label": "category[]",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:code",
+      "label": "code",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_condition:subject",
+      "label": "subject",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

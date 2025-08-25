@@ -1,0 +1,5 @@
+subject,predicate,object,confidence,provenance
+urn:ufsa:id:openfigi,skos:relatedMatch,urn:ufsa:id:isin,0.6,Doc 3 example
+urn:ufsa:concept:openfigi_v3:compositeFIGI,skos:broadMatch,urn:ufsa:concept:openfigi_v3:shareClassFIGI,0.8,OpenFIGI composite vs share class hierarchy
+urn:ufsa:id:cusip,skos:relatedMatch,urn:ufsa:id:openfigi,0.5,FIGI maps from identifiers including CUSIP
+urn:ufsa:scheme:iana_mime_application,skos:relatedMatch,urn:ufsa:scheme:w3c_skos_core,0.2,MIME types described in human-readable SKOS docs

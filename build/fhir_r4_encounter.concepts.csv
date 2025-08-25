@@ -1,0 +1,9 @@
+id,label,in_scheme,notes_json
+fhir_r4_encounter:,FHIR Encounter,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""object""}"
+fhir_r4_encounter:id,id,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""string"", ""description"": ""Logical id of this encounter""}"
+fhir_r4_encounter:status,status,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""string"", ""description"": ""planned | in-progress | finished""}"
+fhir_r4_encounter:class,class,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""object""}"
+fhir_r4_encounter:class.code,code,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""string""}"
+fhir_r4_encounter:type,type,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""array""}"
+fhir_r4_encounter:type[],type[],http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""object""}"
+fhir_r4_encounter:subject,subject,http://ufsa.org/v2/standards/fhir_r4_encounter,"{""type"": ""object""}"

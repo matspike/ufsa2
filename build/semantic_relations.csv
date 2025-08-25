@@ -1,0 +1,15 @@
+subject_id,predicate,object_id
+openfigi_v3:compositefigi,skos:narrower,openfigi_v3:shareclassfigi
+openfigi_v3:shareclassfigi,skos:broader,openfigi_v3:compositefigi
+cyclonedx_example:pkg:pypi/requests@2.32.3,skos:related,cyclonedx_example:pkg:pypi/urllib3@2.2.2
+internal_dw_schema:users,skos:narrower,internal_dw_schema:users.user_id
+internal_dw_schema:users,skos:narrower,internal_dw_schema:users.email
+internal_dw_schema:users.user_id,skos:broader,internal_dw_schema:users
+internal_dw_schema:users.email,skos:broader,internal_dw_schema:users
+internal_dw_schema:orders,skos:narrower,internal_dw_schema:orders.order_id
+internal_dw_schema:orders,skos:narrower,internal_dw_schema:orders.user_id
+internal_dw_schema:orders,skos:narrower,internal_dw_schema:orders.amount
+internal_dw_schema:orders.order_id,skos:broader,internal_dw_schema:orders
+internal_dw_schema:orders.user_id,skos:broader,internal_dw_schema:orders
+internal_dw_schema:orders.user_id,skos:relatedMatch,internal_dw_schema:users.user_id
+internal_dw_schema:orders.amount,skos:broader,internal_dw_schema:orders

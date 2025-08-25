@@ -1,0 +1,137 @@
+{
+  "id": "fhir_r4_patient",
+  "label": "HL7 FHIR R4 Patient Resource (Fixture)",
+  "concepts": [
+    {
+      "id": "fhir_r4_patient:",
+      "label": "Patient",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:id",
+      "label": "id",
+      "notes": {
+        "type": "string",
+        "description": "Logical id of this artifact"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:active",
+      "label": "active",
+      "notes": {
+        "type": "boolean"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:gender",
+      "label": "gender",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name",
+      "label": "name",
+      "notes": {
+        "type": "array"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name[]",
+      "label": "name[]",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name[].use",
+      "label": "use",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name[].family",
+      "label": "family",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name[].given",
+      "label": "given",
+      "notes": {
+        "type": "array"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_patient:name[].given[]",
+      "label": "given[]",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

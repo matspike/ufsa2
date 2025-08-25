@@ -1,0 +1,382 @@
+[
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "fhir_r4_encounter:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "fhir_r4_condition:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "fhir_r4_medication:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "fhir_r4_procedure:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "shopify_admin_order:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "fhir_r4_condition:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "fhir_r4_medication:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "fhir_r4_procedure:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "shopify_admin_order:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "fhir_r4_medication:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "fhir_r4_procedure:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "shopify_admin_order:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:id",
+    "target": "fhir_r4_procedure:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:id",
+    "target": "shopify_admin_order:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:id",
+    "target": "shopify_admin_order:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_order:id",
+    "target": "shopify_customer:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_order:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_order:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_customer:id",
+    "target": "shopify_inventory_item:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_customer:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_inventory_item:id",
+    "target": "shopify_fulfillment:id",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_patient:name",
+    "target": "openfigi_v3:name",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:status",
+    "target": "fhir_r4_encounter:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:status",
+    "target": "fhir_r4_medication:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:status",
+    "target": "fhir_r4_procedure:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:status",
+    "target": "shopify_admin_product:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:status",
+    "target": "shopify_fulfillment:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:status",
+    "target": "fhir_r4_medication:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:status",
+    "target": "fhir_r4_procedure:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:status",
+    "target": "shopify_admin_product:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:status",
+    "target": "shopify_fulfillment:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:status",
+    "target": "fhir_r4_procedure:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:status",
+    "target": "shopify_admin_product:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:status",
+    "target": "shopify_fulfillment:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:status",
+    "target": "shopify_admin_product:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_procedure:status",
+    "target": "shopify_fulfillment:status",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_product:status",
+    "target": "shopify_fulfillment:status",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code",
+    "target": "fhir_r4_observation:code.coding[].code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code",
+    "target": "fhir_r4_encounter:class.code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code",
+    "target": "fhir_r4_condition:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code",
+    "target": "fhir_r4_medication:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code",
+    "target": "fhir_r4_procedure:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code.coding[].code",
+    "target": "fhir_r4_encounter:class.code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code.coding[].code",
+    "target": "fhir_r4_condition:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code.coding[].code",
+    "target": "fhir_r4_medication:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:code.coding[].code",
+    "target": "fhir_r4_procedure:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:class.code",
+    "target": "fhir_r4_condition:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:class.code",
+    "target": "fhir_r4_medication:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:class.code",
+    "target": "fhir_r4_procedure:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:code",
+    "target": "fhir_r4_medication:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:code",
+    "target": "fhir_r4_procedure:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_medication:code",
+    "target": "fhir_r4_procedure:code",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:subject",
+    "target": "fhir_r4_encounter:subject",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:subject",
+    "target": "fhir_r4_condition:subject",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_observation:subject",
+    "target": "fhir_r4_procedure:subject",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:subject",
+    "target": "fhir_r4_condition:subject",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_encounter:subject",
+    "target": "fhir_r4_procedure:subject",
+    "score": 1.0
+  },
+  {
+    "source": "fhir_r4_condition:subject",
+    "target": "fhir_r4_procedure:subject",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_product:createdat",
+    "target": "shopify_admin_order:createdat",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_product:createdat",
+    "target": "shopify_customer:createdat",
+    "score": 1.0
+  },
+  {
+    "source": "shopify_admin_order:createdat",
+    "target": "shopify_customer:createdat",
+    "score": 1.0
+  }
+]

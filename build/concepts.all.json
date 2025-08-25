@@ -1,0 +1,1322 @@
+[
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:",
+    "label": "Patient",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "string",
+      "description": "Logical id of this artifact"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:active",
+    "label": "active",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "boolean"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:gender",
+    "label": "gender",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name",
+    "label": "name",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name[]",
+    "label": "name[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name[].use",
+    "label": "use",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name[].family",
+    "label": "family",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name[].given",
+    "label": "given",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_patient",
+    "scheme_label": "HL7 FHIR R4 Patient Resource (Fixture)",
+    "id": "fhir_r4_patient:name[].given[]",
+    "label": "given[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_patient",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:",
+    "label": "Observation",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:resourceType",
+    "label": "resourceType",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string",
+      "description": "The status of the result value."
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "object",
+      "description": "Type of observation (code / type)",
+      "valueset_hint": "loinc"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code.coding",
+    "label": "coding",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code.coding[]",
+    "label": "coding[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "object",
+      "valueset_hint": "loinc"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code.coding[].system",
+    "label": "system",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code.coding[].code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:code.coding[].display",
+    "label": "display",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:subject",
+    "label": "subject",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:subject.reference",
+    "label": "reference",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:effectiveDateTime",
+    "label": "effectiveDateTime",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_observation",
+    "scheme_label": "HL7 FHIR R4 Observation Resource (Fixture)",
+    "id": "fhir_r4_observation:valueString",
+    "label": "valueString",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:",
+    "label": "FHIR Encounter",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "string",
+      "description": "Logical id of this encounter"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "string",
+      "description": "planned | in-progress | finished"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:class",
+    "label": "class",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:class.code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:type",
+    "label": "type",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:type[]",
+    "label": "type[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_encounter",
+    "scheme_label": "HL7 FHIR R4 Encounter Resource (Fixture)",
+    "id": "fhir_r4_encounter:subject",
+    "label": "subject",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_encounter",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:",
+    "label": "FHIR Condition",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:clinicalStatus",
+    "label": "clinicalStatus",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:verificationStatus",
+    "label": "verificationStatus",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:category",
+    "label": "category",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:category[]",
+    "label": "category[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_condition",
+    "scheme_label": "HL7 FHIR R4 Condition Resource (Fixture)",
+    "id": "fhir_r4_condition:subject",
+    "label": "subject",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_condition",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_medication",
+    "scheme_label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "id": "fhir_r4_medication:",
+    "label": "FHIR Medication",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_medication",
+    "scheme_label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "id": "fhir_r4_medication:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_medication",
+    "scheme_label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "id": "fhir_r4_medication:code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_medication",
+    "scheme_label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "id": "fhir_r4_medication:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_medication",
+    "scheme_label": "HL7 FHIR R4 Medication Resource (Fixture)",
+    "id": "fhir_r4_medication:manufacturer",
+    "label": "manufacturer",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:",
+    "label": "FHIR Procedure",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "string"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:code",
+    "label": "code",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:subject",
+    "label": "subject",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:performer",
+    "label": "performer",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "array"
+    }
+  },
+  {
+    "scheme": "fhir_r4_procedure",
+    "scheme_label": "HL7 FHIR R4 Procedure Resource (Fixture)",
+    "id": "fhir_r4_procedure:performer[]",
+    "label": "performer[]",
+    "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_procedure",
+    "notes": {
+      "type": "object"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:US",
+    "label": "United States of America",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "US"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:GB",
+    "label": "United Kingdom",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "GB"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:AU",
+    "label": "Australia",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "AU"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:DE",
+    "label": "Germany",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "DE"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:BR",
+    "label": "Brazil",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "BR"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:ZA",
+    "label": "South Africa",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "ZA"
+    }
+  },
+  {
+    "scheme": "iso_3166_1_a2",
+    "scheme_label": "ISO 3166-1 Alpha-2 Country Codes (Fixture)",
+    "id": "iso_3166_1_a2:JP",
+    "label": "Japan",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_1_a2",
+    "notes": {
+      "code": "JP"
+    }
+  },
+  {
+    "scheme": "w3c_skos_core",
+    "scheme_label": "W3C SKOS Core Vocabulary (Fixture-Min)",
+    "id": "w3c_skos_core:http://example.org/concept/label",
+    "label": "Label",
+    "in_scheme": "http://www.w3.org/2004/02/skos/core#",
+    "notes": {}
+  },
+  {
+    "scheme": "w3c_skos_core",
+    "scheme_label": "W3C SKOS Core Vocabulary (Fixture-Min)",
+    "id": "w3c_skos_core:http://example.org/concept/concept",
+    "label": "Concept",
+    "in_scheme": "http://www.w3.org/2004/02/skos/core#",
+    "notes": {}
+  },
+  {
+    "scheme": "iana_mime_application",
+    "scheme_label": "IANA MIME Types (Application) (Fixture)",
+    "id": "iana_mime_application:application_json",
+    "label": "JavaScript Object Notation",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+    "notes": {
+      "notation": "application/json"
+    }
+  },
+  {
+    "scheme": "iana_mime_application",
+    "scheme_label": "IANA MIME Types (Application) (Fixture)",
+    "id": "iana_mime_application:application_zip",
+    "label": "ZIP Archive",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+    "notes": {
+      "notation": "application/zip"
+    }
+  },
+  {
+    "scheme": "iana_mime_application",
+    "scheme_label": "IANA MIME Types (Application) (Fixture)",
+    "id": "iana_mime_application:application_pdf",
+    "label": "PDF Document",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+    "notes": {
+      "notation": "application/pdf"
+    }
+  },
+  {
+    "scheme": "iana_mime_application",
+    "scheme_label": "IANA MIME Types (Application) (Fixture)",
+    "id": "iana_mime_application:application_gzip",
+    "label": "GZIP",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+    "notes": {
+      "notation": "application/gzip"
+    }
+  },
+  {
+    "scheme": "iana_mime_application",
+    "scheme_label": "IANA MIME Types (Application) (Fixture)",
+    "id": "iana_mime_application:application_ld_json",
+    "label": "LD+JSON",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_application",
+    "notes": {
+      "notation": "application/ld+json"
+    }
+  },
+  {
+    "scheme": "shopify_admin_product",
+    "scheme_label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "id": "shopify_admin_product:title",
+    "label": "title",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+    "notes": {
+      "description": "The title of the product."
+    }
+  },
+  {
+    "scheme": "shopify_admin_product",
+    "scheme_label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "id": "shopify_admin_product:createdat",
+    "label": "createdAt",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+    "notes": {
+      "description": "The date and time when the product was created."
+    }
+  },
+  {
+    "scheme": "shopify_admin_product",
+    "scheme_label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "id": "shopify_admin_product:handle",
+    "label": "handle",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+    "notes": {
+      "description": "A unique human-friendly string for the product."
+    }
+  },
+  {
+    "scheme": "shopify_admin_product",
+    "scheme_label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "id": "shopify_admin_product:vendor",
+    "label": "vendor",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+    "notes": {
+      "description": "The name of the vendor of the product."
+    }
+  },
+  {
+    "scheme": "shopify_admin_product",
+    "scheme_label": "Shopify Admin GraphQL API Product Object (Fixture)",
+    "id": "shopify_admin_product:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+    "notes": {
+      "description": "The status of the product."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:figi",
+    "label": "figi",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The unique identifier assigned to the instrument."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:name",
+    "label": "name",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The instrument name."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:ticker",
+    "label": "ticker",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The instrument ticker symbol."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:exchcode",
+    "label": "exchCode",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The exchange code where the instrument is traded."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:marketsector",
+    "label": "marketSector",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The market sector classification."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:securitytype",
+    "label": "securityType",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The instrument's security type."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:compositefigi",
+    "label": "compositeFIGI",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The composite FIGI for the instrument across exchanges."
+    }
+  },
+  {
+    "scheme": "openfigi_v3",
+    "scheme_label": "OpenFIGI API v3 Mapping Response (Fixture)",
+    "id": "openfigi_v3:shareclassfigi",
+    "label": "shareClassFIGI",
+    "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+    "notes": {
+      "description": "The FIGI for the specific share class of the instrument."
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The unique ID of the order."
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:createdat",
+    "label": "createdAt",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The date and time when the order was created."
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:currencycode",
+    "label": "currencyCode",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The three-letter code for the currency used."
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:totalprice",
+    "label": "totalPrice",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The sum of all line items"
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:customer",
+    "label": "customer",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The customer associated with the order."
+    }
+  },
+  {
+    "scheme": "shopify_admin_order",
+    "scheme_label": "Shopify Admin GraphQL API Order Object (Fixture)",
+    "id": "shopify_admin_order:shippingaddress",
+    "label": "shippingAddress",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_order",
+    "notes": {
+      "description": "The shipping address for the order."
+    }
+  },
+  {
+    "scheme": "iana_mime_text",
+    "scheme_label": "IANA MIME Types (Text) (Fixture)",
+    "id": "iana_mime_text:text_plain",
+    "label": "Plain Text",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+    "notes": {
+      "notation": "text/plain"
+    }
+  },
+  {
+    "scheme": "iana_mime_text",
+    "scheme_label": "IANA MIME Types (Text) (Fixture)",
+    "id": "iana_mime_text:text_csv",
+    "label": "CSV",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+    "notes": {
+      "notation": "text/csv"
+    }
+  },
+  {
+    "scheme": "iana_mime_text",
+    "scheme_label": "IANA MIME Types (Text) (Fixture)",
+    "id": "iana_mime_text:text_html",
+    "label": "HTML",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_text",
+    "notes": {
+      "notation": "text/html"
+    }
+  },
+  {
+    "scheme": "iana_mime_image",
+    "scheme_label": "IANA MIME Types (Image) (Fixture)",
+    "id": "iana_mime_image:image_jpeg",
+    "label": "JPEG",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+    "notes": {
+      "notation": "image/jpeg"
+    }
+  },
+  {
+    "scheme": "iana_mime_image",
+    "scheme_label": "IANA MIME Types (Image) (Fixture)",
+    "id": "iana_mime_image:image_png",
+    "label": "PNG",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+    "notes": {
+      "notation": "image/png"
+    }
+  },
+  {
+    "scheme": "iana_mime_image",
+    "scheme_label": "IANA MIME Types (Image) (Fixture)",
+    "id": "iana_mime_image:image_gif",
+    "label": "GIF",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_image",
+    "notes": {
+      "notation": "image/gif"
+    }
+  },
+  {
+    "scheme": "iana_mime_audio",
+    "scheme_label": "IANA MIME Types (Audio) (Fixture)",
+    "id": "iana_mime_audio:audio_mpeg",
+    "label": "MP3",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+    "notes": {
+      "notation": "audio/mpeg"
+    }
+  },
+  {
+    "scheme": "iana_mime_audio",
+    "scheme_label": "IANA MIME Types (Audio) (Fixture)",
+    "id": "iana_mime_audio:audio_wav",
+    "label": "WAV",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+    "notes": {
+      "notation": "audio/wav"
+    }
+  },
+  {
+    "scheme": "iana_mime_audio",
+    "scheme_label": "IANA MIME Types (Audio) (Fixture)",
+    "id": "iana_mime_audio:audio_ogg",
+    "label": "OGG",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+    "notes": {
+      "notation": "audio/ogg"
+    }
+  },
+  {
+    "scheme": "iana_mime_video",
+    "scheme_label": "IANA MIME Types (Video) (Fixture)",
+    "id": "iana_mime_video:video_mp4",
+    "label": "MP4",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+    "notes": {
+      "notation": "video/mp4"
+    }
+  },
+  {
+    "scheme": "iana_mime_video",
+    "scheme_label": "IANA MIME Types (Video) (Fixture)",
+    "id": "iana_mime_video:video_webm",
+    "label": "WebM",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+    "notes": {
+      "notation": "video/webm"
+    }
+  },
+  {
+    "scheme": "iana_mime_video",
+    "scheme_label": "IANA MIME Types (Video) (Fixture)",
+    "id": "iana_mime_video:video_x-msvideo",
+    "label": "AVI",
+    "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+    "notes": {
+      "notation": "video/x-msvideo"
+    }
+  },
+  {
+    "scheme": "iso_3166_2",
+    "scheme_label": "ISO 3166-2 Subdivision Codes (Fixture)",
+    "id": "iso_3166_2:US-CA",
+    "label": "California",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_2",
+    "notes": {
+      "code": "US-CA"
+    }
+  },
+  {
+    "scheme": "iso_3166_2",
+    "scheme_label": "ISO 3166-2 Subdivision Codes (Fixture)",
+    "id": "iso_3166_2:US-NY",
+    "label": "New York",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_2",
+    "notes": {
+      "code": "US-NY"
+    }
+  },
+  {
+    "scheme": "iso_3166_2",
+    "scheme_label": "ISO 3166-2 Subdivision Codes (Fixture)",
+    "id": "iso_3166_2:GB-ENG",
+    "label": "England",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_2",
+    "notes": {
+      "code": "GB-ENG"
+    }
+  },
+  {
+    "scheme": "iso_3166_2",
+    "scheme_label": "ISO 3166-2 Subdivision Codes (Fixture)",
+    "id": "iso_3166_2:JP-13",
+    "label": "Tokyo",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_3166_2",
+    "notes": {
+      "code": "JP-13"
+    }
+  },
+  {
+    "scheme": "iso_4217",
+    "scheme_label": "ISO 4217 Currency Codes (Fixture)",
+    "id": "iso_4217:USD",
+    "label": "US Dollar",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+    "notes": {
+      "code": "USD"
+    }
+  },
+  {
+    "scheme": "iso_4217",
+    "scheme_label": "ISO 4217 Currency Codes (Fixture)",
+    "id": "iso_4217:EUR",
+    "label": "Euro",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+    "notes": {
+      "code": "EUR"
+    }
+  },
+  {
+    "scheme": "iso_4217",
+    "scheme_label": "ISO 4217 Currency Codes (Fixture)",
+    "id": "iso_4217:JPY",
+    "label": "Japanese Yen",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+    "notes": {
+      "code": "JPY"
+    }
+  },
+  {
+    "scheme": "iso_4217",
+    "scheme_label": "ISO 4217 Currency Codes (Fixture)",
+    "id": "iso_4217:GBP",
+    "label": "Pound Sterling",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+    "notes": {
+      "code": "GBP"
+    }
+  },
+  {
+    "scheme": "iso_6166_isin",
+    "scheme_label": "ISO 6166 ISIN Codes (Fixture)",
+    "id": "iso_6166_isin:US0378331005",
+    "label": "Apple Inc. ISIN",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_6166_isin",
+    "notes": {
+      "code": "US0378331005"
+    }
+  },
+  {
+    "scheme": "iso_6166_isin",
+    "scheme_label": "ISO 6166 ISIN Codes (Fixture)",
+    "id": "iso_6166_isin:US5949181045",
+    "label": "Microsoft Corp ISIN",
+    "in_scheme": "http://ufsa.org/v2/standards/iso_6166_isin",
+    "notes": {
+      "code": "US5949181045"
+    }
+  },
+  {
+    "scheme": "shopify_customer",
+    "scheme_label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "id": "shopify_customer:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+    "notes": {
+      "description": "The unique ID of the customer."
+    }
+  },
+  {
+    "scheme": "shopify_customer",
+    "scheme_label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "id": "shopify_customer:email",
+    "label": "email",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+    "notes": {
+      "description": "The customer's email address."
+    }
+  },
+  {
+    "scheme": "shopify_customer",
+    "scheme_label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "id": "shopify_customer:firstname",
+    "label": "firstName",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+    "notes": {
+      "description": "The customer's first name."
+    }
+  },
+  {
+    "scheme": "shopify_customer",
+    "scheme_label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "id": "shopify_customer:lastname",
+    "label": "lastName",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+    "notes": {
+      "description": "The customer's last name."
+    }
+  },
+  {
+    "scheme": "shopify_customer",
+    "scheme_label": "Shopify Admin GraphQL API Customer Object (Fixture)",
+    "id": "shopify_customer:createdat",
+    "label": "createdAt",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_customer",
+    "notes": {
+      "description": "When the customer was created."
+    }
+  },
+  {
+    "scheme": "shopify_inventory_item",
+    "scheme_label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+    "id": "shopify_inventory_item:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+    "notes": {
+      "description": "The unique ID of the inventory item."
+    }
+  },
+  {
+    "scheme": "shopify_inventory_item",
+    "scheme_label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+    "id": "shopify_inventory_item:sku",
+    "label": "sku",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+    "notes": {
+      "description": "The stock keeping unit."
+    }
+  },
+  {
+    "scheme": "shopify_inventory_item",
+    "scheme_label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+    "id": "shopify_inventory_item:tracked",
+    "label": "tracked",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+    "notes": {
+      "description": "Whether the inventory is tracked."
+    }
+  },
+  {
+    "scheme": "shopify_inventory_item",
+    "scheme_label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+    "id": "shopify_inventory_item:countrycodeoforigin",
+    "label": "countryCodeOfOrigin",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+    "notes": {
+      "description": "The country code of origin."
+    }
+  },
+  {
+    "scheme": "shopify_fulfillment",
+    "scheme_label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+    "id": "shopify_fulfillment:id",
+    "label": "id",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+    "notes": {
+      "description": "The unique ID of the fulfillment."
+    }
+  },
+  {
+    "scheme": "shopify_fulfillment",
+    "scheme_label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+    "id": "shopify_fulfillment:status",
+    "label": "status",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+    "notes": {
+      "description": "The status of the fulfillment."
+    }
+  },
+  {
+    "scheme": "shopify_fulfillment",
+    "scheme_label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+    "id": "shopify_fulfillment:trackinginfo",
+    "label": "trackingInfo",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+    "notes": {
+      "description": "Tracking information."
+    }
+  },
+  {
+    "scheme": "shopify_fulfillment",
+    "scheme_label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+    "id": "shopify_fulfillment:lineitems",
+    "label": "lineItems",
+    "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+    "notes": {
+      "description": "The fulfilled line items."
+    }
+  },
+  {
+    "scheme": "cusip",
+    "scheme_label": "CUSIP (Fixture)",
+    "id": "cusip:03783310",
+    "label": "Apple Inc. CUSIP",
+    "in_scheme": "http://ufsa.org/v2/standards/cusip",
+    "notes": {
+      "code": "03783310"
+    }
+  },
+  {
+    "scheme": "cusip",
+    "scheme_label": "CUSIP (Fixture)",
+    "id": "cusip:59491810",
+    "label": "Microsoft Corp CUSIP",
+    "in_scheme": "http://ufsa.org/v2/standards/cusip",
+    "notes": {
+      "code": "59491810"
+    }
+  },
+  {
+    "scheme": "cyclonedx_example",
+    "scheme_label": "Example CycloneDX SBOM",
+    "id": "cyclonedx_example:pkg:pypi/requests@2.32.3",
+    "label": "requests",
+    "in_scheme": "http://ufsa.org/v2.1/standards/cyclonedx_example",
+    "notes": {
+      "notation": "2.32.3",
+      "description": "Python HTTP for Humans",
+      "purl": "pkg:pypi/requests@2.32.3",
+      "kind": "software_component",
+      "licenses": "",
+      "hashes": "",
+      "externalReferences": ""
+    }
+  },
+  {
+    "scheme": "cyclonedx_example",
+    "scheme_label": "Example CycloneDX SBOM",
+    "id": "cyclonedx_example:pkg:pypi/urllib3@2.2.2",
+    "label": "urllib3",
+    "in_scheme": "http://ufsa.org/v2.1/standards/cyclonedx_example",
+    "notes": {
+      "notation": "2.2.2",
+      "description": "HTTP client",
+      "purl": "pkg:pypi/urllib3@2.2.2",
+      "kind": "software_component",
+      "licenses": "",
+      "hashes": "",
+      "externalReferences": ""
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:users",
+    "label": "users",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "kind": "table"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:users.user_id",
+    "label": "users.user_id",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "data_type": "INTEGER",
+      "kind": "column"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:users.email",
+    "label": "users.email",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "data_type": "VARCHAR(255)",
+      "kind": "column"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:orders",
+    "label": "orders",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "kind": "table"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:orders.order_id",
+    "label": "orders.order_id",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "data_type": "INTEGER",
+      "kind": "column"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:orders.user_id",
+    "label": "orders.user_id",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "data_type": "INTEGER",
+      "kind": "column"
+    }
+  },
+  {
+    "scheme": "internal_dw_schema",
+    "scheme_label": "Internal Data Warehouse Schema",
+    "id": "internal_dw_schema:orders.amount",
+    "label": "orders.amount",
+    "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+    "notes": {
+      "data_type": "DECIMAL(10,2)",
+      "kind": "column"
+    }
+  }
+]

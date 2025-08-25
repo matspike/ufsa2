@@ -1,0 +1,45 @@
+{
+  "id": "iana_mime_audio",
+  "label": "IANA MIME Types (Audio) (Fixture)",
+  "concepts": [
+    {
+      "id": "iana_mime_audio:audio_mpeg",
+      "label": "MP3",
+      "notes": {
+        "notation": "audio/mpeg"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_audio:audio_wav",
+      "label": "WAV",
+      "notes": {
+        "notation": "audio/wav"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_audio:audio_ogg",
+      "label": "OGG",
+      "notes": {
+        "notation": "audio/ogg"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_audio",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

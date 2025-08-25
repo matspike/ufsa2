@@ -1,0 +1,4 @@
+id,label,in_scheme,notes_json
+iana_mime_video:video_mp4,MP4,http://ufsa.org/v2/standards/iana_mime_video,"{""notation"": ""video/mp4""}"
+iana_mime_video:video_webm,WebM,http://ufsa.org/v2/standards/iana_mime_video,"{""notation"": ""video/webm""}"
+iana_mime_video:video_x-msvideo,AVI,http://ufsa.org/v2/standards/iana_mime_video,"{""notation"": ""video/x-msvideo""}"

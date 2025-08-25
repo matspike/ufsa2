@@ -1,0 +1,8 @@
+table_name,column_name,data_type,concept_uri
+users,,,internal_dw_schema:users
+users,user_id,INTEGER,internal_dw_schema:users.user_id
+users,email,VARCHAR(255),internal_dw_schema:users.email
+orders,,,internal_dw_schema:orders
+orders,order_id,INTEGER,internal_dw_schema:orders.order_id
+orders,user_id,INTEGER,internal_dw_schema:orders.user_id
+orders,amount,"DECIMAL(10,2)",internal_dw_schema:orders.amount

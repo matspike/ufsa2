@@ -1,0 +1,8 @@
+id,label,in_scheme,notes_json
+internal_dw_schema:users,users,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""kind"": ""table""}"
+internal_dw_schema:users.user_id,users.user_id,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""data_type"": ""INTEGER"", ""kind"": ""column""}"
+internal_dw_schema:users.email,users.email,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""data_type"": ""VARCHAR(255)"", ""kind"": ""column""}"
+internal_dw_schema:orders,orders,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""kind"": ""table""}"
+internal_dw_schema:orders.order_id,orders.order_id,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""data_type"": ""INTEGER"", ""kind"": ""column""}"
+internal_dw_schema:orders.user_id,orders.user_id,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""data_type"": ""INTEGER"", ""kind"": ""column""}"
+internal_dw_schema:orders.amount,orders.amount,http://ufsa.org/v2.1/standards/internal_dw_schema,"{""data_type"": ""DECIMAL(10,2)"", ""kind"": ""column""}"

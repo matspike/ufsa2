@@ -1,0 +1,71 @@
+{
+  "id": "fhir_r4_medication",
+  "label": "HL7 FHIR R4 Medication Resource (Fixture)",
+  "concepts": [
+    {
+      "id": "fhir_r4_medication:",
+      "label": "FHIR Medication",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_medication:id",
+      "label": "id",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_medication:code",
+      "label": "code",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_medication:status",
+      "label": "status",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_medication:manufacturer",
+      "label": "manufacturer",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_medication",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

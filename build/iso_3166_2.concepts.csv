@@ -1,0 +1,5 @@
+id,label,in_scheme,notes_json
+iso_3166_2:US-CA,California,http://ufsa.org/v2/standards/iso_3166_2,"{""code"": ""US-CA""}"
+iso_3166_2:US-NY,New York,http://ufsa.org/v2/standards/iso_3166_2,"{""code"": ""US-NY""}"
+iso_3166_2:GB-ENG,England,http://ufsa.org/v2/standards/iso_3166_2,"{""code"": ""GB-ENG""}"
+iso_3166_2:JP-13,Tokyo,http://ufsa.org/v2/standards/iso_3166_2,"{""code"": ""JP-13""}"

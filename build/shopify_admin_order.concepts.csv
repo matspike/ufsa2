@@ -1,0 +1,7 @@
+id,label,in_scheme,notes_json
+shopify_admin_order:id,id,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The unique ID of the order.""}"
+shopify_admin_order:createdat,createdAt,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The date and time when the order was created.""}"
+shopify_admin_order:currencycode,currencyCode,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The three-letter code for the currency used.""}"
+shopify_admin_order:totalprice,totalPrice,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The sum of all line items""}"
+shopify_admin_order:customer,customer,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The customer associated with the order.""}"
+shopify_admin_order:shippingaddress,shippingAddress,http://ufsa.org/v2/standards/shopify_admin_order,"{""description"": ""The shipping address for the order.""}"

@@ -1,0 +1,104 @@
+{
+  "id": "internal_dw_schema",
+  "label": "Internal Data Warehouse Schema",
+  "concepts": [
+    {
+      "id": "internal_dw_schema:users",
+      "label": "users",
+      "notes": {
+        "kind": "table"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "internal_dw_schema:users.user_id",
+      "label": "users.user_id",
+      "notes": {
+        "data_type": "INTEGER",
+        "kind": "column"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "internal_dw_schema:users.email",
+      "label": "users.email",
+      "notes": {
+        "data_type": "VARCHAR(255)",
+        "kind": "column"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "internal_dw_schema:orders",
+      "label": "orders",
+      "notes": {
+        "kind": "table"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "internal_dw_schema:orders.order_id",
+      "label": "orders.order_id",
+      "notes": {
+        "data_type": "INTEGER",
+        "kind": "column"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "internal_dw_schema:orders.user_id",
+      "label": "orders.user_id",
+      "notes": {
+        "data_type": "INTEGER",
+        "kind": "column"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": [
+        "internal_dw_schema:users.user_id"
+      ]
+    },
+    {
+      "id": "internal_dw_schema:orders.amount",
+      "label": "orders.amount",
+      "notes": {
+        "data_type": "DECIMAL(10,2)",
+        "kind": "column"
+      },
+      "in_scheme": "http://ufsa.org/v2.1/standards/internal_dw_schema",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

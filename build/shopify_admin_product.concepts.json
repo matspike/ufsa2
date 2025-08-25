@@ -1,0 +1,71 @@
+{
+  "id": "shopify_admin_product",
+  "label": "Shopify Admin GraphQL API Product Object (Fixture)",
+  "concepts": [
+    {
+      "id": "shopify_admin_product:title",
+      "label": "title",
+      "notes": {
+        "description": "The title of the product."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_admin_product:createdat",
+      "label": "createdAt",
+      "notes": {
+        "description": "The date and time when the product was created."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_admin_product:handle",
+      "label": "handle",
+      "notes": {
+        "description": "A unique human-friendly string for the product."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_admin_product:vendor",
+      "label": "vendor",
+      "notes": {
+        "description": "The name of the vendor of the product."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_admin_product:status",
+      "label": "status",
+      "notes": {
+        "description": "The status of the product."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_admin_product",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

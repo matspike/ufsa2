@@ -1,0 +1,110 @@
+{
+  "id": "openfigi_v3",
+  "label": "OpenFIGI API v3 Mapping Response (Fixture)",
+  "concepts": [
+    {
+      "id": "openfigi_v3:figi",
+      "label": "figi",
+      "notes": {
+        "description": "The unique identifier assigned to the instrument."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:name",
+      "label": "name",
+      "notes": {
+        "description": "The instrument name."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:ticker",
+      "label": "ticker",
+      "notes": {
+        "description": "The instrument ticker symbol."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:exchcode",
+      "label": "exchCode",
+      "notes": {
+        "description": "The exchange code where the instrument is traded."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:marketsector",
+      "label": "marketSector",
+      "notes": {
+        "description": "The market sector classification."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:securitytype",
+      "label": "securityType",
+      "notes": {
+        "description": "The instrument's security type."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:compositefigi",
+      "label": "compositeFIGI",
+      "notes": {
+        "description": "The composite FIGI for the instrument across exchanges."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "openfigi_v3:shareclassfigi",
+      "label": "shareClassFIGI",
+      "notes": {
+        "description": "The FIGI for the specific share class of the instrument."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/openfigi_v3",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

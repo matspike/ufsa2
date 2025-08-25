@@ -1,0 +1,4 @@
+id,label,in_scheme,notes_json
+iana_mime_text:text_plain,Plain Text,http://ufsa.org/v2/standards/iana_mime_text,"{""notation"": ""text/plain""}"
+iana_mime_text:text_csv,CSV,http://ufsa.org/v2/standards/iana_mime_text,"{""notation"": ""text/csv""}"
+iana_mime_text:text_html,HTML,http://ufsa.org/v2/standards/iana_mime_text,"{""notation"": ""text/html""}"

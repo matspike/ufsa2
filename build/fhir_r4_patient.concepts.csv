@@ -1,0 +1,11 @@
+id,label,in_scheme,notes_json
+fhir_r4_patient:,Patient,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""object""}"
+fhir_r4_patient:id,id,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""string"", ""description"": ""Logical id of this artifact""}"
+fhir_r4_patient:active,active,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""boolean""}"
+fhir_r4_patient:gender,gender,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""string""}"
+fhir_r4_patient:name,name,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""array""}"
+fhir_r4_patient:name[],name[],http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""object""}"
+fhir_r4_patient:name[].use,use,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""string""}"
+fhir_r4_patient:name[].family,family,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""string""}"
+fhir_r4_patient:name[].given,given,http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""array""}"
+fhir_r4_patient:name[].given[],given[],http://ufsa.org/v2/standards/fhir_r4_patient,"{""type"": ""string""}"

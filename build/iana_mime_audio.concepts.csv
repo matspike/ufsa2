@@ -1,0 +1,4 @@
+id,label,in_scheme,notes_json
+iana_mime_audio:audio_mpeg,MP3,http://ufsa.org/v2/standards/iana_mime_audio,"{""notation"": ""audio/mpeg""}"
+iana_mime_audio:audio_wav,WAV,http://ufsa.org/v2/standards/iana_mime_audio,"{""notation"": ""audio/wav""}"
+iana_mime_audio:audio_ogg,OGG,http://ufsa.org/v2/standards/iana_mime_audio,"{""notation"": ""audio/ogg""}"

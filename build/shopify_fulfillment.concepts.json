@@ -1,0 +1,58 @@
+{
+  "id": "shopify_fulfillment",
+  "label": "Shopify Admin GraphQL API Fulfillment Object (Fixture)",
+  "concepts": [
+    {
+      "id": "shopify_fulfillment:id",
+      "label": "id",
+      "notes": {
+        "description": "The unique ID of the fulfillment."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_fulfillment:status",
+      "label": "status",
+      "notes": {
+        "description": "The status of the fulfillment."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_fulfillment:trackinginfo",
+      "label": "trackingInfo",
+      "notes": {
+        "description": "Tracking information."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_fulfillment:lineitems",
+      "label": "lineItems",
+      "notes": {
+        "description": "The fulfilled line items."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_fulfillment",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

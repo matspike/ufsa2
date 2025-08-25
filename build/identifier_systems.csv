@@ -1,0 +1,5 @@
+id,name,authority,uri,description
+iso-3166-1-a2,ISO 3166-1 Alpha-2 Country Codes,ISO,https://www.iso.org/iso-3166-country-codes.html,Two-letter country code set
+openfigi,OpenFIGI Identifier,OMG / Bloomberg L.P.,https://www.openfigi.com/about/identifiers,Financial Instrument Global Identifier
+isin,ISIN,ISO,https://www.iso.org/standard/74842.html,International Securities Identification Number
+cusip,CUSIP,ANSI / CUSIP Global Services,https://www.cusip.com/,Committee on Uniform Securities Identification Procedures

@@ -1,0 +1,8 @@
+id,label,in_scheme,notes_json
+iso_3166_1_a2:US,United States of America,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""US""}"
+iso_3166_1_a2:GB,United Kingdom,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""GB""}"
+iso_3166_1_a2:AU,Australia,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""AU""}"
+iso_3166_1_a2:DE,Germany,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""DE""}"
+iso_3166_1_a2:BR,Brazil,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""BR""}"
+iso_3166_1_a2:ZA,South Africa,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""ZA""}"
+iso_3166_1_a2:JP,Japan,http://ufsa.org/v2/standards/iso_3166_1_a2,"{""code"": ""JP""}"

@@ -1,0 +1,9 @@
+id,label,in_scheme,notes_json
+openfigi_v3:figi,figi,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The unique identifier assigned to the instrument.""}"
+openfigi_v3:name,name,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The instrument name.""}"
+openfigi_v3:ticker,ticker,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The instrument ticker symbol.""}"
+openfigi_v3:exchcode,exchCode,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The exchange code where the instrument is traded.""}"
+openfigi_v3:marketsector,marketSector,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The market sector classification.""}"
+openfigi_v3:securitytype,securityType,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The instrument's security type.""}"
+openfigi_v3:compositefigi,compositeFIGI,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The composite FIGI for the instrument across exchanges.""}"
+openfigi_v3:shareclassfigi,shareClassFIGI,http://ufsa.org/v2/standards/openfigi_v3,"{""description"": ""The FIGI for the specific share class of the instrument.""}"

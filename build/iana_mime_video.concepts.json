@@ -1,0 +1,45 @@
+{
+  "id": "iana_mime_video",
+  "label": "IANA MIME Types (Video) (Fixture)",
+  "concepts": [
+    {
+      "id": "iana_mime_video:video_mp4",
+      "label": "MP4",
+      "notes": {
+        "notation": "video/mp4"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_video:video_webm",
+      "label": "WebM",
+      "notes": {
+        "notation": "video/webm"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iana_mime_video:video_x-msvideo",
+      "label": "AVI",
+      "notes": {
+        "notation": "video/x-msvideo"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iana_mime_video",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

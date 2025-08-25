@@ -1,0 +1,3 @@
+id,label,in_scheme,notes_json
+cyclonedx_example:pkg:pypi/requests@2.32.3,requests,http://ufsa.org/v2.1/standards/cyclonedx_example,"{""notation"": ""2.32.3"", ""description"": ""Python HTTP for Humans"", ""purl"": ""pkg:pypi/requests@2.32.3"", ""kind"": ""software_component"", ""licenses"": """", ""hashes"": """", ""externalReferences"": """"}"
+cyclonedx_example:pkg:pypi/urllib3@2.2.2,urllib3,http://ufsa.org/v2.1/standards/cyclonedx_example,"{""notation"": ""2.2.2"", ""description"": ""HTTP client"", ""purl"": ""pkg:pypi/urllib3@2.2.2"", ""kind"": ""software_component"", ""licenses"": """", ""hashes"": """", ""externalReferences"": """"}"

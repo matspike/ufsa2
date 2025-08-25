@@ -1,0 +1,58 @@
+{
+  "id": "shopify_inventory_item",
+  "label": "Shopify Admin GraphQL API InventoryItem Object (Fixture)",
+  "concepts": [
+    {
+      "id": "shopify_inventory_item:id",
+      "label": "id",
+      "notes": {
+        "description": "The unique ID of the inventory item."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_inventory_item:sku",
+      "label": "sku",
+      "notes": {
+        "description": "The stock keeping unit."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_inventory_item:tracked",
+      "label": "tracked",
+      "notes": {
+        "description": "Whether the inventory is tracked."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "shopify_inventory_item:countrycodeoforigin",
+      "label": "countryCodeOfOrigin",
+      "notes": {
+        "description": "The country code of origin."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/shopify_inventory_item",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

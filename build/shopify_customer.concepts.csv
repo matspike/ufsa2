@@ -1,0 +1,6 @@
+id,label,in_scheme,notes_json
+shopify_customer:id,id,http://ufsa.org/v2/standards/shopify_customer,"{""description"": ""The unique ID of the customer.""}"
+shopify_customer:email,email,http://ufsa.org/v2/standards/shopify_customer,"{""description"": ""The customer's email address.""}"
+shopify_customer:firstname,firstName,http://ufsa.org/v2/standards/shopify_customer,"{""description"": ""The customer's first name.""}"
+shopify_customer:lastname,lastName,http://ufsa.org/v2/standards/shopify_customer,"{""description"": ""The customer's last name.""}"
+shopify_customer:createdat,createdAt,http://ufsa.org/v2/standards/shopify_customer,"{""description"": ""When the customer was created.""}"

@@ -1,0 +1,9 @@
+id,label,in_scheme,notes_json
+fhir_r4_condition:,FHIR Condition,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"
+fhir_r4_condition:id,id,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""string""}"
+fhir_r4_condition:clinicalStatus,clinicalStatus,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"
+fhir_r4_condition:verificationStatus,verificationStatus,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"
+fhir_r4_condition:category,category,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""array""}"
+fhir_r4_condition:category[],category[],http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"
+fhir_r4_condition:code,code,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"
+fhir_r4_condition:subject,subject,http://ufsa.org/v2/standards/fhir_r4_condition,"{""type"": ""object""}"

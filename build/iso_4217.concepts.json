@@ -1,0 +1,58 @@
+{
+  "id": "iso_4217",
+  "label": "ISO 4217 Currency Codes (Fixture)",
+  "concepts": [
+    {
+      "id": "iso_4217:USD",
+      "label": "US Dollar",
+      "notes": {
+        "code": "USD"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_4217:EUR",
+      "label": "Euro",
+      "notes": {
+        "code": "EUR"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_4217:JPY",
+      "label": "Japanese Yen",
+      "notes": {
+        "code": "JPY"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "iso_4217:GBP",
+      "label": "Pound Sterling",
+      "notes": {
+        "code": "GBP"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/iso_4217",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

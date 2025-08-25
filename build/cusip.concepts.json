@@ -1,0 +1,32 @@
+{
+  "id": "cusip",
+  "label": "CUSIP (Fixture)",
+  "concepts": [
+    {
+      "id": "cusip:03783310",
+      "label": "Apple Inc. CUSIP",
+      "notes": {
+        "code": "03783310"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/cusip",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "cusip:59491810",
+      "label": "Microsoft Corp CUSIP",
+      "notes": {
+        "code": "59491810"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/cusip",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

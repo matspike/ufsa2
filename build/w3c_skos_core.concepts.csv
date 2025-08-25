@@ -1,0 +1,3 @@
+id,label,in_scheme,notes_json
+w3c_skos_core:http://example.org/concept/label,Label,http://www.w3.org/2004/02/skos/core#,{}
+w3c_skos_core:http://example.org/concept/concept,Concept,http://www.w3.org/2004/02/skos/core#,{}

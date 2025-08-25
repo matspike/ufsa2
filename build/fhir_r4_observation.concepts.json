@@ -1,0 +1,179 @@
+{
+  "id": "fhir_r4_observation",
+  "label": "HL7 FHIR R4 Observation Resource (Fixture)",
+  "concepts": [
+    {
+      "id": "fhir_r4_observation:",
+      "label": "Observation",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:resourceType",
+      "label": "resourceType",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:status",
+      "label": "status",
+      "notes": {
+        "type": "string",
+        "description": "The status of the result value."
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code",
+      "label": "code",
+      "notes": {
+        "type": "object",
+        "description": "Type of observation (code / type)",
+        "valueset_hint": "loinc"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code.coding",
+      "label": "coding",
+      "notes": {
+        "type": "array"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code.coding[]",
+      "label": "coding[]",
+      "notes": {
+        "type": "object",
+        "valueset_hint": "loinc"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code.coding[].system",
+      "label": "system",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code.coding[].code",
+      "label": "code",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:code.coding[].display",
+      "label": "display",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:subject",
+      "label": "subject",
+      "notes": {
+        "type": "object"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:subject.reference",
+      "label": "reference",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:effectiveDateTime",
+      "label": "effectiveDateTime",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    },
+    {
+      "id": "fhir_r4_observation:valueString",
+      "label": "valueString",
+      "notes": {
+        "type": "string"
+      },
+      "in_scheme": "http://ufsa.org/v2/standards/fhir_r4_observation",
+      "exact_match": [],
+      "close_match": [],
+      "broad_match": [],
+      "narrow_match": [],
+      "related_match": []
+    }
+  ]
+}

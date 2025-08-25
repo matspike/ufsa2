@@ -1,0 +1,5 @@
+id,label,in_scheme,notes_json
+iso_4217:USD,US Dollar,http://ufsa.org/v2/standards/iso_4217,"{""code"": ""USD""}"
+iso_4217:EUR,Euro,http://ufsa.org/v2/standards/iso_4217,"{""code"": ""EUR""}"
+iso_4217:JPY,Japanese Yen,http://ufsa.org/v2/standards/iso_4217,"{""code"": ""JPY""}"
+iso_4217:GBP,Pound Sterling,http://ufsa.org/v2/standards/iso_4217,"{""code"": ""GBP""}"
