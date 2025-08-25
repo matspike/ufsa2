@@ -1,0 +1,1178 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://matspike.github.io/ufsa2/ref/4_UFSA2.1_SBOM_AST/">
+      
+      
+        <link rel="prev" href="../3_Identifier%20and%20Mapping%20Registries/">
+      
+      
+        <link rel="next" href="../../research/0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>SBOM & AST - UFSA v2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ufsa-v21-implementation-plan-integrating-sbom-and-ast-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UFSA v2" class="md-header__button md-logo" aria-label="UFSA v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UFSA v2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SBOM & AST
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matspike/ufsa2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UFSA v2" class="md-nav__button md-logo" aria-label="UFSA v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UFSA v2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matspike/ufsa2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Target
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_UFSA%20v2.0%20Registry%20and%20Emitter%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registry & Emitters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Profiles%20and%20Overlays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profiles & Overlays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Identifier%20and%20Mapping%20Registries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifier & Mappings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    SBOM & AST
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    SBOM & AST
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundational-enhancements-registry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Foundational Enhancements &amp; Registry Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Foundational Enhancements &amp; Registry Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-new-parser-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Create New Parser Stubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-update-the-pointer-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Update the Pointer Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-create-fixture-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Create Fixture Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-parser-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Parser Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Parser Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-implement-parser_cyclonedxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Implement parser_cyclonedx.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-implement-parser_ast_sqlpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Implement parser_ast_sql.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-emitter-and-output-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Emitter and Output Enhancements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Emitter and Output Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-modify-the-csv-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Modify the CSV Emitter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-update-conceptscsv-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Update concepts.csv Emitter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-integration-with-tracker-and-sealing-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Integration with Tracker and Sealing Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Integration with Tracker and Sealing Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-update-tracker-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Update Tracker Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-update-the-sealing-script-seal_licensepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Update the Sealing Script (SEAL_LICENSE.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-update-distwhitelisttxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Update dist.whitelist.txt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-and-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline and Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Research
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture (full)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../research/1_UFSA%20v2.0%20Registry%20and%20Emitter%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registry & Emitters (full)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundational-enhancements-registry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Foundational Enhancements &amp; Registry Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Foundational Enhancements &amp; Registry Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-new-parser-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Create New Parser Stubs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-update-the-pointer-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Update the Pointer Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-create-fixture-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Create Fixture Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-parser-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Parser Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Parser Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-implement-parser_cyclonedxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Implement parser_cyclonedx.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-implement-parser_ast_sqlpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Implement parser_ast_sql.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-emitter-and-output-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Emitter and Output Enhancements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Emitter and Output Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-modify-the-csv-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Modify the CSV Emitter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-update-conceptscsv-emitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Update concepts.csv Emitter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-integration-with-tracker-and-sealing-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Integration with Tracker and Sealing Script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Integration with Tracker and Sealing Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-update-tracker-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Update Tracker Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-update-the-sealing-script-seal_licensepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Update the Sealing Script (SEAL_LICENSE.py)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-update-distwhitelisttxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Update dist.whitelist.txt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline-and-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline and Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ufsa-v21-implementation-plan-integrating-sbom-and-ast-analysis"><strong>UFSA v2.1 Implementation Plan: Integrating SBOM and AST Analysis</strong></h1>
+<p><strong>Document Purpose:</strong> This document provides a comprehensive plan for extending the UFSA v2 engine to ingest Software Bill of Materials (SBOM) and Abstract Syntax Tree (AST) data as first-class data sources. It details the required architectural additions, parser implementations, emitter enhancements, and the critical final step of integrating these new artifacts into the tracker and license sealing workflows.</p>
+<p><strong>Strategic Goal:</strong> To evolve UFSA v2 from a standards interoperability engine into a holistic governance platform capable of creating a unified semantic map of an organization's formal data standards, software supply chain, and internal database schemas.</p>
+<h2 id="phase-1-foundational-enhancements-registry-updates"><strong>Phase 1: Foundational Enhancements &amp; Registry Updates</strong></h2>
+<p>This phase focuses on preparing the existing architecture to recognize and handle the new data source types.</p>
+<h3 id="11-create-new-parser-stubs"><strong>1.1. Create New Parser Stubs</strong></h3>
+<p>In the ufsa_v2/parsers/ directory, create two new files with boilerplate class definitions inheriting from BaseParser:</p>
+<ul>
+<li>parser_cyclonedx.py: This will handle SBOMs in the CycloneDX JSON format.  </li>
+<li>parser_ast_sql.py: This will handle SQL Data Definition Language (DDL) files.</li>
+</ul>
+<h3 id="12-update-the-pointer-registry"><strong>1.2. Update the Pointer Registry</strong></h3>
+<p>Add new entries to ufsa_v2/registry/pointer_registry.yaml to register the new parsers and point them to fixture files. This makes the engine aware of the new capabilities.</p>
+<p># ... existing entries ...</p>
+<p># New entry for SBOM (CycloneDX)<br />
+- standard_id: cyclonedx_example<br />
+  standard_name: Example CycloneDX SBOM<br />
+  governing_body: OWASP<br />
+  specification_url: "file://data/fixtures/sbom_example.json"<br />
+  data_format: "CycloneDX-JSON"<br />
+  parser_module: "ufsa_v2.parsers.parser_cyclonedx"<br />
+  canonical_concept_scheme_uri: "http://ufsa.org/v2.1/standards/cyclonedx_example"</p>
+<p># New entry for AST (SQL DDL)<br />
+- standard_id: internal_dw_schema<br />
+  standard_name: Internal Data Warehouse Schema<br />
+  governing_body: Internal<br />
+  specification_url: "file://data/fixtures/dw_schema.sql"<br />
+  data_format: "SQL-DDL"<br />
+  parser_module: "ufsa_v2.parsers.parser_ast_sql"<br />
+  canonical_concept_scheme_uri: "http://ufsa.org/v2.1/standards/internal_dw_schema"</p>
+<h3 id="13-create-fixture-files"><strong>1.3. Create Fixture Files</strong></h3>
+<p>In the data/fixtures/ directory, add the two files referenced above:</p>
+<ul>
+<li>sbom_example.json: A valid, simple CycloneDX JSON file containing a few components and dependencies.  </li>
+<li>dw_schema.sql: A simple SQL file with a few CREATE TABLE statements, including primary and foreign keys.</li>
+</ul>
+<h2 id="phase-2-parser-implementation"><strong>Phase 2: Parser Implementation</strong></h2>
+<p>This is the core development phase where the logic for ingesting the new formats is built.</p>
+<h3 id="21-implement-parser_cyclonedxpy"><strong>2.1. Implement parser_cyclonedx.py</strong></h3>
+<p>This parser will transform an SBOM's component list and dependency graph into the UFSA SKOS model.</p>
+<ul>
+<li><strong>Dependencies:</strong> Add cyclonedx-python-lib to the project's dependencies.  </li>
+<li><strong>Logic:</strong>  </li>
+<li>Load the JSON file from the given URL.  </li>
+<li>The SBOM itself will be the skos:ConceptScheme.  </li>
+<li>Iterate through the components array. Each component becomes a skos:Concept.  <ul>
+<li>Use the component's purl (Package URL) as the basis for the concept's URI.  </li>
+<li>component.name -&gt; skos:prefLabel.  </li>
+<li>component.version -&gt; skos:notation.  </li>
+<li>component.description -&gt; skos:definition.  </li>
+</ul>
+</li>
+<li>Iterate through the dependencies graph. For each dependency link (dependsOn), create a skos:related relationship between the corresponding component concepts.</li>
+</ul>
+<h3 id="22-implement-parser_ast_sqlpy"><strong>2.2. Implement parser_ast_sql.py</strong></h3>
+<p>This parser will transform SQL DDL into a structured representation of a database schema.</p>
+<ul>
+<li><strong>Dependencies:</strong> Add sqlglot to the project's dependencies. This is a powerful SQL parser and transpiler.  </li>
+<li><strong>Logic:</strong>  </li>
+<li>Read the content of the .sql file.  </li>
+<li>Use sqlglot.parse() to generate an AST from the SQL text.  </li>
+<li>The database schema (e.g., the filename) will be the skos:ConceptScheme.  </li>
+<li>Traverse the AST to find all CREATE TABLE expressions.  <ul>
+<li>Each table becomes a skos:Concept. (e.g., .../internal_dw_schema#users).  </li>
+</ul>
+</li>
+<li>For each table, iterate through its column definitions.  <ul>
+<li>Each column becomes a skos:Concept that is skos:broader than its parent table concept (e.g., .../internal_dw_schema#users.user_id).  </li>
+<li>The column's data type (e.g., VARCHAR(255)) will be stored as a skos:note.  </li>
+</ul>
+</li>
+<li>Parse FOREIGN KEY constraints to create relationships. A foreign key from orders.user_id to users.user_id becomes a skos:relatedMatch between the two column concepts.</li>
+</ul>
+<h2 id="phase-3-emitter-and-output-enhancements"><strong>Phase 3: Emitter and Output Enhancements</strong></h2>
+<p>The standard output tables are not perfectly suited for this new, specialized data. We will enhance the emitter to produce more specific tables for clarity.</p>
+<h3 id="31-modify-the-csv-emitter"><strong>3.1. Modify the CSV Emitter</strong></h3>
+<p>In ufsa_v2/emitters/csv_emitter.py, add logic to generate two new, optional tables if the relevant data exists in the master graph.</p>
+<ul>
+<li><strong>New Output: software_components.csv</strong>  </li>
+<li><strong>Trigger:</strong> Generate this file if any concepts exist within a ConceptScheme whose URI contains /standards/cyclonedx.  </li>
+<li><strong>Columns:</strong> purl, name, version, description, scheme_uri.  </li>
+<li><strong>Logic:</strong> Use a SPARQL query to select concepts from SBOM schemes and extract their labels, notations, and definitions into this structured format.  </li>
+<li><strong>New Output: database_schemas.csv</strong>  </li>
+<li><strong>Trigger:</strong> Generate this file if any concepts exist within a ConceptScheme whose URI contains /standards/internal_dw.  </li>
+<li><strong>Columns:</strong> table_name, column_name, data_type, concept_uri.  </li>
+<li><strong>Logic:</strong> Use a SPARQL query to select concepts from SQL DDL schemes, parse the parent/child relationships to distinguish tables from columns, and extract the data type from the skos:note.</li>
+</ul>
+<h3 id="32-update-conceptscsv-emitter"><strong>3.2. Update concepts.csv Emitter</strong></h3>
+<p>Modify the query for concepts.csv to <strong>exclude</strong> concepts that have been emitted into the new specialized tables to avoid data duplication.</p>
+<h2 id="phase-4-integration-with-tracker-and-sealing-script"><strong>Phase 4: Integration with Tracker and Sealing Script</strong></h2>
+<p>This final phase ensures the new capabilities are fully integrated into the project's integrity and compliance framework.</p>
+<h3 id="41-update-tracker-configuration"><strong>4.1. Update Tracker Configuration</strong></h3>
+<p>The tracker's logic for discovering files to hash might need to be updated. Ensure that the new output files (software_components.csv, database_schemas.csv) are automatically picked up and added to tracker.json and TRACKER.md when the pipeline runs.</p>
+<h3 id="42-update-the-sealing-script-seal_licensepy"><strong>4.2. Update the Sealing Script (SEAL_LICENSE.py)</strong></h3>
+<p>The sealing script operates on source code files. The new parser modules must be included in its scope.</p>
+<ul>
+<li><strong>Verify Paths:</strong> Check the list of directories that SEAL_LICENSE.py scans. Ensure that ufsa_v2/parsers/ is included so that parser_cyclonedx.py and parser_ast_sql.py are properly sealed with license headers.  </li>
+<li><strong>Run and Verify:</strong> After updating, run make seal. Inspect the LICENSE_HASHES.md report to confirm the new parser files are present and have been correctly processed with initial and sealed hashes.</li>
+</ul>
+<h3 id="43-update-distwhitelisttxt"><strong>4.3. Update dist.whitelist.txt</strong></h3>
+<p>If it exists, this file specifies which files are included in a distributable package. Add the paths to the new parser files to ensure they are included in any sealed archives created by make package-sealed.</p>
+<ul>
+<li>ufsa_v2/parsers/parser_cyclonedx.py  </li>
+<li>ufsa_v2/parsers/parser_ast_sql.py</li>
+</ul>
+<h2 id="timeline-and-next-steps"><strong>Timeline and Next Steps</strong></h2>
+<p>This work can be broken down into a series of tasks, suitable for a sprint-based workflow.</p>
+<ul>
+<li><strong>Task 1 (1-2 days):</strong> Implement Phase 1. Set up the foundational stubs, registry entries, and fixture files.  </li>
+<li><strong>Task 2 (3-5 days):</strong> Implement Phase 2. Build and test the CycloneDX and SQL AST parsers. This is the most complex part of the plan.  </li>
+<li><strong>Task 3 (2-3 days):</strong> Implement Phase 3. Enhance the CSV emitter to generate the new, specialized tables.  </li>
+<li><strong>Task 4 (1 day):</strong> Implement Phase 4. Integrate the new source and output files with the tracker and sealing script. Run make pipeline, make seal, and make package-verify to confirm end-to-end success.  </li>
+<li><strong>Task 5 (Ongoing):</strong> Update project documentation (README.md) to reflect the new capabilities.</li>
+</ul>
+<p>By following this plan, the agent can systematically extend UFSA v2, adding significant new value while maintaining the project's core principles of declarative configuration, robustness, and verifiable integrity.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+        <script src="../../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

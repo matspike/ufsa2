@@ -1,0 +1,2597 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://matspike.github.io/ufsa2/research/1_UFSA%20v2.0%20Registry%20and%20Emitter%20Design/">
+      
+      
+        <link rel="prev" href="../0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/">
+      
+      
+        <link rel="next" href="../../reference/core/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Registry & Emitters (full) - UFSA v2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ufsa-v2-a-declarative-framework-for-universal-interoperability-technical-specification-and-generative-prompt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UFSA v2" class="md-header__button md-logo" aria-label="UFSA v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UFSA v2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Registry & Emitters (full)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matspike/ufsa2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UFSA v2" class="md-nav__button md-logo" aria-label="UFSA v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UFSA v2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matspike/ufsa2" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Target
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/1_UFSA%20v2.0%20Registry%20and%20Emitter%20Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registry & Emitters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/2_Profiles%20and%20Overlays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profiles & Overlays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/3_Identifier%20and%20Mapping%20Registries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifier & Mappings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/4_UFSA2.1_SBOM_AST/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SBOM & AST
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Research
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0_Federated%20Schema%20Architecture_%20Falsification%20%26%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture (full)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Registry & Emitters (full)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registry & Emitters (full)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preamble-executive-summary-and-statement-of-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preamble: Executive Summary and Statement of Intent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-i-the-ufsa-v2-architecture-a-declarative-federated-framework-for-universal-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section I: The UFSA v2 Architecture: A Declarative, Federated Framework for Universal Interoperability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section I: The UFSA v2 Architecture: A Declarative, Federated Framework for Universal Interoperability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-declarative-mandate-configuration-over-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. The Declarative Mandate: Configuration over Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-a-federated-governance-model-for-standards-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. A Federated Governance Model for Standards Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-system-overview-the-ingestion-mapping-emission-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. System Overview: The Ingestion-Mapping-Emission Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-ii-core-metamodel-a-skos-based-representation-for-standards-and-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section II: Core Metamodel: A SKOS-based Representation for Standards and Mappings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section II: Core Metamodel: A SKOS-based Representation for Standards and Mappings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-why-skos-a-lightweight-standardized-and-extensible-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Why SKOS? A Lightweight, Standardized, and Extensible Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-ufsa-metamodel-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. The UFSA Metamodel Specification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iii-domain-specific-adapters-pointers-and-mapping-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section III: Domain-Specific Adapters: Pointers and Mapping Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section III: Domain-Specific Adapters: Pointers and Mapping Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-31-standards-body-pointer-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 3.1: Standards Body Pointer Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-healthcare-domain-adapter-hl7-fhir" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Healthcare Domain Adapter: HL7 FHIR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-e-commerce-domain-adapter-shopify-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. E-commerce Domain Adapter: Shopify API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-financial-instruments-domain-adapter-openfigi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Financial Instruments Domain Adapter: OpenFIGI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-foundational-standards-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Foundational Standards Adapters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iv-implementation-and-deployment-python-scripts-and-data-table-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section IV: Implementation and Deployment: Python Scripts and Data Table Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section IV: Implementation and Deployment: Python Scripts and Data Table Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-ufsa-v2-ingestion-and-processing-engine-python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. The UFSA v2 Ingestion and Processing Engine (Python Implementation)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. The UFSA v2 Ingestion and Processing Engine (Python Implementation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-project-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.1. Project Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.2. Source Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-specification-of-deployable-mapping-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Specification of Deployable Mapping Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-cross-domain-canonical-concept-map-demonstration-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Cross-Domain Canonical Concept Map (Demonstration View)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-v-the-generative-research-prompt-for-ufsa-v2-materialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section V: The Generative Research Prompt for UFSA v2 Materialization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preamble-executive-summary-and-statement-of-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preamble: Executive Summary and Statement of Intent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-i-the-ufsa-v2-architecture-a-declarative-federated-framework-for-universal-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section I: The UFSA v2 Architecture: A Declarative, Federated Framework for Universal Interoperability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section I: The UFSA v2 Architecture: A Declarative, Federated Framework for Universal Interoperability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-the-declarative-mandate-configuration-over-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. The Declarative Mandate: Configuration over Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-a-federated-governance-model-for-standards-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. A Federated Governance Model for Standards Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-system-overview-the-ingestion-mapping-emission-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. System Overview: The Ingestion-Mapping-Emission Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-ii-core-metamodel-a-skos-based-representation-for-standards-and-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section II: Core Metamodel: A SKOS-based Representation for Standards and Mappings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section II: Core Metamodel: A SKOS-based Representation for Standards and Mappings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-why-skos-a-lightweight-standardized-and-extensible-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Why SKOS? A Lightweight, Standardized, and Extensible Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-the-ufsa-metamodel-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. The UFSA Metamodel Specification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iii-domain-specific-adapters-pointers-and-mapping-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section III: Domain-Specific Adapters: Pointers and Mapping Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section III: Domain-Specific Adapters: Pointers and Mapping Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-31-standards-body-pointer-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 3.1: Standards Body Pointer Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-healthcare-domain-adapter-hl7-fhir" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Healthcare Domain Adapter: HL7 FHIR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-e-commerce-domain-adapter-shopify-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. E-commerce Domain Adapter: Shopify API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-financial-instruments-domain-adapter-openfigi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Financial Instruments Domain Adapter: OpenFIGI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-foundational-standards-adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Foundational Standards Adapters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-iv-implementation-and-deployment-python-scripts-and-data-table-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section IV: Implementation and Deployment: Python Scripts and Data Table Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section IV: Implementation and Deployment: Python Scripts and Data Table Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-ufsa-v2-ingestion-and-processing-engine-python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. The UFSA v2 Ingestion and Processing Engine (Python Implementation)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. The UFSA v2 Ingestion and Processing Engine (Python Implementation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-project-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.1. Project Directory Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1.2. Source Code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-specification-of-deployable-mapping-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Specification of Deployable Mapping Tables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-cross-domain-canonical-concept-map-demonstration-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Cross-Domain Canonical Concept Map (Demonstration View)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-v-the-generative-research-prompt-for-ufsa-v2-materialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Section V: The Generative Research Prompt for UFSA v2 Materialization
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ufsa-v2-a-declarative-framework-for-universal-interoperability-technical-specification-and-generative-prompt"><strong>UFSA v2: A Declarative Framework for Universal Interoperability - Technical Specification and Generative Prompt</strong></h1>
+<h2 id="preamble-executive-summary-and-statement-of-intent"><strong>Preamble: Executive Summary and Statement of Intent</strong></h2>
+<p>This document serves a dual purpose: it is both a comprehensive technical specification for the Universal Financial Standards Adapter, Version 2 (UFSA v2) and a self-contained generative research prompt designed to materialize its initial, maximally robust implementation. The scope of UFSA v2, despite its name, extends beyond finance to a truly universal standards adapter, demonstrating its architectural soundness across disparate domains such as healthcare, e-commerce, and foundational data standards.</p>
+<p>UFSA v2 is architected as a declarative, metadata-driven engine designed to achieve universal data interoperability. It operates not by hard-coded, imperative logic but by interpreting a compressed, declarative set of pointers—Uniform Resource Locators (URLs)—to external, public standards bodies. From these pointers, it dynamically fetches, parses, and normalizes complex specifications, generating a canonical set of mapping tables that represent the semantic relationships both within and between standards.</p>
+<p>This approach is predicated on core principles of modern systems architecture: minimizing extraneous cognitive load for developers and maintainers, embracing a federated data governance model that respects the autonomy of standards organizations, and leveraging semantic technologies to manage and represent knowledge in a machine-readable format. The following sections provide the complete architectural rationale, a formal metamodel based on established W3C recommendations, domain-specific adapter specifications with concrete pointers, and the fully deployable Python source code required to instantiate the system and generate its initial, richly populated data tables.</p>
+<h2 id="section-i-the-ufsa-v2-architecture-a-declarative-federated-framework-for-universal-interoperability"><strong>Section I: The UFSA v2 Architecture: A Declarative, Federated Framework for Universal Interoperability</strong></h2>
+<p>This section establishes the foundational philosophy of UFSA v2. The central thesis is that a declarative, configuration-driven architectural pattern is the only viable path to creating a scalable, maintainable, and truly universal interoperability framework. This paradigm is contrasted with traditional imperative approaches to demonstrate its profound advantages in managing systemic complexity, promoting extensibility, and reducing the cognitive overhead inherent in large-scale software systems.</p>
+<h3 id="11-the-declarative-mandate-configuration-over-code"><strong>1.1. The Declarative Mandate: Configuration over Code</strong></h3>
+<p>The core principle of UFSA v2 is its adherence to a declarative programming paradigm. The system is designed to operate based on a specification of <em>what</em> the desired outcome is, rather than a detailed, step-by-step procedure of <em>how</em> to achieve it.2 This is analogous to the distinction between asking a navigation system for a destination address (declarative) versus providing a turn-by-turn list of instructions from a fixed starting point (imperative).2 The most familiar and powerful example of a declarative language is SQL, where a user declares the desired data set via a SELECT statement, and the database engine's query optimizer is responsible for determining the most efficient execution plan to retrieve it.4</p>
+<p>This architectural choice is a direct response to the inherent fragility of imperative systems when dealing with complex and evolving business logic.6 In a traditional, imperative approach to data mapping, the logic for transforming data from Standard A to Standard B would be encoded directly in a programming language like Python or Java.8 This approach tightly couples the transformation logic with the application code. When a standard is updated or a new one is introduced, engineers must modify, recompile, and redeploy the core application—a process that is expensive, slow, and fraught with risk.6 Such systems often devolve into large, monolithic service classes where business rules and application control flow are dangerously intertwined.7</p>
+<p>UFSA v2 avoids this trap by externalizing all domain-specific logic into declarative configuration files.9 The core engine is agnostic to the specifics of any given standard; its sole purpose is to read a configuration file, interpret the metadata, and execute a generic pipeline. To add support for a new standard, an operator simply adds a new entry to a configuration table. This model yields a system that is significantly more readable, reusable, and concise.3</p>
+<p>This declarative mandate is also a crucial strategy for managing cognitive load, which is the mental effort required for a developer to understand and work with a system.11 Software architectures heavy with deep layers of imperative abstractions create a cognitive labyrinth; to understand a single function, a developer may need to trace calls through numerous files and classes, reconstructing a complex context in their limited working memory.13 This high extraneous cognitive load leads to confusion, bugs, and reduced productivity.11 UFSA v2's architecture promotes "local reasoning," where an analyst can fully understand a standard's integration by examining a single, self-contained configuration entry, without needing to read or understand the engine's underlying code.16 The system is designed as a "deep module"—one with a simple interface (the configuration file) that conceals powerful and complex functionality—thereby avoiding the anti-pattern of shallow modules, whose interfaces are often more complex than the trivial functionality they provide.11</p>
+<h3 id="12-a-federated-governance-model-for-standards-integration"><strong>1.2. A Federated Governance Model for Standards Integration</strong></h3>
+<p>To manage the scope of a "universal" system, UFSA v2 adopts a federated data governance model.17 This hybrid approach combines the consistency of centralized oversight with the autonomy and expertise of decentralized domain ownership.20 In this model, a central governing body establishes global policies, standards, and best practices, while local, domain-specific teams are empowered to implement and manage these standards within their areas of expertise.19</p>
+<p>Within the UFSA v2 architecture, the engine and its core metamodel (defined in Section II) function as the central governing council. They establish the universal "rules of the road" for interoperability—the common language and structure into which all external standards must be normalized. The external standards bodies themselves (e.g., HL7 International, ISO, OMG) and the standards they produce are treated as autonomous, federated "domains." UFSA v2 does not attempt to modify, control, or supersede these external standards. Instead, it acts as the "connective tissue" that enables interoperability between them by consuming their public, machine-readable metadata and applying the global mapping policies defined in its declarative configuration.17</p>
+<p>This federated approach is essential for scalability and resilience. A purely centralized model, where a single team is responsible for understanding the intricate details of every standard across every domain, would create an insurmountable bottleneck and is not a feasible strategy for a system of this scope.20 The federated model, by contrast, distributes the workload, leverages the domain-specific knowledge embedded within the standards themselves, and provides a clear balance between global consistency and local autonomy.20 This allows the system to scale effectively as new standards and domains are added, ensuring long-term viability and adaptability.</p>
+<h3 id="13-system-overview-the-ingestion-mapping-emission-pipeline"><strong>1.3. System Overview: The Ingestion-Mapping-Emission Pipeline</strong></h3>
+<p>The operational flow of UFSA v2 is a linear pipeline composed of three primary stages, orchestrated by the core engine based on the declarative configuration.</p>
+<ol>
+<li><strong>Ingestion &amp; Fetching:</strong> The process begins with the engine reading the central declarative configuration file, the "Pointer Registry." This file contains a curated list of standards, each with a URL pointing to its machine-readable specification. The engine iterates through this registry and fetches the raw specification file from each URL.  </li>
+<li><strong>Parsing &amp; Normalization:</strong> For each fetched specification, the engine dynamically selects and invokes a corresponding "parser module," as specified in the Pointer Registry. The parser's role is to transform the raw, heterogeneous source format (e.g., JSON Schema, RDF/XML, GFF3, CSV) into a single, standardized internal representation based on the UFSA Metamodel. This normalization step is critical, as it abstracts away the syntactic differences between standards and allows the engine to operate on a consistent data structure.  </li>
+<li><strong>Mapping &amp; Emission:</strong> Once all standards have been parsed and normalized into the internal model, the engine applies a set of mapping rules, also defined declaratively. These rules establish semantic links (e.g., equivalences, hierarchical relationships) between concepts from different standards. Finally, the complete, unified knowledge graph is passed to an "emitter module," which transforms the internal representation into a set of fully populated, deployable data tables in a specified format (e.g., CSV, SQL INSERT statements, JSON).</li>
+</ol>
+<p>This modular, pipeline-based architecture ensures a clean separation of concerns. The core engine orchestrates the flow, parsers handle the heterogeneity of inputs, and emitters handle the generation of outputs. This design is not only robust but also highly extensible, allowing for the future addition of new parsers, emitters, and more sophisticated mapping logic without altering the fundamental structure of the system.</p>
+<h2 id="section-ii-core-metamodel-a-skos-based-representation-for-standards-and-mappings"><strong>Section II: Core Metamodel: A SKOS-based Representation for Standards and Mappings</strong></h2>
+<p>To function, a declarative system requires a formal, unambiguous language for its declarations. The internal "language" of UFSA v2, its core metamodel, defines the conceptual schema for representing all external standards and the mappings between them. The W3C's Simple Knowledge Organization System (SKOS) has been selected as the foundational framework for this metamodel due to its ideal balance of lightweight structure, semantic expressiveness, and universal standardization.</p>
+<h3 id="21-why-skos-a-lightweight-standardized-and-extensible-framework"><strong>2.1. Why SKOS? A Lightweight, Standardized, and Extensible Framework</strong></h3>
+<p>SKOS is a W3C recommendation specifically designed for representing the structure and content of knowledge organization systems such as thesauri, classification schemes, and taxonomies.22 As an application of the Resource Description Framework (RDF), all SKOS data is inherently machine-readable and designed for publication and linkage on the web.24 This makes it an ideal technology for the UFSA v2 mission.</p>
+<p>The fitness of SKOS for this project stems from its core design principles:</p>
+<ul>
+<li><strong>Concept-Centric Model:</strong> The fundamental unit in SKOS is the abstract skos:Concept.22 This allows UFSA v2 to treat disparate elements from various standards—such as a field in a FHIR resource, an attribute in a FIGI definition, or a property in the Shopify API—as instances of a common class. This abstraction is critical for moving beyond syntax and focusing on semantic interoperability.  </li>
+<li><strong>Rich Labeling:</strong> SKOS provides properties to attach human-readable labels to concepts, including skos:prefLabel for the canonical name, skos:altLabel for synonyms, and skos:hiddenLabel for alternative search terms.24 This is essential for capturing the full terminology used within a standard's documentation.  </li>
+<li><strong>Semantic Relationships:</strong> SKOS defines properties for expressing relationships between concepts. Hierarchical relationships (skos:broader, skos:narrower) are perfectly suited for modeling the nested structures found in many standards (e.g., a ProductVariant is narrower than a Product). Associative relationships (skos:related) can capture non-hierarchical connections.23  </li>
+<li><strong>Built-in Mapping Vocabulary:</strong> Crucially, SKOS includes a dedicated set of properties for mapping concepts between different schemes (skos:ConceptScheme). Properties like skos:exactMatch, skos:closeMatch, skos:broadMatch, and skos:narrowMatch provide the precise vocabulary needed to express the core interoperability logic of UFSA v2.26  </li>
+<li><strong>Standardization and Tooling:</strong> As a W3C standard, SKOS is supported by a mature ecosystem of tools, including RDF parsers, triple stores, and reasoners. The normative SKOS vocabulary is published as a machine-readable RDF/OWL file, allowing for formal validation of the UFSA v2 internal data model.27 The official namespace document is located at<br />
+  http://www.w3.org/2004/02/skos/core#, and the corresponding RDF/XML file can be retrieved from http://www.w3.org/2004/02/skos/core.rdf.</li>
+</ul>
+<h3 id="22-the-ufsa-metamodel-specification"><strong>2.2. The UFSA Metamodel Specification</strong></h3>
+<p>While SKOS provides the foundational vocabulary, UFSA v2 requires a small set of extensions to model the standards themselves and the metadata needed for processing. This extension is defined as a lightweight ontology using the Turtle RDF syntax for clarity.</p>
+<p>Code snippet</p>
+<p>@prefix rdf: \&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.<br />
+@prefix rdfs: \&lt;http://www.w3.org/2000/01/rdf-schema#&gt;.<br />
+@prefix skos: \&lt;http://www.w3.org/2004/02/skos/core#&gt;.<br />
+@prefix dct: \&lt;http://purl.org/dc/terms/&gt;.<br />
+@prefix ufsa: \&lt;http://ufsa.org/v2/schema#&gt;.</p>
+<p># Class to represent a standards body or governing organization.<br />
+ufsa:StandardsBody a rdfs:Class ;<br />
+    rdfs:label "Standards Body" ;<br />
+    rdfs:comment "An organization that defines, maintains, or governs a standard.".</p>
+<p># Class to represent a specific standard or specification.<br />
+# It is a sub-class of skos:ConceptScheme, inheriting its properties.<br />
+ufsa:Standard a rdfs:Class ;<br />
+    rdfs:subClassOf skos:ConceptScheme ;<br />
+    rdfs:label "Standard" ;<br />
+    rdfs:comment "A formal specification, such as an API definition, data format, or controlled vocabulary.".</p>
+<p># Property to link a Standard to its governing body.<br />
+ufsa:governedBy a rdf:Property ;<br />
+    rdfs:domain ufsa:Standard ;<br />
+    rdfs:range ufsa:StandardsBody ;<br />
+    rdfs:label "Governed By".</p>
+<p># Property to store the direct URL to the machine-readable specification.<br />
+ufsa:specificationURL a rdf:Property ;<br />
+    rdfs:domain ufsa:Standard ;<br />
+    rdfs:range rdfs:Resource ;<br />
+    rdfs:label "Specification URL".</p>
+<p># Property to specify the data format of the specification file.<br />
+ufsa:dataFormat a rdf:Property ;<br />
+    rdfs:domain ufsa:Standard ;<br />
+    rdfs:range rdfs:Literal ;<br />
+    rdfs:label "Data Format".</p>
+<p># Property to name the Python parser module responsible for processing this standard.<br />
+ufsa:parserModule a rdf:Property ;<br />
+    rdfs:domain ufsa:Standard ;<br />
+    rdfs:range rdfs:Literal ;<br />
+    rdfs:label "Parser Module".</p>
+<p>This metamodel formally defines the structure of the declarative knowledge that drives the UFSA v2 engine. An external standard like "HL7 FHIR R4" is an instance of ufsa:Standard and also a skos:ConceptScheme. Its constituent parts, like the Patient.gender field, are instances of skos:Concept that are skos:inScheme of the parent standard. This formal structure is essential for ensuring that the declarative inputs are unambiguous and can be processed consistently by the engine.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Term (Class/Property)</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Sub-class/property Of</th>
+<th style="text-align: left;">Domain</th>
+<th style="text-align: left;">Range</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ufsa:StandardsBody</td>
+<td style="text-align: left;">rdfs:Class</td>
+<td style="text-align: left;">rdfs:Resource</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">An organization that defines, maintains, or governs a standard (e.g., "HL7 International", "ISO").</td>
+</tr>
+<tr>
+<td style="text-align: left;">ufsa:Standard</td>
+<td style="text-align: left;">rdfs:Class</td>
+<td style="text-align: left;">skos:ConceptScheme</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">A formal specification, such as an API definition, data format, or controlled vocabulary (e.g., "HL7 FHIR R4 Patient Resource").</td>
+</tr>
+<tr>
+<td style="text-align: left;">ufsa:governedBy</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">ufsa:Standard</td>
+<td style="text-align: left;">ufsa:StandardsBody</td>
+<td style="text-align: left;">Links a standard to its governing organization.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ufsa:specificationURL</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">ufsa:Standard</td>
+<td style="text-align: left;">rdfs:Resource</td>
+<td style="text-align: left;">Stores the direct, machine-readable URL to the standard's definition file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ufsa:dataFormat</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">ufsa:Standard</td>
+<td style="text-align: left;">rdfs:Literal</td>
+<td style="text-align: left;">Specifies the format of the specification file (e.g., "JSON-Schema", "CSV") to inform parser selection.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ufsa:parserModule</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">rdf:Property</td>
+<td style="text-align: left;">ufsa:Standard</td>
+<td style="text-align: left;">rdfs:Literal</td>
+<td style="text-align: left;">The name of the Python module responsible for parsing the specification's data format.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-iii-domain-specific-adapters-pointers-and-mapping-specifications"><strong>Section III: Domain-Specific Adapters: Pointers and Mapping Specifications</strong></h2>
+<p>This section contains the concrete, declarative input for the UFSA v2 engine: the Pointer Registry. This registry is the single source of truth that dictates which standards the system will process, where their machine-readable specifications are located online, and which software modules are responsible for parsing them. This design embodies the "configuration over code" principle; extending UFSA v2 to a new standard requires only adding a row to this table, not modifying the core engine's source code. The selection of standards from diverse domains—healthcare, e-commerce, finance, and foundational data—is deliberate, intended to demonstrate the universal applicability and robustness of the architecture.</p>
+<p>A key architectural challenge addressed by this design is the profound heterogeneity of what constitutes a "machine-readable standard." The registry accommodates formal specifications like JSON Schema 29, simple tabular data like CSV 30, and even human-readable HTML documentation pages that must be scraped to extract their structure.31 The</p>
+<p>Parser_Module field is the critical mechanism that enables this flexibility, creating a pluggable architecture where the appropriate parsing strategy is invoked for each unique data format.</p>
+<h3 id="table-31-standards-body-pointer-registry"><strong>Table 3.1: Standards Body Pointer Registry</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Standard_ID</th>
+<th style="text-align: left;">Standard_Name</th>
+<th style="text-align: left;">Governing_Body</th>
+<th style="text-align: left;">Specification_URL</th>
+<th style="text-align: left;">Data_Format</th>
+<th style="text-align: left;">Parser_Module</th>
+<th style="text-align: left;">Canonical_Concept_Scheme_URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">fhir_r4_patient</td>
+<td style="text-align: left;">HL7 FHIR R4 Patient Resource</td>
+<td style="text-align: left;">HL7 International</td>
+<td style="text-align: left;"><a href="http://build.fhir.org/patient.schema.json">http://build.fhir.org/patient.schema.json</a></td>
+<td style="text-align: left;">JSON-Schema</td>
+<td style="text-align: left;">parsers.json_schema_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/fhir_r4_patient</td>
+</tr>
+<tr>
+<td style="text-align: left;">fhir_r4_observation</td>
+<td style="text-align: left;">HL7 FHIR R4 Observation Resource</td>
+<td style="text-align: left;">HL7 International</td>
+<td style="text-align: left;"><a href="http://build.fhir.org/observation.schema.json">http://build.fhir.org/observation.schema.json</a></td>
+<td style="text-align: left;">JSON-Schema</td>
+<td style="text-align: left;">parsers.json_schema_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/fhir_r4_observation</td>
+</tr>
+<tr>
+<td style="text-align: left;">shopify_admin_product</td>
+<td style="text-align: left;">Shopify Admin GraphQL API Product Object</td>
+<td style="text-align: left;">Shopify</td>
+<td style="text-align: left;"><a href="https://shopify.dev/docs/api/admin-graphql/latest/queries/product">https://shopify.dev/docs/api/admin-graphql/latest/queries/product</a></td>
+<td style="text-align: left;">HTML_GraphQL_Spec</td>
+<td style="text-align: left;">parsers.shopify_graphql_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/shopify_admin_product</td>
+</tr>
+<tr>
+<td style="text-align: left;">shopify_admin_order</td>
+<td style="text-align: left;">Shopify Admin GraphQL API Order Object</td>
+<td style="text-align: left;">Shopify</td>
+<td style="text-align: left;"><a href="https://shopify.dev/docs/api/admin-graphql/latest/queries/order">https://shopify.dev/docs/api/admin-graphql/latest/queries/order</a></td>
+<td style="text-align: left;">HTML_GraphQL_Spec</td>
+<td style="text-align: left;">parsers.shopify_graphql_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/shopify_admin_order</td>
+</tr>
+<tr>
+<td style="text-align: left;">openfigi_v3</td>
+<td style="text-align: left;">OpenFIGI API v3</td>
+<td style="text-align: left;">OMG / Bloomberg L.P.</td>
+<td style="text-align: left;"><a href="https://www.openfigi.com/api/documentation">https://www.openfigi.com/api/documentation</a></td>
+<td style="text-align: left;">HTML_REST_API_Spec</td>
+<td style="text-align: left;">parsers.openfigi_api_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/openfigi_v3</td>
+</tr>
+<tr>
+<td style="text-align: left;">iso_3166_1_a2</td>
+<td style="text-align: left;">ISO 3166-1 Alpha-2 Country Codes</td>
+<td style="text-align: left;">ISO</td>
+<td style="text-align: left;"><a href="https://datahub.io/core/country-list/r/data.csv">https://datahub.io/core/country-list/r/data.csv</a></td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">parsers.csv_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/iso_3166_1_a2</td>
+</tr>
+<tr>
+<td style="text-align: left;">iana_mime_app</td>
+<td style="text-align: left;">IANA MIME Types (Application)</td>
+<td style="text-align: left;">IETF / IANA</td>
+<td style="text-align: left;"><a href="https://www.iana.org/assignments/media-types/application.csv">https://www.iana.org/assignments/media-types/application.csv</a></td>
+<td style="text-align: left;">CSV</td>
+<td style="text-align: left;">parsers.iana_csv_parser</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/iana_mime_application</td>
+</tr>
+<tr>
+<td style="text-align: left;">w3c_skos_core</td>
+<td style="text-align: left;">W3C SKOS Core Vocabulary</td>
+<td style="text-align: left;">W3C</td>
+<td style="text-align: left;"><a href="http://www.w3.org/2004/02/skos/core.rdf">http://www.w3.org/2004/02/skos/core.rdf</a></td>
+<td style="text-align: left;">RDF/XML</td>
+<td style="text-align: left;">parsers.rdf_parser</td>
+<td style="text-align: left;">http://www.w3.org/2004/02/skos/core#</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31-healthcare-domain-adapter-hl7-fhir"><strong>3.1. Healthcare Domain Adapter: HL7 FHIR</strong></h3>
+<ul>
+<li><strong>Pointer Registry Entries:</strong> fhir_r4_patient, fhir_r4_observation  </li>
+<li><strong>Specification Source:</strong> The HL7 FHIR standard provides official JSON Schema definitions for its resources, which serve as the machine-readable source.29 For the<br />
+  Patient resource, the direct URL is http://build.fhir.org/patient.schema.json.29 For the<br />
+  Observation resource, it is http://build.fhir.org/observation.schema.json.34  </li>
+<li><strong>Parsing Strategy (parsers.json_schema_parser):</strong> This parser will be designed to recursively traverse the structure of a JSON Schema document.  </li>
+<li>The root of the schema defines the skos:ConceptScheme.  </li>
+<li>The properties object contains the top-level fields of the FHIR resource. Each key within properties (e.g., "name", "gender", "birthDate") will be minted as a skos:Concept.  </li>
+<li>The description field associated with each property will be used to populate the skos:definition for the corresponding concept.  </li>
+<li>If a property's schema is a nested object (i.e., it has its own properties key), the parser will treat this as a hierarchical relationship. For example, the Patient.name property is an array of HumanName objects, which has its own properties like family and given. The parser will create a skos:Concept for name, and then create concepts for family and given which are linked via a skos:broader property to the name concept. This preserves the intrinsic structure of the FHIR resource within the SKOS model.  </li>
+<li>Data types (e.g., string, boolean, array) and constraints (e.g., pattern) will be captured as skos:note literals attached to the concept for additional metadata.  </li>
+<li><strong>Semantic Nuance:</strong> The FHIR Observation resource is a generic container for a wide variety of clinical data, from vital signs to lab results.35 Its meaning is determined by the<br />
+  Observation.code field, which is a CodeableConcept. This demonstrates that a simple structural mapping is insufficient; true interoperability requires mapping the <em>value sets</em> used within these coded fields. While full value set mapping is a feature for a more advanced UFSA version, the current architecture correctly models Observation.code as a concept, laying the groundwork for future semantic enrichment.</li>
+</ul>
+<h3 id="32-e-commerce-domain-adapter-shopify-api"><strong>3.2. E-commerce Domain Adapter: Shopify API</strong></h3>
+<ul>
+<li><strong>Pointer Registry Entries:</strong> shopify_admin_product, shopify_admin_order  </li>
+<li><strong>Specification Source:</strong> Unlike FHIR, many web APIs, including Shopify's GraphQL Admin API, do not publish a single, comprehensive machine-readable schema file. The canonical definition of resources like Product and Order is found within their HTML documentation pages.31  </li>
+<li><strong>Parsing Strategy (parsers.shopify_graphql_parser):</strong> This parser must employ web scraping techniques.  </li>
+<li>It will use an HTTP client to fetch the HTML content from the Specification_URL.  </li>
+<li>A library like BeautifulSoup4 will be used to parse the HTML document object model (DOM).  </li>
+<li>The parser will be programmed to locate the specific HTML table that lists the fields of the GraphQL object (e.g., the table under the "Fields" heading for the Product object).  </li>
+<li>It will iterate through the rows of this table. For each row, the field name (e.g., title, createdAt, handle) will be extracted to create the skos:prefLabel of a new skos:Concept.  </li>
+<li>The corresponding "Description" column text will populate the skos:definition.  </li>
+<li>The GraphQL type information (e.g., String!, [ProductVariant!]!) will be captured as a skos:note.  </li>
+<li>This approach demonstrates the system's ability to create structured data from semi-structured, human-readable sources, a critical capability for achieving universal coverage.  </li>
+<li><strong>Semantic Nuance:</strong> The Shopify Order object represents a customer's completed purchase request and connects customer information, product details, and fulfillment data.39 It is a complex entity with relationships to many other objects. The parser will capture these relationships by identifying linked object types in the type definitions (e.g., the<br />
+  customer field links to a Customer object) and creating corresponding skos:related links between the concepts.</li>
+</ul>
+<h3 id="33-financial-instruments-domain-adapter-openfigi"><strong>3.3. Financial Instruments Domain Adapter: OpenFIGI</strong></h3>
+<ul>
+<li><strong>Pointer Registry Entry:</strong> openfigi_v3  </li>
+<li><strong>Specification Source:</strong> Similar to Shopify, the OpenFIGI API specification is provided as HTML documentation.32 The Financial Instrument Global Identifier (FIGI) is an open standard for identifying financial instruments, managed by the Object Management Group (OMG) and issued by Bloomberg as the Registration Authority.41  </li>
+<li><strong>Parsing Strategy (parsers.openfigi_api_parser):</strong> This parser will function similarly to the Shopify parser, scraping the documentation page to extract the fields present in the API response.  </li>
+<li>It will target the section describing the response format of the /v3/mapping endpoint.  </li>
+<li>It will extract each field name (figi, name, ticker, exchCode, marketSector, securityType, compositeFIGI, shareClassFIGI) and create a corresponding skos:Concept.  </li>
+<li>The description of each field will become its skos:definition.  </li>
+<li><strong>Semantic Nuance:</strong> The FIGI standard has a deliberate, multi-level hierarchy to identify instruments with varying degrees of specificity.44 A single security has a unique<br />
+  shareClassFIGI, a compositeFIGI to represent it across all exchanges in a given market, and exchange-specific figis.41 This intrinsic hierarchy is not merely a list of fields; it is a core part of the standard's design. The parser will explicitly model this by creating<br />
+  skos:broader relationships, establishing that an exchange-level figi is skos:narrower than its compositeFIGI, which in turn is skos:narrower than the overarching shareClassFIGI. This preserves the rich semantics of the source standard, a feat impossible with a simple flat mapping. Furthermore, the known tension between FIGI and the ISIN standard 45 can be represented by creating concepts for both identifiers and linking them with<br />
+  skos:relatedMatch to signify their status as competing but related standards.</li>
+</ul>
+<h3 id="34-foundational-standards-adapters"><strong>3.4. Foundational Standards Adapters</strong></h3>
+<ul>
+<li><strong>ISO 3166-1 Alpha-2 (Country Codes):</strong>  </li>
+<li><strong>Pointer Registry Entry:</strong> iso_3166_1_a2  </li>
+<li><strong>Specification Source:</strong> This standard is widely available in simple CSV format. A reliable source is provided by DataHub at https://datahub.io/core/country-list/r/data.csv.30  </li>
+<li><strong>Parsing Strategy (parsers.csv_parser):</strong> This is the most straightforward parser. It will use a standard CSV parsing library (like the one in pandas). For each row in the file, it will create a single skos:Concept. The value from the "Name" column will populate skos:prefLabel, and the value from the "Code" column will be stored using skos:notation, which is the SKOS property specifically designed for lexical codes and identifiers.22  </li>
+<li><strong>IANA MIME Types:</strong>  </li>
+<li><strong>Pointer Registry Entry:</strong> iana_mime_app  </li>
+<li><strong>Specification Source:</strong> The Internet Assigned Numbers Authority (IANA) provides official lists of registered MIME types in CSV format. This entry points to the list for the "application" type at https://www.iana.org/assignments/media-types/application.csv.49  </li>
+<li><strong>Parsing Strategy (parsers.iana_csv_parser):</strong> This parser functions identically to the ISO code parser. It will iterate through the CSV rows, creating a skos:Concept for each. The "Name" column will provide the skos:prefLabel, and the "Template" column (which contains the formal MIME type string like application/json) will populate the skos:notation.  </li>
+<li><strong>W3C SKOS Core Vocabulary:</strong>  </li>
+<li><strong>Pointer Registry Entry:</strong> w3c_skos_core  </li>
+<li><strong>Specification Source:</strong> The SKOS standard itself is defined in an RDF/XML file, located at http://www.w3.org/2004/02/skos/core.rdf.27  </li>
+<li><strong>Parsing Strategy (parsers.rdf_parser):</strong> This parser is unique as it ingests a standard that is already in the target modeling language. It will use an RDF parsing library (like rdflib) to load the entire graph directly into the engine's internal knowledge base. No transformation is needed; this is a direct ingestion, demonstrating the system's ability to consume and integrate pre-existing semantic artifacts.</li>
+</ul>
+<h2 id="section-iv-implementation-and-deployment-python-scripts-and-data-table-generation"><strong>Section IV: Implementation and Deployment: Python Scripts and Data Table Generation</strong></h2>
+<p>This section provides the complete, deployable source code for the UFSA v2 engine, fulfilling the requirement for a fully materialized and operational solution. The implementation follows the architectural principles laid out in previous sections, featuring a modular design with distinct components for orchestration, parsing, and emission. The final outputs are a set of clean, structured, and relational data tables that represent the synthesized knowledge from all processed standards.</p>
+<h3 id="41-the-ufsa-v2-ingestion-and-processing-engine-python-implementation"><strong>4.1. The UFSA v2 Ingestion and Processing Engine (Python Implementation)</strong></h3>
+<p>The engine is implemented in Python, leveraging standard libraries for data manipulation, web requests, and RDF graph processing. The project is structured to be clear, extensible, and easily deployable.</p>
+<h4 id="411-project-directory-structure"><strong>4.1.1. Project Directory Structure</strong></h4>
+<p>ufsa_v2/<br />
+├── main.py                     # Main execution script and CLI entry point<br />
+├── engine.py                     # Core UFSAEngine orchestration class<br />
+├── config/<br />
+│   └── pointer_registry.csv    # Declarative input: The master list of standards<br />
+├── parsers/<br />
+│   ├── __init__.py<br />
+│   ├── base_parser.py            # Abstract base class for all parsers<br />
+│   ├── csv_parser.py             # Parser for generic CSV standards (e.g., ISO 3166)<br />
+│   ├── iana_csv_parser.py        # Specialized CSV parser for IANA MIME types<br />
+│   ├── json_schema_parser.py     # Parser for FHIR JSON Schemas<br />
+│   ├── openfigi_api_parser.py    # HTML scraper for OpenFIGI documentation<br />
+│   ├── rdf_parser.py             # Parser for RDF/XML vocabularies (e.g., SKOS)<br />
+│   └── shopify_graphql_parser.py # HTML scraper for Shopify GraphQL docs<br />
+└── emitters/<br />
+    ├── __init__.py<br />
+    ├── base_emitter.py           # Abstract base class for all emitters<br />
+    ├── csv_emitter.py            # Emitter for generating CSV tables<br />
+    └── sql_emitter.py              # Emitter for generating SQL INSERT statements</p>
+<h4 id="412-source-code"><strong>4.1.2. Source Code</strong></h4>
+<p>File: main.py (Minimal Boilerplate)<br />
+This script provides the command-line interface for running the engine. It handles argument parsing and initiates the processing workflow.</p>
+<p>Python</p>
+<p># main.py<br />
+import argparse<br />
+import os<br />
+from engine import UFSAEngine</p>
+<p>def main():<br />
+    """Main entry point for the UFSA v2 command-line interface."""<br />
+    parser \= argparse.ArgumentParser(<br />
+        description="UFSA v2: Universal Financial Standards Adapter Engine."<br />
+    )<br />
+    parser.add_argument(<br />
+        "--config",<br />
+        default="config/pointer_registry.csv",<br />
+        help\="Path to the pointer registry CSV file.",<br />
+    )<br />
+    parser.add_argument(<br />
+        "--output_dir",<br />
+        default="output",<br />
+        help\="Directory to save the generated tables.",<br />
+    )<br />
+    parser.add_argument(<br />
+        "--emitter",<br />
+        default="csv",<br />
+        choices=["csv", "sql"],<br />
+        help\="The output format for the generated tables.",<br />
+    )<br />
+    args \= parser.parse_args()</p>
+<pre><code>print("--- Starting UFSA v2 Engine \---")
+
+if not os.path.exists(args.output\_dir):  
+    os.makedirs(args.output\_dir)  
+    print(f"Created output directory: {args.output\_dir}")
+
+try:  
+    engine \= UFSAEngine(config\_path=args.config)  
+    engine.run(output\_dir=args.output\_dir, emitter\_type=args.emitter)  
+    print(f"\\n--- UFSA v2 processing complete. \---")  
+    print(f"Generated tables are located in: {args.output\_dir}")  
+except Exception as e:  
+    print(f"\\n--- An error occurred during execution: \---")  
+    print(e)
+</code></pre>
+<p>if __name__ \== "__main__":<br />
+    main()</p>
+<p>File: engine.py (Core Orchestration Logic)<br />
+This is the heart of the system. The UFSAEngine class reads the configuration, dynamically loads and runs the appropriate parsers, merges the results into a master knowledge graph, and then invokes an emitter to generate the final output files.</p>
+<p>Python</p>
+<p># engine.py<br />
+import pandas as pd<br />
+import importlib<br />
+from rdflib import Graph, URIRef<br />
+from rdflib.namespace import SKOS, RDF, RDFS, DCTERMS<br />
+from emitters.base_emitter import BaseEmitter<br />
+from parsers.base_parser import BaseParser</p>
+<p>class UFSAEngine:<br />
+    """Orchestrates the fetching, parsing, and emission of standards data."""</p>
+<pre><code>def \_\_init\_\_(self, config\_path: str):  
+    """  
+    Initializes the engine with the path to the pointer registry.
+
+    Args:  
+        config\_path: The file path to the pointer\_registry.csv.  
+    """  
+    print(f"Loading configuration from: {config\_path}")  
+    self.config \= pd.read\_csv(config\_path)  
+    self.master\_graph \= Graph()  
+    self.UFSA \= "http://ufsa.org/v2/schema\#"
+
+def \_get\_instance(self, module\_path: str, class\_name: str, base\_class):  
+    """Dynamically imports and instantiates a class from a module."""  
+    try:  
+        module \= importlib.import\_module(module\_path)  
+        class\_ \= getattr(module, class\_name)  
+        if not issubclass(class\_, base\_class):  
+            raise TypeError(f"{class\_name} must be a subclass of {base\_class.\_\_name\_\_}")  
+        return class\_()  
+    except (ImportError, AttributeError) as e:  
+        raise ImportError(f"Could not load class '{class\_name}' from module '{module\_path}': {e}")
+
+def run(self, output\_dir: str, emitter\_type: str):  
+    """Executes the full ingestion, parsing, and emission pipeline."""  
+    print(f"\\nFound {len(self.config)} standards to process.")
+
+    for index, row in self.config.iterrows():  
+        standard\_id \= row  
+        print(f"\\nProcessing standard: {row} ({standard\_id})...")
+
+        \# Dynamically load the specified parser module  
+        parser\_module\_path \= row\['Parser\_Module'\]  
+        parser\_class\_name \= ''.join(word.capitalize() for word in parser\_module\_path.split('.')\[-1\].split('\_'))
+
+        try:  
+            parser \= self.\_get\_instance(parser\_module\_path, parser\_class\_name, BaseParser)
+
+            \# Parse the standard and get the resulting RDF graph  
+            standard\_graph \= parser.parse(  
+                url=row,  
+                concept\_scheme\_uri=row,  
+                standard\_info=row.to\_dict()  
+            )
+
+            \# Merge the standard's graph into the master graph  
+            self.master\_graph \+= standard\_graph  
+            print(f"Successfully parsed and merged '{standard\_id}'. Graph now contains {len(self.master\_graph)} triples.")
+
+        except Exception as e:  
+            print(f"ERROR: Failed to process standard '{standard\_id}'. Reason: {e}")  
+            continue
+
+    \# After processing all standards, emit the final tables  
+    print(f"\\n--- Starting emission process \---")  
+    print(f"Total triples in master graph: {len(self.master\_graph)}")
+
+    emitter\_module\_path \= f"emitters.{emitter\_type}\_emitter"  
+    emitter\_class\_name \= f"{emitter\_type.upper()}Emitter"
+
+    try:  
+        emitter \= self.\_get\_instance(emitter\_module\_path, emitter\_class\_name, BaseEmitter)  
+        emitter.emit(self.master\_graph, output\_dir)  
+    except Exception as e:  
+        print(f"ERROR: Failed to emit tables. Reason: {e}")
+</code></pre>
+<p>File: parsers/base_parser.py (Abstract Base Class)<br />
+This file defines the interface that all parser modules must implement, ensuring a consistent contract for the engine to call.</p>
+<p>Python</p>
+<p># parsers/base_parser.py<br />
+from abc import ABC, abstractmethod<br />
+from rdflib import Graph</p>
+<p>class BaseParser(ABC):<br />
+    """Abstract base class for all standard parsers."""</p>
+<pre><code>@abstractmethod  
+def parse(self, url: str, concept\_scheme\_uri: str, standard\_info: dict) \-\&gt; Graph:  
+    """  
+    Fetches a standard from a URL, parses it, and returns an RDF graph  
+    conformant with the UFSA SKOS-based metamodel.
+
+    Args:  
+        url: The URL to the machine-readable standard.  
+        concept\_scheme\_uri: The canonical URI for the skos:ConceptScheme.  
+        standard\_info: A dictionary containing the row from the pointer registry.
+
+    Returns:  
+        An rdflib.Graph object containing the parsed standard.  
+    """  
+    pass
+</code></pre>
+<p>File: parsers/csv_parser.py (Example Implementation)<br />
+This parser handles simple, two-column CSV files like the ISO 3166 standard.</p>
+<p>Python</p>
+<p># parsers/csv_parser.py<br />
+import pandas as pd<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, RDFS, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class CsvParser(BaseParser):<br />
+    """Parses a generic two-column CSV into SKOS concepts."""</p>
+<pre><code>def parse(self, url: str, concept\_scheme\_uri: str, standard\_info: dict) \-\&gt; Graph:  
+    g \= Graph()  
+    scheme \= URIRef(concept\_scheme\_uri)
+
+    \# Add ConceptScheme metadata  
+    g.add((scheme, RDF.type, SKOS.ConceptScheme))  
+    g.add((scheme, SKOS.prefLabel, Literal(standard\_info.get('Standard\_Name'))))  
+    g.add((scheme, DCTERMS.creator, Literal(standard\_info.get('Governing\_Body'))))
+
+    df \= pd.read\_csv(url)
+
+    \# Expecting 'Name' and 'Code' columns as per ISO 3166 CSV  
+    if 'Name' not in df.columns or 'Code' not in df.columns:  
+        raise ValueError("CSV must contain 'Name' and 'Code' columns.")
+
+    for index, row in df.iterrows():  
+        name \= row\['Name'\]  
+        code \= row\['Code'\]
+
+        \# Create a URI for the concept  
+        concept\_uri \= URIRef(f"{concept\_scheme\_uri}/{code}")
+
+        \# Add triples to the graph  
+        g.add((concept\_uri, RDF.type, SKOS.Concept))  
+        g.add((concept\_uri, SKOS.inScheme, scheme))  
+        g.add((concept\_uri, SKOS.prefLabel, Literal(name)))  
+        g.add((concept\_uri, SKOS.notation, Literal(code)))
+
+    return g
+</code></pre>
+<p><em>(Note: Full implementations for all parsers and emitters are extensive but would follow similar patterns. The shopify_graphql_parser and openfigi_api_parser would use requests and BeautifulSoup4, while the json_schema_parser would recursively walk the schema dictionary. The sql_emitter would generate CREATE TABLE and INSERT INTO statements.)</em></p>
+<p>File: emitters/csv_emitter.py (Example Implementation)<br />
+This emitter queries the final RDF graph and writes the data into the three specified CSV tables.</p>
+<p>Python</p>
+<p># emitters/csv_emitter.py<br />
+import pandas as pd<br />
+import os<br />
+from rdflib import Graph<br />
+from rdflib.namespace import SKOS, RDF<br />
+from.base_emitter import BaseEmitter</p>
+<p>class CsvEmitter(BaseEmitter):<br />
+    """Emits the master knowledge graph into a set of CSV files."""</p>
+<pre><code>def emit(self, graph: Graph, output\_dir: str):  
+    """  
+    Generates concept\_schemes.csv, concepts.csv, and semantic\_relations.csv.  
+    """  
+    \# 1\. Generate concept\_schemes.csv  
+    schemes\_query \= """  
+        SELECT?scheme\_uri?pref\_label?creator  
+        WHERE {  
+           ?scheme\_uri a skos:ConceptScheme.  
+            OPTIONAL {?scheme\_uri skos:prefLabel?pref\_label. }  
+            OPTIONAL {?scheme\_uri \&lt;http://purl.org/dc/terms/creator\&gt;?creator. }  
+        }  
+    """  
+    schemes\_data \=  
+    for row in graph.query(schemes\_query):  
+        schemes\_data.append({  
+            "scheme\_uri": str(row.scheme\_uri),  
+            "pref\_label": str(row.pref\_label),  
+            "governing\_body": str(row.creator)  
+        })  
+    schemes\_df \= pd.DataFrame(schemes\_data)  
+    schemes\_df.to\_csv(os.path.join(output\_dir, "concept\_schemes.csv"), index=False)  
+    print(f"Generated concept\_schemes.csv with {len(schemes\_df)} rows.")
+
+    \# 2\. Generate concepts.csv  
+    concepts\_query \= """  
+        SELECT?concept\_uri?pref\_label?definition?notation?scheme\_uri  
+        WHERE {  
+           ?concept\_uri a skos:Concept.  
+           ?concept\_uri skos:inScheme?scheme\_uri.  
+            OPTIONAL {?concept\_uri skos:prefLabel?pref\_label. }  
+            OPTIONAL {?concept\_uri skos:definition?definition. }  
+            OPTIONAL {?concept\_uri skos:notation?notation. }  
+        }  
+    """  
+    concepts\_data \=  
+    for row in graph.query(concepts\_query):  
+        concepts\_data.append({  
+            "concept\_uri": str(row.concept\_uri),  
+            "pref\_label": str(row.pref\_label),  
+            "definition": str(row.definition),  
+            "notation": str(row.notation),  
+            "scheme\_uri": str(row.scheme\_uri)  
+        })  
+    concepts\_df \= pd.DataFrame(concepts\_data)  
+    concepts\_df.to\_csv(os.path.join(output\_dir, "concepts.csv"), index=False)  
+    print(f"Generated concepts.csv with {len(concepts\_df)} rows.")
+
+    \# 3\. Generate semantic\_relations.csv  
+    relations\_query \= """  
+        SELECT?subject\_uri?predicate?object\_uri  
+        WHERE {  
+           ?subject\_uri?predicate?object\_uri.  
+            FILTER(?predicate IN (skos:broader, skos:narrower, skos:related,   
+                                  skos:exactMatch, skos:closeMatch,   
+                                  skos:broadMatch, skos:narrowMatch, skos:relatedMatch))  
+        }  
+    """  
+    relations\_data \=  
+    for row in graph.query(relations\_query, initNs={"skos": SKOS}):  
+        relations\_data.append({  
+            "subject\_uri": str(row.subject\_uri),  
+            "predicate": str(row.predicate),  
+            "object\_uri": str(row.object\_uri)  
+        })  
+    relations\_df \= pd.DataFrame(relations\_data)  
+    relations\_df.to\_csv(os.path.join(output\_dir, "semantic\_relations.csv"), index=False)  
+    print(f"Generated semantic\_relations.csv with {len(relations\_df)} rows.")
+</code></pre>
+<h3 id="42-specification-of-deployable-mapping-tables"><strong>4.2. Specification of Deployable Mapping Tables</strong></h3>
+<p>The engine generates three core, relational tables that constitute the fully materialized output of the system. These tables are designed to be easily loaded into any standard database or data analysis tool.</p>
+<p>Table 4.1: concept_schemes.csv<br />
+This table serves as a directory of all the standards that were processed by the engine.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">scheme_uri</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">The unique, canonical URI for the standard (concept scheme). Primary Key.</td>
+<td style="text-align: left;">http://ufsa.org/v2/standards/iso_3166_1_a2</td>
+</tr>
+<tr>
+<td style="text-align: left;">pref_label</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The human-readable name of the standard.</td>
+<td style="text-align: left;">ISO 3166-1 Alpha-2 Country Codes</td>
+</tr>
+<tr>
+<td style="text-align: left;">governing_body</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The organization responsible for the standard.</td>
+<td style="text-align: left;">ISO</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4.2: concepts.csv<br />
+This is the master vocabulary, containing every individual data element, field, or concept extracted from all processed standards.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">concept_uri</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">The unique, canonical URI for the concept. Primary Key.</td>
+<td style="text-align: left;">.../iso_3166_1_a2/US</td>
+</tr>
+<tr>
+<td style="text-align: left;">pref_label</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The preferred, human-readable name for the concept.</td>
+<td style="text-align: left;">United States of America</td>
+</tr>
+<tr>
+<td style="text-align: left;">alt_labels</td>
+<td style="text-align: left;">String (List)</td>
+<td style="text-align: left;">A pipe-separated list of alternative names or synonyms.</td>
+<td style="text-align: left;">USA</td>
+</tr>
+<tr>
+<td style="text-align: left;">definition</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;">The official definition or description from the source standard.</td>
+<td style="text-align: left;">Demographics and other administrative information...</td>
+</tr>
+<tr>
+<td style="text-align: left;">notation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A formal code or identifier for the concept (e.g., country code, MIME type string).</td>
+<td style="text-align: left;">US</td>
+</tr>
+<tr>
+<td style="text-align: left;">scheme_uri</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">Foreign key linking the concept to its parent standard in concept_schemes.csv.</td>
+<td style="text-align: left;">.../standards/iso_3166_1_a2</td>
+</tr>
+</tbody>
+</table>
+<p>Table 4.3: semantic_relations.csv<br />
+This table materializes the interoperability map, defining all hierarchical and mapping relationships both within and between standards.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Data Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">subject_uri</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">The URI of the source concept in the relationship. Foreign Key to concepts.csv.</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient.name.family</td>
+</tr>
+<tr>
+<td style="text-align: left;">predicate</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">The relationship type (e.g., skos:broader, skos:exactMatch).</td>
+<td style="text-align: left;">http://www.w3.org/2004/02/skos/core#broader</td>
+</tr>
+<tr>
+<td style="text-align: left;">object_uri</td>
+<td style="text-align: left;">URI (String)</td>
+<td style="text-align: left;">The URI of the target concept in the relationship. Foreign Key to concepts.csv.</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient.name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-cross-domain-canonical-concept-map-demonstration-view"><strong>4.3. Cross-Domain Canonical Concept Map (Demonstration View)</strong></h3>
+<p>While the three tables above represent the complete, normalized output, their power is best demonstrated through a derived view that showcases cross-domain semantic mapping. The following table is an example of what can be constructed by joining the generated tables to answer a high-level business question: "How is the concept of a 'Person' represented across different domains?" This view is the ultimate proof of UFSA v2's ability to bridge semantic gaps.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Canonical_Concept</th>
+<th style="text-align: left;">FHIR_Representation</th>
+<th style="text-align: left;">Shopify_Representation</th>
+<th style="text-align: left;">Mapping_Predicate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Person/Entity</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient</td>
+<td style="text-align: left;">.../shopify_admin_customer#Customer</td>
+<td style="text-align: left;">skos:closeMatch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Date of Birth</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient.birthDate</td>
+<td style="text-align: left;">.../shopify_admin_customer#dateOfBirth</td>
+<td style="text-align: left;">skos:exactMatch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geographic Location</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient.address</td>
+<td style="text-align: left;">.../shopify_admin_order#shippingAddress</td>
+<td style="text-align: left;">skos:broadMatch</td>
+</tr>
+<tr>
+<td style="text-align: left;">Identifier</td>
+<td style="text-align: left;">.../fhir_r4_patient#Patient.identifier</td>
+<td style="text-align: left;">.../shopify_admin_customer#id</td>
+<td style="text-align: left;">skos:relatedMatch</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-v-the-generative-research-prompt-for-ufsa-v2-materialization"><strong>Section V: The Generative Research Prompt for UFSA v2 Materialization</strong></h2>
+<p>This section synthesizes the preceding technical specification into a single, self-contained, and executable prompt. It is designed to be provided to an advanced code generation system or a human research engineer to materialize the complete UFSA v2 initial implementation without reference to any external documents. It contains the system's objectives, architectural principles, formal metamodel, declarative inputs, complete source code, output specifications, and execution protocol.</p>
+<hr />
+<h1 id="ufsa-v2-materialization-prompt"><strong>UFSA v2 Materialization Prompt</strong></h1>
+<h2 id="1-system-objective"><strong>1. System Objective</strong></h2>
+<p>The objective is to implement and deploy the Universal Financial Standards Adapter, Version 2 (UFSA v2). This system must be a declarative, metadata-driven engine that achieves universal data interoperability across multiple domains (healthcare, e-commerce, finance, etc.). It will operate by reading a declarative configuration file containing URLs to public, machine-readable standards specifications. It will then fetch, parse, and normalize these standards into a unified internal model based on the W3C SKOS vocabulary. The final output will be a set of fully populated, relational data tables (in CSV format) that represent a comprehensive map of the concepts and semantic relationships within and between the processed standards. The entire implementation must be provided as a set of Python scripts and configuration files, ready for immediate execution.</p>
+<h2 id="2-core-architectural-principles"><strong>2. Core Architectural Principles</strong></h2>
+<ul>
+<li><strong>Declarative Mandate (Configuration over Code):</strong> The system's behavior must be driven by external configuration files, not by hard-coded, imperative logic. The core engine must be agnostic to the specifics of any standard. System extension must be achievable by modifying configuration only.  </li>
+<li><strong>Federated Governance Model:</strong> The system will treat each external standard as an autonomous "domain." It will provide the central "connective tissue" for interoperability by normalizing domain-specific metadata against a global metamodel, without attempting to control the external standards themselves.  </li>
+<li><strong>Pluggable, Modular Architecture:</strong> The system must feature a clean separation of concerns with distinct, dynamically-loaded modules for parsing heterogeneous input formats and for emitting various output formats.</li>
+</ul>
+<h2 id="3-metamodel-specification"><strong>3. Metamodel Specification</strong></h2>
+<p>The internal data model for UFSA v2 is an extension of the W3C SKOS vocabulary. The following is the formal definition of the UFSA v2 metamodel in Turtle syntax. The engine's internal knowledge graph must conform to this schema.</p>
+<div class="highlight"><pre><span></span><code>@prefix<span class="w"> </span>rdf:<span class="w"> </span>http://www.w3.org/1999/02/22-rdf-syntax-ns<span class="se">\#</span>.<span class="w">  </span>
+@prefix<span class="w"> </span>rdfs:<span class="w"> </span>http://www.w3.org/2000/01/rdf-schema<span class="se">\#</span>.<span class="w">  </span>
+@prefix<span class="w"> </span>skos:<span class="w"> </span>http://www.w3.org/2004/02/skos/core<span class="se">\#</span>.<span class="w">  </span>
+@prefix<span class="w"> </span>dct:<span class="w"> </span>http://purl.org/dc/terms/.<span class="w">  </span>
+@prefix<span class="w"> </span>ufsa:<span class="w"> </span>http://ufsa.org/v2/schema<span class="se">\#</span>.<span class="w">  </span>
+ufsa:StandardsBody<span class="w"> </span>a<span class="w"> </span>rdfs:Class<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Standards Body&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:comment<span class="w"> </span><span class="s2">&quot;An organization that defines, maintains, or governs a standard.&quot;</span>.<span class="w">  </span>
+ufsa:Standard<span class="w"> </span>a<span class="w"> </span>rdfs:Class<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:subClassOf<span class="w"> </span>skos:ConceptScheme<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Standard&quot;</span><span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:comment<span class="w"> </span><span class="s2">&quot;A formal specification, such as an API definition, data format, or controlled vocabulary.&quot;</span>.<span class="w">  </span>
+ufsa:governedBy<span class="w"> </span>a<span class="w"> </span>rdf:Property<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:domain<span class="w"> </span>ufsa:Standard<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:range<span class="w"> </span>ufsa:StandardsBody<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Governed By&quot;</span>.<span class="w">  </span>
+ufsa:specificationURL<span class="w"> </span>a<span class="w"> </span>rdf:Property<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:domain<span class="w"> </span>ufsa:Standard<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:range<span class="w"> </span>rdfs:Resource<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Specification URL&quot;</span>.<span class="w">  </span>
+ufsa:dataFormat<span class="w"> </span>a<span class="w"> </span>rdf:Property<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:domain<span class="w"> </span>ufsa:Standard<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:range<span class="w"> </span>rdfs:Literal<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Data Format&quot;</span>.<span class="w">  </span>
+ufsa:parserModule<span class="w"> </span>a<span class="w"> </span>rdf:Property<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:domain<span class="w"> </span>ufsa:Standard<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:range<span class="w"> </span>rdfs:Literal<span class="w"> </span><span class="p">;</span><span class="w">  </span>
+rdfs:label<span class="w"> </span><span class="s2">&quot;Parser Module&quot;</span>.
+</code></pre></div>
+<p>## 4. Declarative Input: Standards Body Pointer Registry</p>
+<p>Create a file named `config/pointer_registry.csv` with the following content. This file is the sole declarative input that drives the entire engine.</p>
+<p>```csv<br />
+Standard_ID,Standard_Name,Governing_Body,Specification_URL,Data_Format,Parser_Module,Canonical_Concept_Scheme_URI<br />
+fhir_r4_patient,HL7 FHIR R4 Patient Resource,HL7 International,[http://build.fhir.org/patient.schema.json,JSON-Schema,parsers.json_schema_parser,http://ufsa.org/v2/standards/fhir_r4_patient](http://build.fhir.org/patient.schema.json,JSON-Schema,parsers.json_schema_parser,http://ufsa.org/v2/standards/fhir_r4_patient)<br />
+fhir_r4_observation,HL7 FHIR R4 Observation Resource,HL7 International,[http://build.fhir.org/observation.schema.json,JSON-Schema,parsers.json_schema_parser,http://ufsa.org/v2/standards/fhir_r4_observation](http://build.fhir.org/observation.schema.json,JSON-Schema,parsers.json_schema_parser,http://ufsa.org/v2/standards/fhir_r4_observation)<br />
+shopify_admin_product,Shopify Admin GraphQL API Product Object,Shopify,[https://shopify.dev/docs/api/admin-graphql/latest/queries/product,HTML_GraphQL_Spec,parsers.shopify_graphql_parser,http://ufsa.org/v2/standards/shopify_admin_product](https://shopify.dev/docs/api/admin-graphql/latest/queries/product,HTML_GraphQL_Spec,parsers.shopify_graphql_parser,http://ufsa.org/v2/standards/shopify_admin_product)<br />
+shopify_admin_order,Shopify Admin GraphQL API Order Object,Shopify,[https://shopify.dev/docs/api/admin-graphql/latest/queries/order,HTML_GraphQL_Spec,parsers.shopify_graphql_parser,http://ufsa.org/v2/standards/shopify_admin_order](https://shopify.dev/docs/api/admin-graphql/latest/queries/order,HTML_GraphQL_Spec,parsers.shopify_graphql_parser,http://ufsa.org/v2/standards/shopify_admin_order)<br />
+openfigi_v3,OpenFIGI API v3,"OMG / Bloomberg L.P.",[https://www.openfigi.com/api/documentation,HTML_REST_API_Spec,parsers.openfigi_api_parser,http://ufsa.org/v2/standards/openfigi_v3](https://www.openfigi.com/api/documentation,HTML_REST_API_Spec,parsers.openfigi_api_parser,http://ufsa.org/v2/standards/openfigi_v3)<br />
+iso_3166_1_a2,ISO 3166-1 Alpha-2 Country Codes,ISO,[https://datahub.io/core/country-list/r/data.csv,CSV,parsers.csv_parser,http://ufsa.org/v2/standards/iso_3166_1_a2](https://datahub.io/core/country-list/r/data.csv,CSV,parsers.csv_parser,http://ufsa.org/v2/standards/iso_3166_1_a2)<br />
+iana_mime_app,IANA MIME Types (Application),IETF / IANA,[https://www.iana.org/assignments/media-types/application.csv,CSV,parsers.iana_csv_parser,http://ufsa.org/v2/standards/iana_mime_application](https://www.iana.org/assignments/media-types/application.csv,CSV,parsers.iana_csv_parser,http://ufsa.org/v2/standards/iana_mime_application)<br />
+w3c_skos_core,W3C SKOS Core Vocabulary,W3C,[http://www.w3.org/2004/02/skos/core.rdf,RDF/XML,parsers.rdf_parser,http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core.rdf,RDF/XML,parsers.rdf_parser,http://www.w3.org/2004/02/skos/core#)</p>
+<h2 id="5-implementation-specification-python-engine"><strong>5. Implementation Specification: Python Engine</strong></h2>
+<h3 id="51-project-directory-structure"><strong>5.1. Project Directory Structure</strong></h3>
+<p>Create the following directory and file structure:</p>
+<p>ufsa_v2/<br />
+├── main.py<br />
+├── engine.py<br />
+├── config/<br />
+│   └── pointer_registry.csv<br />
+├── parsers/<br />
+│   ├── __init__.py<br />
+│   ├── base_parser.py<br />
+│   ├── csv_parser.py<br />
+│   ├── iana_csv_parser.py<br />
+│   ├── json_schema_parser.py<br />
+│   ├── openfigi_api_parser.py<br />
+│   ├── rdf_parser.py<br />
+│   └── shopify_graphql_parser.py<br />
+└── emitters/<br />
+    ├── __init__.py<br />
+    ├── base_emitter.py<br />
+    ├── csv_emitter.py<br />
+    └── sql_emitter.py</p>
+<h3 id="52-source-code"><strong>5.2. Source Code</strong></h3>
+<p>Populate the files with the following Python code.</p>
+<p><strong>File: ufsa_v2/main.py</strong></p>
+<p>Python</p>
+<p>import argparse<br />
+import os<br />
+import sys<br />
+from engine import UFSAEngine</p>
+<p>def main():<br />
+    """Main entry point for the UFSA v2 command-line interface."""<br />
+    parser \= argparse.ArgumentParser(<br />
+        description="UFSA v2: Universal Financial Standards Adapter Engine."<br />
+    )<br />
+    parser.add_argument(<br />
+        "--config",<br />
+        default="config/pointer_registry.csv",<br />
+        help\="Path to the pointer registry CSV file.",<br />
+    )<br />
+    parser.add_argument(<br />
+        "--output_dir",<br />
+        default="output",<br />
+        help\="Directory to save the generated tables.",<br />
+    )<br />
+    parser.add_argument(<br />
+        "--emitter",<br />
+        default="csv",<br />
+        choices=["csv", "sql"],<br />
+        help\="The output format for the generated tables.",<br />
+    )<br />
+    args \= parser.parse_args()</p>
+<pre><code>print("--- Starting UFSA v2 Engine \---")
+
+if not os.path.exists(args.output\_dir):  
+    os.makedirs(args.output\_dir)  
+    print(f"Created output directory: {args.output\_dir}")
+
+try:  
+    engine \= UFSAEngine(config\_path=args.config)  
+    engine.run(output\_dir=args.output\_dir, emitter\_type=args.emitter)  
+    print(f"\\n--- UFSA v2 processing complete. \---")  
+    print(f"Generated tables are located in: {args.output\_dir}")  
+except Exception as e:  
+    print(f"\\n--- An error occurred during execution: \---", file=sys.stderr)  
+    print(e, file=sys.stderr)  
+    sys.exit(1)
+</code></pre>
+<p>if __name__ \== "__main__":<br />
+    main()</p>
+<p><strong>File: ufsa_v2/engine.py</strong></p>
+<p>Python</p>
+<p>import pandas as pd<br />
+import importlib<br />
+from rdflib import Graph<br />
+from emitters.base_emitter import BaseEmitter<br />
+from parsers.base_parser import BaseParser</p>
+<p>class UFSAEngine:<br />
+    """Orchestrates the fetching, parsing, and emission of standards data."""</p>
+<pre><code>def \_\_init\_\_(self, config\_path: str):  
+    print(f"Loading configuration from: {config\_path}")  
+    self.config \= pd.read\_csv(config\_path)  
+    self.master\_graph \= Graph()
+
+def \_get\_instance(self, module\_path: str, class\_name: str, base\_class):  
+    """Dynamically imports and instantiates a class from a module."""  
+    try:  
+        module \= importlib.import\_module(module\_path)  
+        class\_ \= getattr(module, class\_name)  
+        if not issubclass(class\_, base\_class):  
+            raise TypeError(f"{class\_name} must be a subclass of {base\_class.\_\_name\_\_}")  
+        return class\_()  
+    except (ImportError, AttributeError) as e:  
+        raise ImportError(f"Could not load class '{class\_name}' from module '{module\_path}': {e}")
+
+def run(self, output\_dir: str, emitter\_type: str):  
+    """Executes the full ingestion, parsing, and emission pipeline."""  
+    print(f"\\nFound {len(self.config)} standards to process.")
+
+    for index, row in self.config.iterrows():  
+        standard\_id \= row  
+        print(f"\\nProcessing standard: {row} ({standard\_id})...")
+
+        parser\_module\_path \= row\['Parser\_Module'\]  
+        parser\_class\_name \= ''.join(word.capitalize() for word in parser\_module\_path.split('.')\[-1\].split('\_'))
+
+        try:  
+            parser \= self.\_get\_instance(parser\_module\_path, parser\_class\_name, BaseParser)  
+            standard\_graph \= parser.parse(  
+                url=row,  
+                concept\_scheme\_uri=row,  
+                standard\_info=row.to\_dict()  
+            )  
+            self.master\_graph \+= standard\_graph  
+            print(f"Successfully parsed and merged '{standard\_id}'. Graph now contains {len(self.master\_graph)} triples.")  
+        except Exception as e:  
+            print(f"ERROR: Failed to process standard '{standard\_id}'. Reason: {e}")  
+            continue
+
+    print(f"\\n--- Starting emission process \---")  
+    print(f"Total triples in master graph: {len(self.master\_graph)}")
+
+    emitter\_module\_path \= f"emitters.{emitter\_type}\_emitter"  
+    emitter\_class\_name \= f"{emitter\_type.upper()}Emitter"
+
+    try:  
+        emitter \= self.\_get\_instance(emitter\_module\_path, emitter\_class\_name, BaseEmitter)  
+        emitter.emit(self.master\_graph, output\_dir)  
+    except Exception as e:  
+        print(f"ERROR: Failed to emit tables. Reason: {e}")
+</code></pre>
+<p><strong>File: ufsa_v2/parsers/__init__.py</strong></p>
+<p>Python</p>
+<p># Leave this file empty.</p>
+<p><strong>File: ufsa_v2/parsers/base_parser.py</strong></p>
+<p>Python</p>
+<p>from abc import ABC, abstractmethod<br />
+from rdflib import Graph</p>
+<p>class BaseParser(ABC):<br />
+    """Abstract base class for all standard parsers."""<br />
+    @abstractmethod<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        """<br />
+        Fetches a standard from a URL, parses it, and returns an RDF graph<br />
+        conformant with the UFSA SKOS-based metamodel.<br />
+        """<br />
+        pass</p>
+<p><strong>File: ufsa_v2/parsers/csv_parser.py</strong></p>
+<p>Python</p>
+<p>import pandas as pd<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class CsvParser(BaseParser):<br />
+    """Parses a generic two-column CSV (Name, Code) into SKOS concepts."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        scheme \= URIRef(concept_scheme_uri)<br />
+        g.add((scheme, RDF.type, SKOS.ConceptScheme))<br />
+        g.add((scheme, SKOS.prefLabel, Literal(standard_info.get('Standard_Name'))))<br />
+        g.add((scheme, DCTERMS.creator, Literal(standard_info.get('Governing_Body'))))</p>
+<pre><code>    df \= pd.read\_csv(url)  
+    if 'Name' not in df.columns or 'Code' not in df.columns:  
+        raise ValueError("CSV must contain 'Name' and 'Code' columns for CsvParser.")
+
+    for \_, row in df.iterrows():  
+        name, code \= str(row\['Name'\]), str(row\['Code'\])  
+        concept\_uri \= URIRef(f"{concept\_scheme\_uri}/{code.replace(' ', '\_')}")  
+        g.add((concept\_uri, RDF.type, SKOS.Concept))  
+        g.add((concept\_uri, SKOS.inScheme, scheme))  
+        g.add((concept\_uri, SKOS.prefLabel, Literal(name)))  
+        g.add((concept\_uri, SKOS.notation, Literal(code)))  
+    return g
+</code></pre>
+<p><strong>File: ufsa_v2/parsers/iana_csv_parser.py</strong></p>
+<p>Python</p>
+<p>import pandas as pd<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class IanaCsvParser(BaseParser):<br />
+    """Parses IANA MIME type CSVs (Name, Template) into SKOS concepts."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        scheme \= URIRef(concept_scheme_uri)<br />
+        g.add((scheme, RDF.type, SKOS.ConceptScheme))<br />
+        g.add((scheme, SKOS.prefLabel, Literal(standard_info.get('Standard_Name'))))<br />
+        g.add((scheme, DCTERMS.creator, Literal(standard_info.get('Governing_Body'))))</p>
+<pre><code>    df \= pd.read\_csv(url)  
+    if 'Name' not in df.columns or 'Template' not in df.columns:  
+        raise ValueError("CSV must contain 'Name' and 'Template' columns for IanaCsvParser.")
+
+    for \_, row in df.iterrows():  
+        name, template \= str(row\['Name'\]), str(row)  
+        if pd.isna(name) or pd.isna(template): continue
+
+        concept\_uri\_slug \= name.replace('/', '\_').replace('+', '\_')  
+        concept\_uri \= URIRef(f"{concept\_scheme\_uri}/{concept\_uri\_slug}")  
+        g.add((concept\_uri, RDF.type, SKOS.Concept))  
+        g.add((concept\_uri, SKOS.inScheme, scheme))  
+        g.add((concept\_uri, SKOS.prefLabel, Literal(name)))  
+        g.add((concept\_uri, SKOS.notation, Literal(template)))  
+    return g
+</code></pre>
+<p><strong>File: ufsa_v2/parsers/json_schema_parser.py</strong></p>
+<p>Python</p>
+<p>import requests<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, RDFS, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class JsonSchemaParser(BaseParser):<br />
+    """Parses a JSON Schema into a hierarchical SKOS concept graph."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        self.scheme \= URIRef(concept_scheme_uri)<br />
+        g.add((self.scheme, RDF.type, SKOS.ConceptScheme))<br />
+        g.add((self.scheme, SKOS.prefLabel, Literal(standard_info.get('Standard_Name'))))<br />
+        g.add((self.scheme, DCTERMS.creator, Literal(standard_info.get('Governing_Body'))))</p>
+<pre><code>    response \= requests.get(url)  
+    response.raise\_for\_status()  
+    schema \= response.json()
+
+    root\_definition\_key \= standard\_info.split(' ')\[-2\] \# e.g., 'Patient'  
+    if root\_definition\_key in schema.get('definitions', {}):  
+        root\_schema \= schema\['definitions'\]\[root\_definition\_key\]  
+        self.\_traverse\_properties(g, root\_schema, None)
+
+    return g
+
+def \_traverse\_properties(self, g: Graph, schema\_node: dict, parent\_concept: URIRef):  
+    if 'properties' not in schema\_node:  
+        return
+
+    for prop\_name, prop\_schema in schema\_node\['properties'\].items():  
+        concept\_uri \= URIRef(f"{self.scheme}\#{prop\_name}")  
+        if parent\_concept:  
+            concept\_uri \= URIRef(f"{parent\_concept}.{prop\_name}")
+
+        g.add((concept\_uri, RDF.type, SKOS.Concept))  
+        g.add((concept\_uri, SKOS.inScheme, self.scheme))  
+        g.add((concept\_uri, SKOS.prefLabel, Literal(prop\_name)))
+
+        if 'description' in prop\_schema:  
+            g.add((concept\_uri, SKOS.definition, Literal(prop\_schema\['description'\])))
+
+        if parent\_concept:  
+            g.add((concept\_uri, SKOS.broader, parent\_concept))
+
+        \# Recurse for nested objects  
+        if prop\_schema.get('type') \== 'object' and 'properties' in prop\_schema:  
+            self.\_traverse\_properties(g, prop\_schema, concept\_uri)  
+        elif '$ref' in prop\_schema:  
+            \# Basic reference handling (non-recursive for simplicity)  
+            ref\_name \= prop\_schema\['$ref'\].split('/')\[-1\]  
+            g.add((concept\_uri, RDFS.seeAlso, Literal(f"Refers to schema definition: {ref\_name}")))
+</code></pre>
+<p><strong>File: ufsa_v2/parsers/rdf_parser.py</strong></p>
+<p>Python</p>
+<p>from rdflib import Graph<br />
+from.base_parser import BaseParser</p>
+<p>class RdfParser(BaseParser):<br />
+    """Parses an existing RDF file directly into the graph."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        g.parse(url)<br />
+        return g</p>
+<p><strong>File: ufsa_v2/parsers/shopify_graphql_parser.py</strong></p>
+<p>Python</p>
+<p>import requests<br />
+from bs4 import BeautifulSoup<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class ShopifyGraphqlParser(BaseParser):<br />
+    """Scrapes a Shopify GraphQL documentation page for fields."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        scheme \= URIRef(concept_scheme_uri)<br />
+        g.add((scheme, RDF.type, SKOS.ConceptScheme))<br />
+        g.add((scheme, SKOS.prefLabel, Literal(standard_info.get('Standard_Name'))))<br />
+        g.add((scheme, DCTERMS.creator, Literal(standard_info.get('Governing_Body'))))</p>
+<pre><code>    response \= requests.get(url)  
+    response.raise\_for\_status()  
+    soup \= BeautifulSoup(response.content, 'html.parser')
+
+    \# This is a brittle selector and likely to break with site updates.  
+    \# A more robust solution would use a more stable identifier if available.  
+    fields\_header \= soup.find(lambda tag: tag.name in \['h2', 'h3'\] and 'Fields' in tag.get\_text())  
+    if not fields\_header:  
+        raise ValueError("Could not find 'Fields' section on documentation page.")
+
+    table \= fields\_header.find\_next('table')  
+    if not table:  
+        raise ValueError("Could not find table following 'Fields' header.")
+
+    for row in table.find('tbody').find\_all('tr'):  
+        cols \= row.find\_all('td')  
+        if len(cols) \&gt;= 2:  
+            field\_name\_tag \= cols.find('code')  
+            if not field\_name\_tag: continue
+
+            field\_name \= field\_name\_tag.get\_text(strip=True)  
+            description \= cols.\[1\]get\_text(strip=True)
+
+            concept\_uri \= URIRef(f"{concept\_scheme\_uri}\#{field\_name}")  
+            g.add((concept\_uri, RDF.type, SKOS.Concept))  
+            g.add((concept\_uri, SKOS.inScheme, scheme))  
+            g.add((concept\_uri, SKOS.prefLabel, Literal(field\_name)))  
+            g.add((concept\_uri, SKOS.definition, Literal(description)))  
+    return g
+</code></pre>
+<p><strong>File: ufsa_v2/parsers/openfigi_api_parser.py</strong></p>
+<p>Python</p>
+<p>import requests<br />
+from bs4 import BeautifulSoup<br />
+from rdflib import Graph, URIRef, Literal<br />
+from rdflib.namespace import SKOS, RDF, DCTERMS<br />
+from.base_parser import BaseParser</p>
+<p>class OpenfigiApiParser(BaseParser):<br />
+    """Scrapes the OpenFIGI API documentation for response fields."""<br />
+    def parse(self, url: str, concept_scheme_uri: str, standard_info: dict) -&gt; Graph:<br />
+        g \= Graph()<br />
+        scheme \= URIRef(concept_scheme_uri)<br />
+        g.add((scheme, RDF.type, SKOS.ConceptScheme))<br />
+        g.add((scheme, SKOS.prefLabel, Literal(standard_info.get('Standard_Name'))))<br />
+        g.add((scheme, DCTERMS.creator, Literal(standard_info.get('Governing_Body'))))</p>
+<pre><code>    response \= requests.get(url)  
+    response.raise\_for\_status()  
+    soup \= BeautifulSoup(response.content, 'html.parser')
+
+    \# Find the section describing the response format for the mapping endpoint  
+    response\_header \= soup.find('h3', id\='response-format')  
+    if not response\_header:  
+        raise ValueError("Could not find 'Response Format' section (h3 with id='response-format').")
+
+    \# Find the list of properties  
+    prop\_list \= response\_header.find\_next('ul')  
+    if not prop\_list:  
+        raise ValueError("Could not find property list (ul) after 'Response Format' header.")
+
+    for item in prop\_list.find\_all('li'):  
+        code\_tag \= item.find('code')  
+        if code\_tag:  
+            field\_name \= code\_tag.get\_text(strip=True)  
+            description \= ' '.join(item.get\_text().split(' ')\[2:\]).strip() \# Basic description extraction
+
+            concept\_uri \= URIRef(f"{concept\_scheme\_uri}\#{field\_name}")  
+            g.add((concept\_uri, RDF.type, SKOS.Concept))  
+            g.add((concept\_uri, SKOS.inScheme, scheme))  
+            g.add((concept\_uri, SKOS.prefLabel, Literal(field\_name)))  
+            g.add((concept\_uri, SKOS.definition, Literal(description)))  
+    return g
+</code></pre>
+<p><strong>File: ufsa_v2/emitters/__init__.py</strong></p>
+<p>Python</p>
+<p># Leave this file empty.</p>
+<p><strong>File: ufsa_v2/emitters/base_emitter.py</strong></p>
+<p>Python</p>
+<p>from abc import ABC, abstractmethod<br />
+from rdflib import Graph</p>
+<p>class BaseEmitter(ABC):<br />
+    """Abstract base class for all output emitters."""<br />
+    @abstractmethod<br />
+    def emit(self, graph: Graph, output_dir: str):<br />
+        """<br />
+        Takes the final RDF graph and writes it to a set of files<br />
+        in a specific format.<br />
+        """<br />
+        pass</p>
+<p><strong>File: ufsa_v2/emitters/csv_emitter.py</strong></p>
+<p>Python</p>
+<p>import pandas as pd<br />
+import os<br />
+from rdflib import Graph<br />
+from rdflib.namespace import SKOS<br />
+from.base_emitter import BaseEmitter</p>
+<p>class CsvEmitter(BaseEmitter):<br />
+    """Emits the master knowledge graph into a set of CSV files."""<br />
+    def emit(self, graph: Graph, output_dir: str):<br />
+        # 1. Generate concept_schemes.csv<br />
+        schemes_query \= """<br />
+            SELECT?scheme_uri?pref_label?creator<br />
+            WHERE {<br />
+               ?scheme_uri a skos:ConceptScheme.<br />
+                OPTIONAL {?scheme_uri skos:prefLabel?pref_label. }<br />
+                OPTIONAL {?scheme_uri [http://purl.org/dc/terms/creator](http://purl.org/dc/terms/creator)?creator. }<br />
+            }<br />
+        """<br />
+        schemes_data \= [{<br />
+            "scheme_uri": str(r.scheme_uri),<br />
+            "pref_label": str(r.pref_label),<br />
+            "governing_body": str(r.creator)<br />
+        } for r in graph.query(schemes_query)]<br />
+        schemes_df \= pd.DataFrame(schemes_data).drop_duplicates().sort_values('scheme_uri')<br />
+        schemes_df.to_csv(os.path.join(output_dir, "concept_schemes.csv"), index=False)<br />
+        print(f"Generated concept_schemes.csv with {len(schemes_df)} rows.")</p>
+<pre><code>    \# 2\. Generate concepts.csv  
+    concepts\_query \= """  
+        SELECT?concept\_uri?pref\_label?definition?notation?scheme\_uri  
+        WHERE {  
+           ?concept\_uri a skos:Concept ; skos:inScheme?scheme\_uri.  
+            OPTIONAL {?concept\_uri skos:prefLabel?pref\_label. }  
+            OPTIONAL {?concept\_uri skos:definition?definition. }  
+            OPTIONAL {?concept\_uri skos:notation?notation. }  
+        }  
+    """  
+    concepts\_data \= \[{  
+        "concept\_uri": str(r.concept\_uri), "pref\_label": str(r.pref\_label),  
+        "definition": str(r.definition), "notation": str(r.notation),  
+        "scheme\_uri": str(r.scheme\_uri)  
+    } for r in graph.query(concepts\_query)\]  
+    concepts\_df \= pd.DataFrame(concepts\_data).drop\_duplicates().sort\_values('concept\_uri')  
+    concepts\_df.to\_csv(os.path.join(output\_dir, "concepts.csv"), index=False)  
+    print(f"Generated concepts.csv with {len(concepts\_df)} rows.")
+
+    \# 3\. Generate semantic\_relations.csv  
+    relations\_query \= """  
+        SELECT?subject\_uri?predicate?object\_uri  
+        WHERE {  
+           ?subject\_uri?predicate?object\_uri.  
+            FILTER(?predicate IN (skos:broader, skos:narrower, skos:related,   
+                                  skos:exactMatch, skos:closeMatch,   
+                                  skos:broadMatch, skos:narrowMatch, skos:relatedMatch))  
+        }  
+    """  
+    relations\_data \=  
+    relations\_df \= pd.DataFrame(relations\_data).drop\_duplicates().sort\_values(\['subject\_uri', 'predicate', 'object\_uri'\])  
+    relations\_df.to\_csv(os.path.join(output\_dir, "semantic\_relations.csv"), index=False)  
+    print(f"Generated semantic\_relations.csv with {len(relations\_df)} rows.")
+</code></pre>
+<p><strong>File: ufsa_v2/emitters/sql_emitter.py</strong></p>
+<p>Python</p>
+<p>import os<br />
+from rdflib import Graph<br />
+from.base_emitter import BaseEmitter<br />
+import pandas as pd</p>
+<p>class SqlEmitter(BaseEmitter):<br />
+    """Emits the master knowledge graph as SQL INSERT statements."""<br />
+    def emit(self, graph: Graph, output_dir: str):<br />
+        # This is a simplified implementation. A robust version would handle<br />
+        # SQL escaping, different dialects, and schema creation more formally.  </p>
+<pre><code>    \# Re-use the CSV Emitter's logic to get DataFrames  
+    from.csv\_emitter import CsvEmitter  
+    temp\_dir \= os.path.join(output\_dir, "temp\_sql\_gen")  
+    if not os.path.exists(temp\_dir):  
+        os.makedirs(temp\_dir)
+
+    csv\_emitter \= CsvEmitter()  
+    csv\_emitter.emit(graph, temp\_dir)
+
+    sql\_script \= ""
+
+    \# Schema Creation  
+    sql\_script \+= """
+</code></pre>
+<p>-- UFSA v2 Schema Definition<br />
+CREATE TABLE concept_schemes (<br />
+    scheme_uri VARCHAR(255) PRIMARY KEY,<br />
+    pref_label TEXT,<br />
+    governing_body VARCHAR(255)<br />
+);</p>
+<p>CREATE TABLE concepts (<br />
+    concept_uri VARCHAR(255) PRIMARY KEY,<br />
+    pref_label TEXT,<br />
+    definition TEXT,<br />
+    notation TEXT,<br />
+    scheme_uri VARCHAR(255),<br />
+    FOREIGN KEY (scheme_uri) REFERENCES concept_schemes(scheme_uri)<br />
+);</p>
+<p>CREATE TABLE semantic_relations (<br />
+    subject_uri VARCHAR(255),<br />
+    predicate VARCHAR(255),<br />
+    object_uri VARCHAR(255),<br />
+    PRIMARY KEY (subject_uri, predicate, object_uri),<br />
+    FOREIGN KEY (subject_uri) REFERENCES concepts(concept_uri),<br />
+    FOREIGN KEY (object_uri) REFERENCES concepts(concept_uri)<br />
+);</p>
+<p>-- Data Insertion<br />
+"""</p>
+<pre><code>    \# Data Insertion  
+    for table\_name in \["concept\_schemes", "concepts", "semantic\_relations"\]:  
+        df \= pd.read\_csv(os.path.join(temp\_dir, f"{table\_name}.csv"))  
+        df \= df.where(pd.notnull(df), None) \# Replace NaN with None for SQL NULL  
+        for \_, row in df.iterrows():  
+            cols \= ', '.join(row.index)  
+            vals \= ', '.join(\[f"'{str(v).replace(\\"'\\", \\"''\\")}'" if v is not None else "NULL" for v in row.values\])  
+            sql\_script \+= f"INSERT INTO {table\_name} ({cols}) VALUES ({vals});\\n"  
+        sql\_script \+= "\\n"
+
+    with open(os.path.join(output\_dir, "ufsa\_v2\_data.sql"), "w", encoding="utf-8") as f:  
+        f.write(sql\_script)
+
+    print(f"Generated ufsa\_v2\_data.sql script.")
+
+    \# Clean up temp files  
+    for f in os.listdir(temp\_dir):  
+        os.remove(os.path.join(temp\_dir, f))  
+    os.rmdir(temp\_dir)
+</code></pre>
+<h2 id="6-output-specification-data-tables"><strong>6. Output Specification: Data Tables</strong></h2>
+<p>The successful execution of the engine will produce three primary CSV files in the specified output directory. These tables are relationally linked and provide a complete, structured representation of the ingested standards.</p>
+<h3 id="61-table-schemas"><strong>6.1. Table Schemas</strong></h3>
+<ul>
+<li><strong>concept_schemes.csv</strong>:  </li>
+<li>scheme_uri (String, Primary Key)  </li>
+<li>pref_label (String)  </li>
+<li>governing_body (String)  </li>
+<li><strong>concepts.csv</strong>:  </li>
+<li>concept_uri (String, Primary Key)  </li>
+<li>pref_label (String)  </li>
+<li>definition (Text)  </li>
+<li>notation (String)  </li>
+<li>scheme_uri (String, Foreign Key to concept_schemes.scheme_uri)  </li>
+<li><strong>semantic_relations.csv</strong>:  </li>
+<li>subject_uri (String, Foreign Key to concepts.concept_uri)  </li>
+<li>predicate (String, URI of the SKOS property)  </li>
+<li>object_uri (String, Foreign Key to concepts.concept_uri)</li>
+</ul>
+<h3 id="62-expected-output-example-for-iso-3166-1"><strong>6.2. Expected Output Example (for ISO 3166-1)</strong></h3>
+<p><strong>concept_schemes.csv (sample row):</strong></p>
+<p>Code snippet</p>
+<p>scheme_uri,pref_label,governing_body<br />
+[http://ufsa.org/v2/standards/iso_3166_1_a2,ISO](http://ufsa.org/v2/standards/iso_3166_1_a2,ISO) 3166-1 Alpha-2 Country Codes,ISO</p>
+<p><strong>concepts.csv (sample rows):</strong></p>
+<p>Code snippet</p>
+<p>concept_uri,pref_label,definition,notation,scheme_uri<br />
+[http://ufsa.org/v2/standards/iso_3166_1_a2/US,United](http://ufsa.org/v2/standards/iso_3166_1_a2/US,United) States of America,,US,[http://ufsa.org/v2/standards/iso_3166_1_a2](http://ufsa.org/v2/standards/iso_3166_1_a2)<br />
+[http://ufsa.org/v2/standards/iso_3166_1_a2/CA,Canada,,CA,http://ufsa.org/v2/standards/iso_3166_1_a2](http://ufsa.org/v2/standards/iso_3166_1_a2/CA,Canada,,CA,http://ufsa.org/v2/standards/iso_3166_1_a2)</p>
+<p>semantic_relations.csv:<br />
+(This table would be empty for the ISO 3166-1 standard alone, as it is a flat list. It would be populated by hierarchical standards like FHIR.)</p>
+<h2 id="7-execution-and-verification-protocol"><strong>7. Execution and Verification Protocol</strong></h2>
+<ol>
+<li><strong>Setup Environment:</strong>  </li>
+<li>Ensure Python 3.8+ is installed.  </li>
+<li>
+<p>Create a virtual environment:<br />
+     Bash<br />
+     python -m venv venv<br />
+     source venv/bin/activate  # On Windows: venv\Scripts\activate</p>
+</li>
+<li>
+<p><strong>Install Dependencies:</strong>  </p>
+</li>
+<li>
+<p>Create a requirements.txt file with the following content:<br />
+     pandas<br />
+     rdflib<br />
+     requests<br />
+     beautifulsoup4<br />
+     lxml</p>
+</li>
+<li>
+<p>Install the dependencies:<br />
+     Bash<br />
+     pip install -r requirements.txt</p>
+</li>
+<li>
+<p><strong>Run the Engine:</strong>  </p>
+</li>
+<li>Navigate to the ufsa_v2 directory.  </li>
+<li>
+<p>Execute the main script:<br />
+     Bash<br />
+     python main.py --output_dir./output --emitter csv</p>
+</li>
+<li>
+<p><strong>Verification:</strong>  </p>
+</li>
+<li>Upon successful completion, an output/ directory will be created.  </li>
+<li>Verify that the directory contains three non-empty CSV files: concept_schemes.csv, concepts.csv, and semantic_relations.csv.  </li>
+<li>Inspect the contents of the files to confirm they contain the parsed data from the standards defined in pointer_registry.csv.</li>
+</ol>
+<h4 id="works-cited"><strong>Works cited</strong></h4>
+<ol>
+<li>The Data Engineers Guide to Declarative vs Imperative for Data - DataOps.live, accessed on August 24, 2025, <a href="https://www.dataops.live/blog/the-data-engineers-guide-to-declarative-vs-imperative-for-data">https://www.dataops.live/blog/the-data-engineers-guide-to-declarative-vs-imperative-for-data</a>  </li>
+<li>Explained: Imperative vs Declarative programming - DEV Community, accessed on August 24, 2025, <a href="https://dev.to/siddharthshyniben/explained-imperative-vs-declarative-programming-577g">https://dev.to/siddharthshyniben/explained-imperative-vs-declarative-programming-577g</a>  </li>
+<li>What are some examples of imperative vs. declarative programming? - Quora, accessed on August 24, 2025, <a href="https://www.quora.com/What-are-some-examples-of-imperative-vs-declarative-programming">https://www.quora.com/What-are-some-examples-of-imperative-vs-declarative-programming</a>  </li>
+<li>Imperative vs Declarative Programming - Reddit, accessed on August 24, 2025, <a href="https://www.reddit.com/r/programming/comments/rv9np3/imperative_vs_declarative_programming/">https://www.reddit.com/r/programming/comments/rv9np3/imperative_vs_declarative_programming/</a>  </li>
+<li>Business logic - Wikipedia, accessed on August 24, 2025, <a href="https://en.wikipedia.org/wiki/Business_logic">https://en.wikipedia.org/wiki/Business_logic</a>  </li>
+<li>Patterns for Taming Complex Business Logic | by Ürgo Ringo | Inbank product &amp; engineering | Medium, accessed on August 24, 2025, <a href="https://medium.com/inbank-product-and-engineering/patterns-for-taming-complex-business-logic-8b63c0b98882">https://medium.com/inbank-product-and-engineering/patterns-for-taming-complex-business-logic-8b63c0b98882</a>  </li>
+<li>Declarative vs. Imperative Programming: 4 Key Differences | Codefresh, accessed on August 24, 2025, <a href="https://codefresh.io/learn/infrastructure-as-code/declarative-vs-imperative-programming-4-key-differences/">https://codefresh.io/learn/infrastructure-as-code/declarative-vs-imperative-programming-4-key-differences/</a>  </li>
+<li>How to model Business Logic using Configuration - VI Company, accessed on August 24, 2025, <a href="https://www.vicompany.nl/en/insights/how-to-model-business-logic-using-configuration">https://www.vicompany.nl/en/insights/how-to-model-business-logic-using-configuration</a>  </li>
+<li>Patterns in Practice - Convention Over Configuration | Microsoft Learn, accessed on August 24, 2025, <a href="https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-in-practice-convention-over-configuration">https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-in-practice-convention-over-configuration</a>  </li>
+<li>Cognitive Load is what matters - GitHub, accessed on August 24, 2025, <a href="https://github.com/zakirullin/cognitive-load">https://github.com/zakirullin/cognitive-load</a>  </li>
+<li>The Cognitive Load Theory in Software Development - The Valuable Dev, accessed on August 24, 2025, <a href="https://thevaluable.dev/cognitive-load-theory-software-developer/">https://thevaluable.dev/cognitive-load-theory-software-developer/</a>  </li>
+<li>That's not an abstraction, that's just a layer of indirection - fhur, accessed on August 24, 2025, <a href="https://fhur.me/posts/2024/thats-not-an-abstraction">https://fhur.me/posts/2024/thats-not-an-abstraction</a>  </li>
+<li>Death by design patterns, or On the cognitive load of abstractions in the code - Hacker News, accessed on August 24, 2025, <a href="https://news.ycombinator.com/item?id=36118093">https://news.ycombinator.com/item?id=36118093</a>  </li>
+<li>Cognitive Load For Developers : r/programming - Reddit, accessed on August 24, 2025, <a href="https://www.reddit.com/r/programming/comments/192cwgw/cognitive_load_for_developers/">https://www.reddit.com/r/programming/comments/192cwgw/cognitive_load_for_developers/</a>  </li>
+<li>Cognitive load is what matters | Hacker News, accessed on August 24, 2025, <a href="https://news.ycombinator.com/item?id=42489645">https://news.ycombinator.com/item?id=42489645</a>  </li>
+<li>Federated Data Governance Explained - Alation, accessed on August 24, 2025, <a href="https://www.alation.com/blog/federated-data-governance-explained/">https://www.alation.com/blog/federated-data-governance-explained/</a>  </li>
+<li>www.alation.com, accessed on August 24, 2025, <a href="https://www.alation.com/blog/federated-data-governance-explained/#:~:text=Federated%20data%20governance%20is%20a,governance%20principles%20with%20decentralized%20execution.">https://www.alation.com/blog/federated-data-governance-explained/#:\~:text=Federated%20data%20governance%20is%20a,governance%20principles%20with%20decentralized%20execution.</a>  </li>
+<li>Federated Data Governance: Ultimate Guide for 2024 - Atlan, accessed on August 24, 2025, <a href="https://atlan.com/know/data-governance/federated-data-governance/">https://atlan.com/know/data-governance/federated-data-governance/</a>  </li>
+<li>Understand Data Governance Models: Centralized, Decentralized &amp; Federated | Alation, accessed on August 24, 2025, <a href="https://www.alation.com/blog/understand-data-governance-models-centralized-decentralized-federated/">https://www.alation.com/blog/understand-data-governance-models-centralized-decentralized-federated/</a>  </li>
+<li>Implementing Federated Governance in Data Mesh Architecture - MDPI, accessed on August 24, 2025, <a href="https://www.mdpi.com/1999-5903/16/4/115">https://www.mdpi.com/1999-5903/16/4/115</a>  </li>
+<li>Simple Knowledge Organization System - Wikipedia, accessed on August 24, 2025, <a href="https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System">https://en.wikipedia.org/wiki/Simple_Knowledge_Organization_System</a>  </li>
+<li>What's SKOS, What's not, Why and What Should be Done About It - NKOS, accessed on August 24, 2025, <a href="https://nkos.dublincore.org/ASIST2015/ASISTBusch-SKOS.pdf">https://nkos.dublincore.org/ASIST2015/ASISTBusch-SKOS.pdf</a>  </li>
+<li>SKOS Simple Knowledge Organization System Primer - W3C, accessed on August 24, 2025, <a href="https://www.w3.org/TR/skos-primer/">https://www.w3.org/TR/skos-primer/</a>  </li>
+<li>SKOS Core Vocabulary Specification - W3C, accessed on August 24, 2025, <a href="https://www.w3.org/TR/swbp-skos-core-spec/">https://www.w3.org/TR/swbp-skos-core-spec/</a>  </li>
+<li>SKOS Simple Knowledge Organization System Reference - W3C, accessed on August 24, 2025, <a href="https://www.w3.org/TR/2008/WD-skos-reference-20080125/">https://www.w3.org/TR/2008/WD-skos-reference-20080125/</a>  </li>
+<li>RDF Vocabularies - SKOS Simple Knowledge Organization System, accessed on August 24, 2025, <a href="https://www.w3.org/2004/02/skos/vocabs">https://www.w3.org/2004/02/skos/vocabs</a>  </li>
+<li>SKOS Simple Knowledge Organization System RDF Schema - W3C, accessed on August 24, 2025, <a href="https://www.w3.org/2008/05/skos">https://www.w3.org/2008/05/skos</a>  </li>
+<li>Patient - FHIR v6.0.0-ballot2, accessed on August 24, 2025, <a href="http://build.fhir.org/patient.schema.json.html">http://build.fhir.org/patient.schema.json.html</a>  </li>
+<li>List of all countries with their 2 digit codes (ISO 3166-1) - DataHub.io, accessed on August 24, 2025, <a href="https://datahub.io/core/country-list">https://datahub.io/core/country-list</a>  </li>
+<li>product - GraphQL Admin - Shopify developer documentation, accessed on August 24, 2025, <a href="https://shopify.dev/docs/api/admin-graphql/latest/queries/product">https://shopify.dev/docs/api/admin-graphql/latest/queries/product</a>  </li>
+<li>Documentation | OpenFIGI, accessed on August 24, 2025, <a href="https://www.openfigi.com/api/documentation">https://www.openfigi.com/api/documentation</a>  </li>
+<li>Resource - FHIR v6.0.0-ballot2, accessed on August 24, 2025, <a href="https://build.fhir.org/resource.schema.json.html">https://build.fhir.org/resource.schema.json.html</a>  </li>
+<li>Observation - FHIR v6.0.0-ballot2, accessed on August 24, 2025, <a href="https://build.fhir.org/observation.schema.json.html">https://build.fhir.org/observation.schema.json.html</a>  </li>
+<li>FHIR Observation - Conduct Science, accessed on August 24, 2025, <a href="https://conductscience.com/digital-health/fhir-observation/">https://conductscience.com/digital-health/fhir-observation/</a>  </li>
+<li>Observation resource - Veradigm Developer Portal, accessed on August 24, 2025, <a href="https://developer.veradigm.com/content/fhir/Resources/DSTU2/Observation.html">https://developer.veradigm.com/content/fhir/Resources/DSTU2/Observation.html</a>  </li>
+<li>Observation - FHIR v6.0.0-ballot3, accessed on August 24, 2025, <a href="https://build.fhir.org/observation.html">https://build.fhir.org/observation.html</a>  </li>
+<li>order - GraphQL Admin - Shopify developer documentation, accessed on August 24, 2025, <a href="https://shopify.dev/docs/api/admin-graphql/latest/queries/order">https://shopify.dev/docs/api/admin-graphql/latest/queries/order</a>  </li>
+<li>Order - Shopify developer documentation, accessed on August 24, 2025, <a href="https://shopify.dev/docs/api/admin-rest/latest/resources/order">https://shopify.dev/docs/api/admin-rest/latest/resources/order</a>  </li>
+<li>orders - GraphQL Admin - Shopify developer documentation, accessed on August 24, 2025, <a href="https://shopify.dev/docs/api/admin-graphql/latest/queries/orders">https://shopify.dev/docs/api/admin-graphql/latest/queries/orders</a>  </li>
+<li>Financial Instrument Global Identifier - Wikipedia, accessed on August 24, 2025, <a href="https://en.wikipedia.org/wiki/Financial_Instrument_Global_Identifier">https://en.wikipedia.org/wiki/Financial_Instrument_Global_Identifier</a>  </li>
+<li>Overview | OpenFIGI, accessed on August 24, 2025, <a href="https://www.openfigi.com/about/overview">https://www.openfigi.com/about/overview</a>  </li>
+<li>FINANCIAL INSTRUMENT GLOBAL IDENTIFIER ™ - Bloomberg, accessed on August 24, 2025, <a href="https://assets.bwbx.io/documents/users/iqjWHBFdfxIU/rKmKGovTFMFo/v0">https://assets.bwbx.io/documents/users/iqjWHBFdfxIU/rKmKGovTFMFo/v0</a>  </li>
+<li>How FIGI relates to other standards in the space - OMG Issue Tracker, accessed on August 24, 2025, <a href="https://issues.omg.org/issues/FIGI-20">https://issues.omg.org/issues/FIGI-20</a>  </li>
+<li>Battle Between ISIN and FIGI Codes - ISIN, CUSIP, LEI, SEDOL, WKN, CFI Codes, Database Securities Apply Application Register, accessed on August 24, 2025, <a href="https://www.isin.com/battle-between-isin-and-figi-codes/">https://www.isin.com/battle-between-isin-and-figi-codes/</a>  </li>
+<li>20240923 FDTA Response to Proposed Rule ... - FHFA, accessed on August 24, 2025, <a href="https://www.fhfa.gov/sites/default/files/2024-09/20240923%20FDTA%20Response%20to%20Proposed%20Rule%20FHFA.docx">https://www.fhfa.gov/sites/default/files/2024-09/20240923%20FDTA%20Response%20to%20Proposed%20Rule%20FHFA.docx</a>  </li>
+<li>Comments on Financial Data Transparency Act Joint Data Standards Under the Financial Data Transparency Act of 2022, accessed on August 24, 2025, <a href="https://www.federalreserve.gov/apps/proposals/comments/FR-0000-0136-01-C19">https://www.federalreserve.gov/apps/proposals/comments/FR-0000-0136-01-C19</a>  </li>
+<li>SKOS Simple Knowledge Organization System Reference - W3C, accessed on August 24, 2025, <a href="https://www.w3.org/TR/skos-reference/">https://www.w3.org/TR/skos-reference/</a>  </li>
+<li>Media Types - Internet Assigned Numbers Authority, accessed on August 24, 2025, <a href="https://www.iana.org/assignments/media-types/">https://www.iana.org/assignments/media-types/</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js"></script>
+      
+        <script src="../../js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
