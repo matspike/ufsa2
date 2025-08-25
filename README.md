@@ -280,44 +280,45 @@ Conventions and guarantees
 ### Data model (ER diagram)
 
 ```mermaid
-erDiagram
-  ConceptScheme ||--o{ Concept : contains
-  Concept }o--o{ Concept : "skos:* relation"
-  ConceptScheme {
-    string scheme_id PK
-    string scheme_label
-    string scheme_uri UNIQUE
-    string governing_body
+classDiagram
+  class ConceptScheme {
+    +scheme_id: string (PK)
+    +scheme_label: string
+    +scheme_uri: string (UNIQUE)
+    +governing_body: string
   }
-  Concept {
-    string concept_id PK
-    string pref_label
-    string definition
-    string notation
-    string scheme_uri FK
+  class Concept {
+    +concept_id: string (PK)
+    +pref_label: string
+    +definition: string
+    +notation: string
+    +scheme_uri: string (FK → ConceptScheme.scheme_uri)
   }
-  SemanticRelation {
-    string subject_id FK
-    string predicate
-    string object_id FK
+  class SemanticRelation {
+    +subject_id: string (FK → Concept.concept_id)
+    +predicate: string
+    +object_id: string (FK → Concept.concept_id)
   }
-  IdentifierSystem {
-    string id PK
-    string name
-    string authority
-    string uri UNIQUE
-    string description
+  class IdentifierSystem {
+    +id: string (PK)
+    +name: string
+    +authority: string
+    +uri: string (UNIQUE)
+    +description: string
   }
-  Mapping {
-    string from_system FK
-    string from_value
-    string to_concept_id FK
-    string relation
-    string note
+  class Mapping {
+    +from_system: string (FK → IdentifierSystem.id)
+    +from_value: string
+    +to_concept_id: string (FK → Concept.concept_id)
+    +relation: string
+    +note: string
   }
-  ConceptScheme ||--o{ IdentifierSystem : catalogs
-  Concept ||--o{ Mapping : targets
-  IdentifierSystem ||--o{ Mapping : provides
+
+  ConceptScheme "1" --> "0..*" Concept : contains
+  ConceptScheme "1" --> "0..*" IdentifierSystem : catalogs
+  IdentifierSystem "1" --> "0..*" Mapping : provides
+  Concept "1" --> "0..*" Mapping : targets
+  Concept "0..*" -- "0..*" Concept : skos relations
 ```
 
 ### Integration patterns

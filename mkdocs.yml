@@ -38,3 +38,6 @@ nav:
   - Research:
     - Architecture (full): research/0_Federated Schema Architecture_ Falsification & Implementation.md
     - Registry & Emitters (full): research/1_UFSA v2.0 Registry and Emitter Design.md
+  - Models:
+    - core: reference/core.md
+    - models: reference/models.md
