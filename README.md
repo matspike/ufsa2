@@ -41,20 +41,20 @@ into:
 ### How It Works
 
 1. **Declaration**: Point to a standard via the registry (`pointer_registry.yaml`)
-2. **Ingestion**: The standard's structure is extracted from its native format (JSON Schema, CSV, RDF)
+2. **Ingestion**: The standard's structure is extracted from its native format (`JSON` Schema, `CSV`, `RDF`)
 3. **Materialization**: The specification becomes its own parser and semantic model
-4. **Normalization**: All standards converge to a unified SKOS-based representation
+4. **Normalization**: All standards converge to a unified `SKOS`-based representation
 5. **Federation**: Cross-domain mappings emerge from the normalized semantic layer
 
 #### Pipeline stages at a glance
 
 | Stage | Purpose | Sources | Key components | Outputs |
 |---|---|---|---|---|
-| Declaration | Declare which specs to ingest | YAML registry | `ufsa_v2/registry/pointer_registry.yaml` | Plan for parsers |
-| Ingestion | Acquire source artifacts | Local fixtures (now); HTTP with cache/pin (later) | Fetcher, scraper | Raw spec files |
-| Parsing/Materialization | Turn spec structure into typed entities | JSON Schema, CSV, RDF, CycloneDX, SQL DDL | Parsers in `ufsa_v2/parsers/` | Concepts, schemes, relations |
-| Normalization | Align to SKOS model | — | Core model in `ufsa_v2/core_models.py` | Unified in‑memory graph |
-| Emission | Persist portable tables | — | Emitters in `ufsa_v2/emitters/` | Per‑scheme CSV/JSON + global tables |
+| Declaration | Declare which specs to ingest | `YAML` registry | `pointer_registry.yaml` | Plan for parsers |
+| Ingestion | Acquire source artifacts | Local fixtures (now); `HTTP` with cache/pin (later) | Fetcher, scraper | Raw spec files |
+| Parsing / Materialization | Turn spec structure into typed entities | `JSON` Schema, `CSV`, `RDF`, `CycloneDX`, `SQL-DDL` | Parsers in `parsers/` | Concepts, schemes, relations |
+| Normalization | Align to `SKOS` model | — | Core model in `core_models.py` | Unified in‑memory graph |
+| Emission | Persist portable tables | — | Emitters in `emitters/` | Per‑scheme `CSV`/ `JSON` + global tables |
 
 ### Architecture diagram
 
@@ -110,12 +110,46 @@ This repo ships an offline, deterministic bootstrap (fixture‑backed) that clea
 
 ## Table of contents
 
-| 1. **[Overview](#overview)** | 1a. *[Architecture diagram](#architecture-diagram)* | 1b. *[Target architecture at a glance](#target-architecture-at-a-glance)* | 1c. *[Project structure](#project-structure)* |
-| 2. **[Product & integration](#product-and-integration)** | 2a. *[Data contracts](#data-contracts)* | 2b. *[Integration patterns](#integration-patterns)* | 2c. *[Versioning & reproducibility](#versioning-and-reproducibility)* |
-| 3. **[Outputs](#outputs)** | 3a. *[Standards covered](#standards-covered-via-fixtures)* | 3b. *[Technologies](#technologies)* | 3c. *[Quick start](#quick-start)* |
-| 4. **[Development](#development)** | 4a. *[Makefile targets](#makefile-targets)* | 4b. *[Planning & progress](#planning-and-progress)* | 4c. *[Tracker workflow](#tracker-workflow)* |
-| 5. **[CI](#ci)** | 5a. *[Releases](#releases)* | 5b. *[Contributing](#contributing)* | 5c. *[License sealing](#license-sealing-optional)* |
-| 6. **[Notes on mappings and relations](#notes-on-mappings-and-relations)** | 6a. *[Architecture references](#architecture-references)* |  |  |
+<table>
+  <tbody>
+    <tr>
+      <td>1. <a href="#overview"><strong>Overview</strong></a></td>
+      <td>1a. <a href="#architecture-diagram"><em>Architecture diagram</em></a></td>
+      <td>1b. <a href="#target-architecture-at-a-glance"><em>Target architecture at a glance</em></a></td>
+      <td>1c. <a href="#project-structure"><em>Project structure</em></a></td>
+    </tr>
+    <tr>
+      <td>2. <a href="#product-and-integration"><strong>Product &amp; integration</strong></a></td>
+      <td>2a. <a href="#data-contracts"><em>Data contracts</em></a></td>
+      <td>2b. <a href="#integration-patterns"><em>Integration patterns</em></a></td>
+      <td>2c. <a href="#versioning-and-reproducibility"><em>Versioning &amp; reproducibility</em></a></td>
+    </tr>
+    <tr>
+      <td>3. <a href="#outputs"><strong>Outputs</strong></a></td>
+      <td>3a. <a href="#standards-covered-via-fixtures"><em>Standards covered</em></a></td>
+      <td>3b. <a href="#technologies"><em>Technologies</em></a></td>
+      <td>3c. <a href="#quick-start"><em>Quick start</em></a></td>
+    </tr>
+    <tr>
+      <td>4. <a href="#development"><strong>Development</strong></a></td>
+      <td>4a. <a href="#makefile-targets"><em>Makefile targets</em></a></td>
+      <td>4b. <a href="#planning-and-progress"><em>Planning &amp; progress</em></a></td>
+      <td>4c. <a href="#tracker-workflow"><em>Tracker workflow</em></a></td>
+    </tr>
+    <tr>
+      <td>5. <a href="#ci"><strong>CI</strong></a></td>
+      <td>5a. <a href="#releases"><em>Releases</em></a></td>
+      <td>5b. <a href="#contributing"><em>Contributing</em></a></td>
+      <td>5c. <a href="#license-sealing-optional"><em>License sealing</em></a></td>
+    </tr>
+    <tr>
+      <td>6. <a href="#notes-on-mappings-and-relations"><strong>Notes on mappings and relations</strong></a></td>
+      <td>6a. <a href="#architecture-references"><em>Architecture references</em></a></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
